@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FREIT — Forum for Research in Empirical International Trade</title>
   <meta name="description" content="An international organization dedicated to furthering research in empirical international economics.">
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+  <link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96x96.png">
+  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -208,12 +208,17 @@
     }
 
     .section-label {
+      display: block;
       font-size: 0.6875rem;
       text-transform: uppercase;
       letter-spacing: 2px;
       color: var(--accent-600);
       font-weight: 600;
       margin-bottom: 1.5rem;
+    }
+
+    a.section-label:hover {
+      color: var(--accent-700);
     }
 
     .conf-grid {
@@ -384,7 +389,7 @@
   <nav class="nav">
     <div class="nav-inner">
       <a href="index.html" class="nav-logo">
-        <span class="nav-logo-img"><img src="freit_logo_new.svg" alt="FREIT logo"></span>
+        <span class="nav-logo-img"><img src="images/freit_logo_new_transparent.png" alt="FREIT logo"></span>
         <span class="nav-logo-text">FREIT</span>
       </a>
       <button class="nav-toggle" aria-label="Toggle navigation" onclick="document.querySelector('.nav-links').classList.toggle('open')">
@@ -402,7 +407,7 @@
   <!-- HERO -->
   <header class="hero">
     <div class="hero-logo">
-      <img src="freit_logo_new.svg" alt="FREIT logo — globe with airplane, truck, and cargo ship representing international trade">
+      <img src="images/freit_logo_new_transparent.png" alt="FREIT logo — globe with airplane, truck, and cargo ship representing international trade">
     </div>
     <h1>Forum for Research in Empirical International Trade</h1>
     <p>An international organization dedicated to furthering research in empirical international economics.</p>
@@ -411,40 +416,40 @@
 
   <!-- CONFERENCES -->
   <section class="conferences">
-    <div class="section-label">Conferences</div>
+    <a href="conferences.html" class="section-label">Conferences</a>
     <div class="conf-grid">
 
-      <a href="eiit.html" class="conf-card fade-up">
+      <a href="eiit/index.html" class="conf-card fade-up">
         <div class="conf-card-acronym">EIIT</div>
         <div class="conf-card-name">Empirical Investigations in International Trade</div>
         <div class="conf-card-meta"><span class="conf-dot"></span> North America</div>
       </a>
 
-      <a href="conferences.html#eiti" class="conf-card fade-up">
+      <a href="eiti/index.html" class="conf-card fade-up">
         <div class="conf-card-acronym">EITI</div>
         <div class="conf-card-name">Empirical Investigations in Trade &amp; Investment</div>
         <div class="conf-card-meta"><span class="conf-dot"></span> Japan</div>
       </a>
 
-      <a href="conferences.html#rmet" class="conf-card fade-up">
+      <a href="rmet/index.html" class="conf-card fade-up">
         <div class="conf-card-acronym">RMET</div>
         <div class="conf-card-name">Rocky Mountain Empirical Trade Conference</div>
         <div class="conf-card-meta"><span class="conf-dot"></span> Canada</div>
       </a>
 
-      <a href="conferences.html#setc" class="conf-card fade-up">
+      <a href="setc/index.html" class="conf-card fade-up">
         <div class="conf-card-acronym">SETC</div>
         <div class="conf-card-name">Sardinian Empirical Trade Conference</div>
         <div class="conf-card-meta"><span class="conf-dot"></span> Italy</div>
       </a>
 
-      <a href="conferences.html#metc" class="conf-card fade-up">
+      <a href="metc/index.html" class="conf-card fade-up">
         <div class="conf-card-acronym">METC</div>
         <div class="conf-card-name">Melbourne Empirical Trade Conference</div>
         <div class="conf-card-meta"><span class="conf-dot"></span> Australia</div>
       </a>
 
-      <a href="conferences.html#ketc" class="conf-card fade-up">
+      <a href="ketc/index.html" class="conf-card fade-up">
         <div class="conf-card-acronym">KETC</div>
         <div class="conf-card-name">Korean Empirical Trade Conference</div>
         <div class="conf-card-meta"><span class="conf-dot"></span> South Korea</div>
@@ -457,7 +462,7 @@
   <footer class="footer">
     <div class="footer-inner">
       <span>&copy; 2026 FREIT. All rights reserved.</span>
-      <a href="mailto:jon@freit.org">tibor@freit.org</a>
+      <a href="mailto:tibor@freit.org">tibor@freit.org</a>
     </div>
   </footer>
 
