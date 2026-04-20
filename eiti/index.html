@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EIIT — Empirical Investigations in International Trade | FREIT</title>
-  <meta name="description" content="EIIT is the longest-running FREIT conference, bringing together economists specializing in empirical international trade since 1994.">
+  <title>EITI — Empirical Investigations in Trade & Investment | FREIT</title>
+  <meta name="description" content="Empirical Investigations in Trade & Investment — a FREIT conference held in Japan.">
   <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
   <link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96x96.png">
   <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
@@ -26,7 +26,6 @@
       --navy-200: #b0b4cc;
       --navy-100: #d8dae6;
       --navy-50: #eef0f5;
-
       --accent-700: #8a6d3b;
       --accent-600: #a07d45;
       --accent-500: #c4985a;
@@ -35,13 +34,10 @@
       --accent-200: #e8dcc8;
       --accent-100: #f0e8d8;
       --accent-50: #f7f3eb;
-
       --bg-page: #faf9f7;
       --bg-card: #ffffff;
-
       --font-display: 'Source Serif 4', Georgia, serif;
       --font-body: 'DM Sans', system-ui, sans-serif;
-
       --max-width: 1080px;
       --side-padding: 2.5rem;
     }
@@ -56,7 +52,6 @@
 
     a { color: inherit; text-decoration: none; }
 
-    /* ===== NAVIGATION ===== */
     .nav {
       background: var(--bg-card);
       border-bottom: 1px solid var(--accent-100);
@@ -116,18 +111,9 @@
       text-transform: uppercase;
     }
 
-    .nav-links a {
-      color: var(--navy-400);
-      transition: color 0.2s;
-    }
-
+    .nav-links a { color: var(--navy-400); transition: color 0.2s; }
     .nav-links a:hover { color: var(--navy-900); }
-
-    .nav-links a.active {
-      color: var(--accent-600);
-      border-bottom: 1.5px solid var(--accent-500);
-      padding-bottom: 2px;
-    }
+    .nav-links a.active { color: var(--accent-600); border-bottom: 1.5px solid var(--accent-500); padding-bottom: 2px; }
 
     .nav-toggle {
       display: none;
@@ -146,7 +132,6 @@
       fill: none;
     }
 
-    /* ===== HERO ===== */
     .conf-hero {
       background: var(--bg-card);
       padding: 2.5rem var(--side-padding) 0;
@@ -157,17 +142,8 @@
       margin: 0 auto;
     }
 
-    .breadcrumb {
-      font-size: 0.8125rem;
-      color: var(--navy-200);
-      margin-bottom: 1rem;
-    }
-
-    .breadcrumb a {
-      color: var(--accent-600);
-      transition: color 0.2s;
-    }
-
+    .breadcrumb { font-size: 0.8125rem; color: var(--navy-200); margin-bottom: 1rem; }
+    .breadcrumb a { color: var(--accent-600); transition: color 0.2s; }
     .breadcrumb a:hover { color: var(--accent-700); }
 
     .conf-hero h1 {
@@ -178,10 +154,7 @@
       margin-bottom: 0.25rem;
     }
 
-    .conf-subtitle {
-      font-size: 0.9375rem;
-      color: var(--navy-400);
-    }
+    .conf-subtitle { font-size: 0.9375rem; color: var(--navy-400); }
 
     .organizer-line {
       font-size: 0.8125rem;
@@ -189,10 +162,7 @@
       margin-top: 0.75rem;
     }
 
-    .organizer-line strong {
-      color: var(--navy-900);
-      font-weight: 500;
-    }
+    .organizer-line strong { color: var(--navy-900); font-weight: 500; }
 
     .hero-divider {
       width: 40px;
@@ -201,7 +171,6 @@
       margin: 1.25rem 0 0;
     }
 
-    /* ===== DESCRIPTION ===== */
     .conf-description {
       background: var(--bg-card);
       padding: 1.5rem var(--side-padding) 2.5rem;
@@ -218,7 +187,6 @@
       line-height: 1.7;
     }
 
-    /* ===== SECTIONS ===== */
     .conf-body {
       max-width: var(--max-width);
       margin: 0 auto;
@@ -234,62 +202,6 @@
       margin-bottom: 1rem;
     }
 
-    .section-label.muted {
-      color: var(--navy-200);
-    }
-
-    /* ===== GRAD COMPETITION CALLOUT ===== */
-    .grad-callout {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 0 var(--side-padding);
-    }
-
-    .grad-callout-inner {
-      background: var(--accent-50);
-      border-left: 3px solid var(--accent-500);
-      padding: 1.15rem 1.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-    }
-
-    .grad-callout h4 {
-      font-family: var(--font-display);
-      font-weight: 600;
-      font-size: 0.9375rem;
-      color: var(--navy-900);
-      margin-bottom: 2px;
-    }
-
-    .grad-callout p {
-      font-size: 0.8125rem;
-      color: var(--accent-700);
-      line-height: 1.5;
-    }
-
-    .grad-btn {
-      display: inline-block;
-      background: var(--bg-card);
-      border: 1px solid var(--accent-200);
-      color: var(--accent-700);
-      font-size: 0.8125rem;
-      font-weight: 500;
-      padding: 8px 18px;
-      border-radius: 6px;
-      cursor: pointer;
-      white-space: nowrap;
-      font-family: var(--font-body);
-      transition: border-color 0.15s, background 0.15s;
-    }
-
-    .grad-btn:hover {
-      border-color: var(--accent-400);
-      background: var(--accent-50);
-    }
-
-    /* ===== NEXT CONFERENCE CARD ===== */
     .next-card {
       background: var(--bg-card);
       border-radius: 10px;
@@ -322,11 +234,7 @@
       color: var(--navy-900);
     }
 
-    .next-card p {
-      font-size: 0.8125rem;
-      color: var(--navy-400);
-      margin-top: 2px;
-    }
+    .next-card p { font-size: 0.8125rem; color: var(--navy-400); margin-top: 2px; }
 
     .next-btn {
       background: var(--accent-600);
@@ -343,7 +251,6 @@
 
     .next-btn:hover { background: var(--accent-700); }
 
-    /* ===== FUTURE CARD ===== */
     .future-card {
       background: var(--bg-card);
       border-radius: 10px;
@@ -359,18 +266,9 @@
       color: var(--navy-900);
     }
 
-    .future-card p {
-      font-size: 0.8125rem;
-      color: var(--navy-400);
-      margin-top: 2px;
-    }
+    .future-card p { font-size: 0.8125rem; color: var(--navy-400); margin-top: 2px; }
 
-    /* ===== PAST EDITIONS ===== */
-    .past-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
+    .past-grid { display: flex; flex-wrap: wrap; gap: 8px; }
 
     .past-pill {
       display: block;
@@ -391,7 +289,6 @@
       transform: translateY(-1px);
     }
 
-    /* ===== FOOTER ===== */
     .footer {
       background: var(--bg-card);
       border-top: 1px solid var(--accent-100);
@@ -408,18 +305,11 @@
       color: var(--navy-200);
     }
 
-    .footer a {
-      color: var(--accent-600);
-      transition: color 0.2s;
-    }
-
+    .footer a { color: var(--accent-600); transition: color 0.2s; }
     .footer a:hover { color: var(--accent-700); }
 
-    /* ===== RESPONSIVE ===== */
     @media (max-width: 768px) {
-      :root {
-        --side-padding: 1.25rem;
-      }
+      :root { --side-padding: 1.25rem; }
 
       .nav-links {
         display: none;
@@ -442,9 +332,7 @@
       }
 
       .nav-links li:last-child { border-bottom: none; }
-
       .nav-toggle { display: block; }
-
       .conf-hero h1 { font-size: 1.375rem; }
 
       .next-card {
@@ -453,19 +341,11 @@
       }
 
       .next-btn { width: 100%; text-align: center; }
-
-      .grad-callout-inner {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .grad-btn { width: 100%; text-align: center; }
     }
   </style>
 </head>
 <body>
 
-  <!-- NAVIGATION -->
   <nav class="nav">
     <div class="nav-inner">
       <a href="../index.html" class="nav-logo">
@@ -479,102 +359,67 @@
         <li><a href="../index.html">Home</a></li>
         <li><a href="../conferences.html" class="active">Conferences</a></li>
         <li><a href="../about.html">About</a></li>
-        <li><a href="mailto:freit@gatech.edu">Contact</a></li>
+        <li><a href="mailto:tibor@freit.org">Contact</a></li>
       </ul>
     </div>
   </nav>
 
-  <!-- HERO -->
   <header class="conf-hero">
     <div class="conf-hero-inner">
-      <div class="breadcrumb"><a href="../conferences.html">Conferences</a> / EIIT</div>
-      <h1>EIIT</h1>
-      <div class="conf-subtitle">Empirical Investigations in International Trade</div>
-      <div class="organizer-line">Organized by <strong>Tibor Besedeš</strong> &middot; North America</div>
+      <div class="breadcrumb"><a href="../conferences.html">Conferences</a> / EITI</div>
+      <h1>EITI</h1>
+      <div class="conf-subtitle">Empirical Investigations in Trade and Investment</div>
+      <div class="organizer-line">Organized by <strong>Fukunari Kimura, Andrew Bernard, Tibor Besedeš</strong> &middot; Japan</div>
       <div class="hero-divider"></div>
     </div>
   </header>
 
-  <!-- DESCRIPTION -->
   <section class="conf-description">
     <div class="conf-description-inner">
-      <p>EIIT is the longest-running FREIT conference, held annually since 1994. At this conference, economists specializing in empirical international trade present their current research. The goal is to promote awareness of ongoing research in the area and to foster increased communication of ideas and future directions. Previous editions have included researchers at many different stages in their careers, and the atmosphere is informal and lively, characterized by significant audience participation.</p>
-
-      <div class="grad-callout-inner" style="margin-top: 1.5rem;">
-        <div>
-          <h4>Graduate student paper competition</h4>
-          <p>Each year, EIIT awards a prize for the best paper presented by a graduate student. See past winners and competition details.</p>
-        </div>
-        <a href="grad-competition.html" class="grad-btn">View past winners</a>
-      </div>
+      <p>EITI brings together researchers working on empirical aspects of international trade and investment, with a particular focus on the Asia-Pacific region. EITI focuses on supporting early-career researchers by bringing them together with senior economists. Started by Jon Haveman and Fukunari Kimura, the conference has been held annually in Japan since 2007, fostering collaboration between researchers across the globe.</p>
     </div>
   </section>
 
-  <!-- CONFERENCE EDITIONS -->
   <main class="conf-body">
 
-    <!-- Next Conference -->
     <div class="section-label">Next conference</div>
-    <a href="eiit.html" class="next-card">
+<!--    <a href="eiti.html" class="next-card">
+ -->
+    <a href="" class="next-card">
       <div>
         <span class="next-badge">Upcoming</span>
-        <h3>EIIT XXXIII &mdash; 2026</h3>
-        <p>Indiana University Bloomington &middot; October 9-11, 2026</p>
+        <h3>EITI &mdash; 2027</h3>
+        <p>TBD &middot; TBD 2027</p>
       </div>
       <span class="next-btn">View details</span>
     </a>
 
-    <!-- Future Conferences -->
-    <div class="section-label">Future conferences</div>
-    <div class="future-card">
-      <h3>EIIT XXXIV &mdash; 2027</h3>
-      <p>Details to be announced</p>
-    </div>
-
     <!-- Past Editions -->
     <div class="section-label">Past editions</div>
     <div class="past-grid">
-      <a href="Archives/AgendaEIIT2025.pdf" target="_blank" class="past-pill">2025</a>
-      <a href="Archives/AgendaEIIT2024.pdf" target="_blank" class="past-pill">2024</a>
-      <a href="Archives/AgendaEIIT2023.pdf" target="_blank" class="past-pill">2023</a>
-      <a href="Archives/AgendaEIIT2022.pdf" target="_blank" class="past-pill">2022</a>
-      <a href="Archives/AgendaEIIT2021.pdf" target="_blank" class="past-pill">2021</a>
-      <a href="Archives/AgendaEIIT2020.pdf" target="_blank" class="past-pill">2020</a>
-      <a href="Archives/AgendaEIIT2019.pdf" target="_blank" class="past-pill">2019</a>
-      <a href="Archives/AgendaEIIT2018.pdf" target="_blank" class="past-pill">2018</a>
-      <a href="Archives/AgendaEIIT2017.pdf" target="_blank" class="past-pill">2017</a>
-      <a href="Archives/AgendaEIIT2016.pdf" target="_blank" class="past-pill">2016</a>
-      <a href="Archives/AgendaEIIT2015.pdf" target="_blank" class="past-pill">2015</a>
-      <a href="Archives/AgendaEIIT2014.pdf" target="_blank" class="past-pill">2014</a>
-      <a href="Archives/AgendaEIIT2013.pdf" target="_blank" class="past-pill">2013</a>
-      <a href="Archives/AgendaEIIT2012.pdf" target="_blank" class="past-pill">2012</a>
-      <a href="Archives/AgendaEIIT2011.pdf" target="_blank" class="past-pill">2011</a>
-      <a href="Archives/AgendaEIIT2010.pdf" target="_blank" class="past-pill">2010</a>
-      <a href="Archives/AgendaEIIT2009.pdf" target="_blank" class="past-pill">2009</a>
-      <a href="Archives/AgendaEIIT2008.pdf" target="_blank" class="past-pill">2008</a>
-      <a href="Archives/AgendaEIIT2007.pdf" target="_blank" class="past-pill">2007</a>
-      <a href="Archives/AgendaEIIT2006.pdf" target="_blank" class="past-pill">2006</a>
-      <a href="Archives/AgendaEIIT2005.pdf" target="_blank" class="past-pill">2005</a>
-      <a href="Archives/AgendaEIIT2004.pdf" target="_blank" class="past-pill">2004</a>
-      <a href="Archives/AgendaEIIT2003.pdf" target="_blank" class="past-pill">2003</a>
-      <a href="Archives/AgendaEIIT2002.pdf" target="_blank" class="past-pill">2002</a>
-      <a href="Archives/AgendaEIIT2001.pdf" target="_blank" class="past-pill">2001</a>
-      <a href="Archives/AgendaEIIT2000.pdf" target="_blank" class="past-pill">2000</a>
-      <a href="Archives/AgendaEIIT1999.pdf" target="_blank" class="past-pill">1999</a>
-      <a href="Archives/AgendaEIIT1998.pdf" target="_blank" class="past-pill">1998</a>
-      <a href="Archives/AgendaEIIT1997.pdf" target="_blank" class="past-pill">1997</a>
-      <a href="Archives/AgendaEIIT1996.pdf" target="_blank" class="past-pill">1996</a>
-      <a href="Archives/AgendaEIIT1995.pdf" target="_blank" class="past-pill">1995</a>
-      <a href="Archives/AgendaEIIT1994.pdf" target="_blank" class="past-pill">1994</a>
+      <a href="Archives/AgendaEITI26.pdf" target="_blank" class="past-pill">2026</a>
+      <a href="Archives/AgendaEITI24.pdf" target="_blank" class="past-pill">2024</a>
+      <a href="Archives/AgendaEITI19.pdf" target="_blank" class="past-pill">2019</a>
+      <a href="Archives/AgendaEITI18.pdf" target="_blank" class="past-pill">2018</a>
+      <a href="Archives/AgendaEITI17.pdf" target="_blank" class="past-pill">2017</a>
+      <a href="Archives/AgendaEITI16.pdf" target="_blank" class="past-pill">2016</a>
+      <a href="Archives/AgendaEITI15.pdf" target="_blank" class="past-pill">2015</a>
+      <a href="Archives/AgendaEITI14.pdf" target="_blank" class="past-pill">2014</a>
+      <a href="Archives/AgendaEITI13.pdf" target="_blank" class="past-pill">2013</a>
+      <a href="Archives/AgendaEITI12.pdf" target="_blank" class="past-pill">2012</a>
+      <a href="Archives/AgendaEITI11.pdf" target="_blank" class="past-pill">2011</a>
+      <a href="Archives/AgendaEITI10.pdf" target="_blank" class="past-pill">2010</a>
+      <a href="Archives/AgendaEITI09.pdf" target="_blank" class="past-pill">2009</a>
+      <a href="Archives/AgendaEITI08.pdf" target="_blank" class="past-pill">2008</a>
+      <a href="Archives/AgendaEITI07.pdf" target="_blank" class="past-pill">2007</a>
     </div>
 
   </main>
 
-  <!-- FOOTER -->
   <footer class="footer">
     <div class="footer-inner">
       <span>&copy; 2026 FREIT. All rights reserved.</span>
-      <a href="mailto:freit@gatech.edu">freit@gatech.edu</a>
+      <a href="mailto:tibor@freit.org">tibor@freit.org</a>
     </div>
   </footer>
 

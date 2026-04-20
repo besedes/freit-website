@@ -300,7 +300,81 @@
       color: var(--navy-400);
     }
 
-    /* ===== CONTACT ===== */
+    /* ===== MAILING LIST ===== */
+    .mailing-list {
+      background: var(--navy-900);
+    }
+ 
+    .mailing-list-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 2.5rem var(--side-padding);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+ 
+    .mailing-list-text h3 {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 1.125rem;
+      color: white;
+      margin-bottom: 4px;
+    }
+ 
+    .mailing-list-text p {
+      font-size: 0.8125rem;
+      color: var(--navy-200);
+      line-height: 1.5;
+    }
+ 
+    .mailing-list-form {
+      display: flex;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+ 
+    .mailing-list-form input[type="email"] {
+      padding: 10px 16px;
+      border: 1px solid var(--navy-600);
+      border-radius: 6px;
+      background: var(--navy-800);
+      color: white;
+      font-size: 0.875rem;
+      font-family: var(--font-body);
+      width: 260px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+ 
+    .mailing-list-form input[type="email"]::placeholder {
+      color: var(--navy-400);
+    }
+ 
+    .mailing-list-form input[type="email"]:focus {
+      border-color: var(--accent-500);
+    }
+ 
+    .mailing-list-form button {
+      padding: 10px 22px;
+      background: var(--accent-500);
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 0.8125rem;
+      font-weight: 500;
+      font-family: var(--font-body);
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background 0.15s;
+    }
+ 
+    .mailing-list-form button:hover {
+      background: var(--accent-600);
+    }
+ 
+     /* ===== CONTACT ===== */
     .contact-section {
       background: var(--bg-card);
       border-top: 1px solid var(--accent-100);
@@ -424,7 +498,7 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="conferences.html">Conferences</a></li>
         <li><a href="about.html" class="active">About</a></li>
-        <li><a href="mailto:tibor@freit.org">Contact</a></li>
+        <li><a href="#" id="nav-contact">Contact</a></li>
       </ul>
     </div>
   </nav>
@@ -443,6 +517,7 @@
     <div class="section-label">Our mission</div>
     <p>FREIT has been developed as an umbrella organization for conferences for empirical international trade researchers around the world.</p>
     <p>The Forum organizes annual conferences across North America, Europe, Asia, and Australia, bringing together leading researchers in the field at every stage of their careers.</p>
+    <p>FREIT is based at the Georgia Institute of Technology, where its operations and conference coordination are managed.</p>
   </section>
 
   <!-- LEADERSHIP -->
@@ -464,6 +539,13 @@
         <div class="affil">Dartmouth College</div>
       </a>
 
+      <a href="https://web.ics.purdue.edu/~asoderbe" class="team-card" target="_blank">
+        <div class="team-photo"><img src="images/soderbery.png" alt="Anson Soderbery"></div>
+        <div class="name">Anson Soderbery</div>
+        <div class="role">Associate Director</div>
+        <div class="affil">Purdue University</div>
+      </a>
+
       <a href="https://www.ide.go.jp/English/Researchers/kimura_fukunari_en.html" class="team-card" target="_blank">
         <div class="team-photo"><img src="images/kimura.jpg" alt="Fukunari Kimura"></div>
         <div class="name">Fukunari Kimura</div>
@@ -482,50 +564,126 @@
   </section>
 
   <!-- EDITORIAL BOARD -->
-  <section class="section" style="padding-bottom: 3rem;">
+  <section class="section">
     <div class="section-label">Editorial board</div>
     <div class="board-list">
 
       <div class="board-member">
-        <span class="board-name">Andrea Ariu</span>
+        <span class="board-name"><a href="https://sites.google.com/site/reshadahsan/home" target="_blank">Reshad Ahsan</a></span>
+        <span class="board-sep">&middot;</span>
+        <span class="board-affil">University of Melbourne</span>
+      </div>
+
+      <div class="board-member">
+        <span class="board-name"><a href="https://ariu.eu/" target="_blank">Andrea Ariu</a></span>
         <span class="board-sep">&middot;</span>
         <span class="board-affil">University of Milan</span>
       </div>
 
       <div class="board-member">
-        <span class="board-name">Eugene Beaulieu</span>
+        <span class="board-name"><a href="https://profiles.ucalgary.ca/eugene-beaulieu" target="_blank">Eugene Beaulieu</a></span>
         <span class="board-sep">&middot;</span>
         <span class="board-affil">University of Calgary</span>
       </div>
 
       <div class="board-member">
-        <span class="board-name">Kyle Handley</span>
+        <span class="board-name"><a href="https://sites.google.com/view/jaerimchoi/home" target="_blank">Jaerim Choi</a></span>
+        <span class="board-sep">&middot;</span>
+        <span class="board-affil">Yonsei Univeristy</span>
+      </div>
+
+      <div class="board-member">
+        <span class="board-name"><a href="https://kylehandley.com/" target="_blank">Kyle Handley</a></span>
         <span class="board-sep">&middot;</span>
         <span class="board-affil">UC San Diego</span>
       </div>
 
       <div class="board-member">
-        <span class="board-name">James Harrigan</span>
-        <span class="board-sep">&middot;</span>
-        <span class="board-affil">University of Virginia</span>
-      </div>
-
-      <div class="board-member">
-        <span class="board-name">Kozo Kiyota</span>
+        <span class="board-name"><a href="https://user.keio.ac.jp/~kiyota/index.html" target="_blank">Kozo Kiyota</a></span>
         <span class="board-sep">&middot;</span>
         <span class="board-affil">Keio University</span>
       </div>
 
       <div class="board-member">
-        <span class="board-name">Crt Kostevc</span>
+        <span class="board-name"><a href="https://sites.google.com/view/ryansungryongkim/" target="_blank">Ryan Kim</a></span>
+        <span class="board-sep">&middot;</span>
+        <span class="board-affil">Seoul National Univeristy</span>
+      </div>
+
+      <div class="board-member">
+        <span class="board-name"><a href="https://www.eunhee-lee.com/" target="_blank">Eunhee Lee</a></span>
+        <span class="board-sep">&middot;</span>
+        <span class="board-affil">Seoul National Univeristy</span>
+      </div>
+
+      <div class="board-member">
+        <span class="board-name"><a href="https://sites.google.com/view/seunghoon/home" target="_blank">Seung Hoon Lee</a></span>
+        <span class="board-sep">&middot;</span>
+        <span class="board-affil">Yonsei Univeristy</span>
+      </div>
+
+      <div class="board-member">
+        <span class="board-name"><a href="https://sites.google.com/view/vlugovskyy/home" target="_blank">Volodymyr Lugovskyy</a></span>
+        <span class="board-sep">&middot;</span>
+        <span class="board-affil">Indiana University</span>
+      </div>
+
+      <div class="board-member">
+        <span class="board-name"><a href="https://crenos.unica.it/crenos/people/anna-maria-pinna" target="_blank">Anna Pinna</a></span>
+        <span class="board-sep">&middot;</span>
+        <span class="board-affil">University of Cagliari</span>
+      </div>
+
+      <div class="board-member">
+        <span class="board-name"><a href="https://l-puzzello.github.io/" target="_blank">Laura Puzzello</a></span>
+        <span class="board-sep">&middot;</span>
+        <span class="board-affil">Monash University</span>
+      </div>
+
+     <div class="board-member">
+        <span class="board-name"><a href="https://sites.google.com/view/chongxiang/home" target="_blank">Chong Xiang</a></span>
+        <span class="board-sep">&middot;</span>
+        <span class="board-affil">Purdue University</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- EMERITUS FOUNDER -->
+  <section class="section">
+    <div class="section-label">Emeritus founder</div>
+    <div class="team-cards" style="grid-template-columns: 1fr;">
+      <div class="team-card" style="max-width: 330px;">
+ 	      <a href="https://needecon.org/" target="_blank">
+        <div class="team-photo"><img src="images/haveman.jpg" alt="Jon Haveman"></div>
+        <div class="name">Jon Haveman</div>
+        <div class="affil">NEED</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- EMERITUS BOARD -->
+  <section class="section" style="padding-bottom: 3rem;">
+    <div class="section-label">Emeritus board</div>
+    <div class="board-list">
+
+      <div class="board-member">
+        <span class="board-name">Jože Damjan</span>
         <span class="board-sep">&middot;</span>
         <span class="board-affil">University of Ljubljana</span>
       </div>
 
       <div class="board-member">
-        <span class="board-name">Volodymyr Lugovskyy</span>
+        <span class="board-name"><a href="https://sites.google.com/view/jamesharrigan/home" target="_blank">James Harrigan</a></span>
         <span class="board-sep">&middot;</span>
-        <span class="board-affil">Indiana University</span>
+        <span class="board-affil">University of Virginia</span>
+      </div>
+
+      <div class="board-member">
+        <span class="board-name"><a href="https://www.ef.uni-lj.si/en/about-ul-seb/management-and-employees/staff-directory/Crt-Kostevc" target="_blank">Črt Kostevc</a></span>
+        <span class="board-sep">&middot;</span>
+        <span class="board-affil">University of Ljubljana</span>
       </div>
 
       <div class="board-member">
@@ -535,67 +693,81 @@
       </div>
 
       <div class="board-member">
-        <span class="board-name">Anna Maria Mayda</span>
+        <span class="board-name"><a href="https://sites.google.com/a/georgetown.edu/annamariamayda/home?authuser=0" target="_blank">Anna Maria Mayda</a></span>
         <span class="board-sep">&middot;</span>
         <span class="board-affil">Georgetown University</span>
       </div>
 
       <div class="board-member">
-        <span class="board-name">Toshihiro Okubo</span>
+        <span class="board-name"><a href="https://k-ris.keio.ac.jp/html/100000347_en.html" target="_blank">Toshihiro Okubo</a></span>
         <span class="board-sep">&middot;</span>
         <span class="board-affil">Keio University</span>
       </div>
 
       <div class="board-member">
-        <span class="board-name">Anna Pinna</span>
-        <span class="board-sep">&middot;</span>
-        <span class="board-affil">University of Cagliari</span>
-      </div>
-
-      <div class="board-member">
-        <span class="board-name">Peter Schott</span>
+        <span class="board-name"><a href="https://sompks4.github.io/" target="_blank">Peter Schott</a></span>
         <span class="board-sep">&middot;</span>
         <span class="board-affil">Yale University</span>
       </div>
 
       <div class="board-member">
-        <span class="board-name">Mine Senses</span>
+        <span class="board-name"><a href="https://sites.google.com/view/minesenses/" target="_blank">Mine Senses</a></span>
         <span class="board-sep">&middot;</span>
         <span class="board-affil">Johns Hopkins University</span>
-      </div>
-
-      <div class="board-member">
-        <span class="board-name">Anson Soderbery</span>
-        <span class="board-sep">&middot;</span>
-        <span class="board-affil">Purdue University</span>
-      </div>
-
-      <div class="board-member">
-        <span class="board-name">Chong Xiang</span>
-        <span class="board-sep">&middot;</span>
-        <span class="board-affil">Purdue University</span>
       </div>
 
     </div>
   </section>
 
-  <!-- CONTACT -->
+  <!-- MAILING LIST -->
+  <section class="mailing-list">
+    <div class="mailing-list-inner">
+      <div class="mailing-list-text">
+        <h3>Stay informed</h3>
+        <p>Join our mailing list to receive updates about upcoming conferences and calls for papers.</p>
+      </div>
+      <!-- Replace the action URL below with your Mailchimp form action URL -->
+      <form class="mailing-list-form" action="YOUR_MAILCHIMP_FORM_ACTION_URL" method="post" target="_blank">
+        <input type="email" name="EMAIL" placeholder="Your email address" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+  </section>
+ 
+   <!-- CONTACT -->
   <section class="contact-section">
     <div class="contact-inner">
       <div class="section-label">Contact</div>
       <div class="contact-item"><strong>Tibor Besedeš</strong>, Executive Director</div>
       <div class="contact-item"><a href="https://econ.gatech.edu" target="_blank"> School of Economics, Georgia Institute of Technology, Atlanta, GA 30332-0615</a></div>
-      <a href="mailto:tibor@freit.org" class="contact-email">tibor@freit.org</a>
+      <span id="contact-email" class="contact-email"></span>
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer class="footer">
     <div class="footer-inner">
-      <span>&copy; 2026 FREIT. All rights reserved.</span>
-      <a href="mailto:tibor@freit.org">tibor@freit.org</a>
+      <span>&copy; 2026 FREIT. Based at Georgia Institute of Technology.</span>
+      <span id="footer-email"></span>
     </div>
   </footer>
 
+
+  <script>
+    (function() {
+      var u = 'freit';
+      var d = 'gatech.edu';
+      var e = u + '@' + d;
+      var m = 'mailto:' + e;
+      var nav = document.getElementById('nav-contact');
+      if (nav) { nav.href = m; }
+      var fe = document.getElementById('footer-email');
+      if (fe) { fe.innerHTML = '<a href="' + m + '" style="color:var(--accent-600);transition:color 0.2s;">' + e + '</a>'; }
+      var ce = document.getElementById('contact-email');
+      if (ce) { ce.innerHTML = '<a href="' + m + '" class="contact-email">' + e + '</a>'; }
+      var se = document.getElementById('sidebar-email');
+      if (se) { se.innerHTML = '<a href="' + m + '" style="color:var(--accent-600);text-decoration:none;">' + e + '</a>'; }
+    })();
+  </script>
 </body>
 </html>
