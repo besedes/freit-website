@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KETC 2027 — Melbourne, Australia | FREIT</title>
+  <meta name="description" content="The second annual Korean Empirical Trade Conference, held in Seoul, South Korea.">
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+  <link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96x96.png">
+  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,300;8..60,400;8..60,600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    :root {
+      --navy-900: #1a1f3a;
+      --navy-800: #242b4a;
+      --navy-700: #2e3660;
+      --navy-600: #3d4578;
+      --navy-400: #6b7199;
+      --navy-200: #b0b4cc;
+      --navy-100: #d8dae6;
+      --navy-50: #eef0f5;
+
+      --accent-700: #8a6d3b;
+      --accent-600: #a07d45;
+      --accent-500: #c4985a;
+      --accent-400: #d4b07a;
+      --accent-300: #e0c99e;
+      --accent-200: #e8dcc8;
+      --accent-100: #f0e8d8;
+      --accent-50: #f7f3eb;
+
+      --bg-page: #faf9f7;
+      --bg-card: #ffffff;
+
+      --font-display: 'Source Serif 4', Georgia, serif;
+      --font-body: 'DM Sans', system-ui, sans-serif;
+
+      --max-width: 1080px;
+      --side-padding: 2.5rem;
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--navy-900);
+      background: var(--bg-page);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* ===== NAVIGATION ===== */
+    .nav {
+      background: var(--bg-card);
+      border-bottom: 1px solid var(--accent-100);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0.65rem var(--side-padding);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .nav-logo-img {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--accent-50);
+      border: 1px solid var(--accent-200);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .nav-logo-img img {
+      width: 26px;
+      height: 26px;
+      object-fit: contain;
+    }
+
+    .nav-logo-text {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 1.125rem;
+      color: var(--navy-900);
+      letter-spacing: 2px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      font-size: 0.8125rem;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    .nav-links a {
+      color: var(--navy-400);
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--navy-900); }
+
+    .nav-links a.active {
+      color: var(--accent-600);
+      border-bottom: 1.5px solid var(--accent-500);
+      padding-bottom: 2px;
+    }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    .nav-toggle svg {
+      display: block;
+      width: 24px;
+      height: 24px;
+      stroke: var(--navy-900);
+      stroke-width: 2;
+      fill: none;
+    }
+
+    /* ===== HERO ===== */
+    .detail-hero {
+      background: var(--bg-card);
+      padding: 2.5rem var(--side-padding) 0;
+    }
+
+    .detail-hero-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .breadcrumb {
+      font-size: 0.8125rem;
+      color: var(--navy-200);
+      margin-bottom: 1rem;
+    }
+
+    .breadcrumb a {
+      color: var(--accent-600);
+      transition: color 0.2s;
+    }
+
+    .breadcrumb a:hover { color: var(--accent-700); }
+
+    .edition-badge {
+      font-size: 0.6875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      padding: 3px 12px;
+      border-radius: 4px;
+      background: var(--accent-50);
+      color: var(--accent-700);
+      display: inline-block;
+      margin-bottom: 8px;
+    }
+
+    .detail-hero h1 {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 1.5rem;
+      color: var(--navy-900);
+      margin-bottom: 0.25rem;
+    }
+
+    .detail-subtitle {
+      font-size: 0.9375rem;
+      color: var(--navy-400);
+    }
+
+    .hero-divider {
+      width: 40px;
+      height: 2px;
+      background: var(--accent-500);
+      margin: 1.25rem 0 0;
+    }
+
+    /* ===== VENUE IMAGE ===== */
+    .venue-image-section {
+      background: var(--bg-card);
+      padding: 1.5rem var(--side-padding) 2.5rem;
+    }
+
+    .venue-image-inner {
+      width: fit-content;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: auto 200px;
+      gap: 7rem;
+      align-items: start;
+    }
+
+    .venue-image-col {
+    }
+
+    .venue-image {
+      width: fit-content;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid var(--accent-100);
+    }
+
+    .venue-image img {
+      display: block;
+      width: 600px;
+      height: 650px;
+      object-fit: cover;
+    }
+
+    .venue-caption {
+      font-size: 0.75rem;
+      color: var(--navy-200);
+      margin-top: 8px;
+      font-style: italic;
+    }
+
+    .sponsor-col {}
+
+    .sponsor-label {
+      font-size: 0.6875rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--accent-600);
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .sponsor-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .sponsor-item {
+      display: block;
+    }
+
+    .sponsor-item img {
+      max-width: 100%;
+      max-height: 120px;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      display: block;
+      filter: grayscale(20%);
+      transition: filter 0.2s;
+    }
+
+    .sponsor-item:hover img {
+      filter: grayscale(0%);
+    }
+
+    @media (max-width: 768px) {
+      .venue-image-inner {
+  		  max-width: var(--max-width);
+  			margin: 0 auto;
+  			display: flex;
+  			gap: 2rem;
+  			align-items: start;
+      }
+    }
+
+    /* ===== DETAIL BODY ===== */
+    .detail-body {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 2.5rem var(--side-padding) 3rem;
+    }
+
+    .detail-grid {
+      display: grid;
+      grid-template-columns: 1fr 240px;
+      gap: 2.5rem;
+    }
+
+    .detail-main {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .detail-block h3 {
+      font-size: 0.6875rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--accent-600);
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+
+    .detail-block p {
+      font-size: 0.875rem;
+      color: var(--navy-400);
+      line-height: 1.7;
+      margin-bottom: 0.5rem;
+    }
+
+    /* ===== ORGANIZERS ===== */
+    .organizer-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .organizer-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .org-avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--accent-50);
+      border: 1px solid var(--accent-200);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--accent-700);
+      flex-shrink: 0;
+    }
+
+    .org-name {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--navy-900);
+    }
+
+    .org-affil {
+      font-size: 0.75rem;
+      color: var(--navy-400);
+    }
+
+    /* ===== NOTE BOX ===== */
+    .note-box {
+      background: var(--accent-50);
+      border-radius: 8px;
+      padding: 14px 16px;
+      font-size: 0.8125rem;
+      color: var(--accent-700);
+      line-height: 1.6;
+      margin-top: 10px;
+    }
+
+    /* ===== SIDEBAR ===== */
+    .detail-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .info-card {
+      background: var(--bg-card);
+      border-radius: 10px;
+      border: 1px solid var(--accent-100);
+      padding: 1rem 1.15rem;
+    }
+
+    .info-card .label {
+      font-size: 0.625rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--accent-600);
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .info-card .value {
+      font-size: 0.9375rem;
+      font-weight: 500;
+      color: var(--navy-900);
+    }
+
+    .info-card .sub {
+      font-size: 0.75rem;
+      color: var(--navy-400);
+      margin-top: 3px;
+    }
+
+    .info-card a {
+      color: var(--accent-600);
+      transition: color 0.2s;
+    }
+
+    .info-card a:hover { color: var(--accent-700); }
+
+    /* ===== CTA CARD ===== */
+    .cta-card {
+      background: var(--navy-900);
+      border-radius: 10px;
+      padding: 1.35rem;
+      text-align: center;
+    }
+
+    .cta-card p {
+      font-size: 0.8125rem;
+      color: var(--navy-200);
+      margin-bottom: 12px;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      background: var(--accent-500);
+      color: white;
+      font-size: 0.8125rem;
+      font-weight: 500;
+      padding: 9px 24px;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+
+    .cta-btn:hover { background: var(--accent-600); }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      background: var(--bg-card);
+      border-top: 1px solid var(--accent-100);
+    }
+
+    .footer-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 1.25rem var(--side-padding);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.75rem;
+      color: var(--navy-200);
+    }
+
+    .footer a {
+      color: var(--accent-600);
+      transition: color 0.2s;
+    }
+
+    .footer a:hover { color: var(--accent-700); }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      :root {
+        --side-padding: 1.25rem;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--bg-card);
+        border-bottom: 1px solid var(--accent-100);
+        flex-direction: column;
+        padding: 1rem 1.25rem;
+        gap: 0;
+      }
+
+      .nav-links.open { display: flex; }
+
+      .nav-links li {
+        padding: 0.75rem 0;
+        border-bottom: 1px solid var(--accent-50);
+      }
+
+      .nav-links li:last-child { border-bottom: none; }
+
+      .nav-toggle { display: block; }
+
+      .detail-hero h1 { font-size: 1.25rem; }
+
+      .detail-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .detail-sidebar {
+        order: -1;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">
+        <span class="nav-logo-img"><img src="../images/freit_logo_new.svg" alt="FREIT logo"></span>
+        <span class="nav-logo-text">FREIT</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+        <svg viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../conferences.html" class="active">Conferences</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="#" id="nav-contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="detail-hero">
+    <div class="detail-hero-inner">
+      <div class="breadcrumb">
+        <a href="../conferences.html">Conferences</a> / <a href="index.html">KETC</a> / 2027
+      </div>
+      <span class="edition-badge">Second edition</span>
+      <h1>KETC 2027</h1>
+      <div class="detail-subtitle">Seoul, South Korea &middot; January 15&ndash;16, 2027</div>
+      <div class="hero-divider"></div>
+    </div>
+  </header>
+
+  <!-- VENUE IMAGE + SPONSORS -->
+  <section class="venue-image-section">
+    <div class="venue-image-inner">
+      <div class="venue-image-col">
+        <div class="venue-image">
+          <img src="images/seoul_photo.jpg" alt="Seoul, South Korea">
+        </div>
+        <div class="venue-caption">Seoul, South Korea</div>
+      </div>
+      <div class="sponsor-col">
+        <div class="sponsor-label">Sponsored by</div>
+        <div class="sponsor-list">
+          <a href="https://www.snu.ac.kr/index.html" class="sponsor-item" target="_blank">
+            <img src="images/snu_logo.svg" alt="Seoul National University">
+          </a>
+          <a href="https://www.yonsei.ac.kr/en_sc/" class="sponsor-item" target="_blank">
+            <img src="images/yonsei_logo.png" alt="Yonsei University" >
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DETAIL CONTENT -->
+  <main class="detail-body">
+    <div class="detail-grid">
+
+      <!-- Main Column -->
+      <div class="detail-main">
+
+        <div class="detail-block">
+          <h3>About this edition</h3>
+          <p>Departments of Economics at Seoul National University and Yonsei University jointly organize the second Korean Empirical Trade Conference in Seoul, South Korea. Economists specializing in empirical economic research on issues relating to international trade and investment will present their latest research at this meeting.</p>
+          <p>The conference is open to other attendees whose papers are not on the program. Space is limited and will be provided on a first-come, first-serve basis for those not on the program.</p>
+        </div>
+
+        <div class="detail-block">
+          <h3>Organizers</h3>
+          <div class="organizer-list">
+            <div class="organizer-item">
+              <div class="org-avatar">JC</div>
+              <div>
+                <div class="org-name">Jaerim Choi</div>
+                <div class="org-affil">Yonsei University</div>
+              </div>
+            </div>
+            <div class="organizer-item">
+              <div class="org-avatar">RK</div>
+              <div>
+                <div class="org-name">Ryan Kim</div>
+                <div class="org-affil">Seoul National University</div>
+              </div>
+            </div>
+            <div class="organizer-item">
+              <div class="org-avatar">EL</div>
+              <div>
+                <div class="org-name">Eunhee Lee</div>
+                <div class="org-affil">Seoul National University</div>
+              </div>
+            </div>
+            <div class="organizer-item">
+              <div class="org-avatar">SHL</div>
+              <div>
+                <div class="org-name">Seung Hoon Lee</div>
+                <div class="org-affil">Yonsei University</div>
+              </div>
+            </div>
+            <div class="organizer-item">
+              <div class="org-avatar">TB</div>
+              <div>
+                <div class="org-name">Tibor Besedeš</div>
+                <div class="org-affil">Georgia Institute of Technology</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="detail-block">
+          <h3>Format</h3>
+          <p>The conference will start Friday morning and run through Saturday afternoon. The program will include a total of 12 papers, with one hour per paper devoted to presentation, discussant remarks, and open discussion. The usual allocation of time is 40 minutes for the presentation, 10 minutes for the discussant, and 10 minutes for open discussion.</p>
+          <p>All participants are expected to attend all sessions on the three days of the conference.</p>
+        </div>
+
+<!--
+        <div class="detail-block">
+          <h3>Registration</h3>
+          <p>If you plan to attend but not to present a paper, please register using the link provided. Space is limited and will be provided on a first-come, first-serve basis for those not on the program.</p>
+          <div class="note-box">
+            There is a 300 CAD registration fee for both presenters and other conference attendees.
+          </div>
+        </div>
+-->
+
+<!--
+        <div class="detail-block">
+          <h3>Submissions</h3>
+          <p>The submission deadline has passed.</p>
+        </div>
+-->
+
+      </div>
+
+      <!-- Sidebar -->
+      <aside class="detail-sidebar">
+
+        <div class="info-card">
+          <div class="label">Location</div>
+          <div class="value">Yonsei University</div>
+          <div class="sub">Seoul, South Korea</div>
+        </div>
+
+        <div class="info-card">
+          <div class="label">Date</div>
+          <div class="value">January 15&ndash;16, 2027</div>
+          <div class="sub">Friday and Saturday</div>
+        </div>
+
+        <div class="info-card">
+          <div class="label">Keynote speaker</div>
+          <div class="value"><a href="" style="color: var(--navy-900); text-decoration: none;" target="_blank">TBA</a></div>
+          <div class="sub"></div>
+        </div>
+
+<!--
+        <div class="cta-card">
+          <a href="" target="_blank" class="cta-btn">Submit paper</a>
+        </div>
+-->
+<!--
+        <div class="info-card">
+          <div class="label">Program</div>
+          <div class="value"><a href="" style="color:var(--accent-900);text-decoration:none;">Download conference program (PDF)</a></div>
+        </div>
+-->
+
+        <div class="info-card">
+          <div class="label">Contact</div>
+          <div class="value" style="font-size: 0.875rem;">Tibor Besedeš</div>
+          <div class="sub"><span id="sidebar-email"></span></div>
+        </div>
+
+      </aside>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <span>&copy; 2026 FREIT. All rights reserved. Based at Georgia Institute of Technology.</span>
+      <span id="footer-email"></span>
+    </div>
+  </footer>
+
+
+  <script>
+    (function() {
+      var u = 'freit';
+      var d = 'gatech.edu';
+      var e = u + '@' + d;
+      var m = 'mailto:' + e;
+      var nav = document.getElementById('nav-contact');
+      if (nav) { nav.href = m; }
+      var fe = document.getElementById('footer-email');
+      if (fe) { fe.innerHTML = '<a href="' + m + '" style="color:var(--accent-600);transition:color 0.2s;">' + e + '</a>'; }
+      var ce = document.getElementById('contact-email');
+      if (ce) { ce.innerHTML = '<a href="' + m + '" class="contact-email">' + e + '</a>'; }
+      var se = document.getElementById('sidebar-email');
+      if (se) { se.innerHTML = '<a href="' + m + '" style="color:var(--accent-600);text-decoration:none;">' + e + '</a>'; }
+    })();
+  </script>
+  
+</body>
+</html>

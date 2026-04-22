@@ -433,7 +433,7 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="conferences.html" class="active">Conferences</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="mailto:freit@gatech.edu">Contact</a></li>
+        <li><a href="#" id="nav-contact">Contact</a></li>
       </ul>
     </div>
   </nav>
@@ -452,7 +452,7 @@
 
     <!-- Tabs -->
     <div class="tabs">
-      <button class="tab active" id="tab-active" onclick="showTab('active')">Active<span class="count">(6)</span></button>
+      <button class="tab active" id="tab-active" onclick="showTab('active')">Active<span class="count">(7)</span></button>
       <button class="tab" id="tab-archived" onclick="showTab('archived')">Archived<span class="count">(4)</span></button>
     </div>
 
@@ -463,7 +463,7 @@
         <a href="eiit/index.html" class="conf-card">
           <div class="conf-card-acronym">EIIT</div>
           <div class="conf-card-name">Empirical Investigations in International Trade</div>
-          <div class="conf-card-meta"><span class="conf-dot"></span> North America</div>
+          <div class="conf-card-meta"><span class="conf-dot"></span> United States</div>
           <div class="conf-card-organizers"><span>Organizer</span>Tibor Besedeš</div>
         </a>
 
@@ -471,7 +471,7 @@
           <div class="conf-card-acronym">EITI</div>
           <div class="conf-card-name">Empirical Investigations in Trade and Investment</div>
           <div class="conf-card-meta"><span class="conf-dot"></span> Japan</div>
-          <div class="conf-card-organizers"><span>Organizers</span>Fukunari Kimura, Andrew Bernard, Tibor Besedeš</div>
+          <div class="conf-card-organizers"><span>Organizers</span>Fukunari Kimura, Andrew Bernard, Kozo Kiyota, Tibor Besedeš</div>
         </a>
 
         <a href="rmet/index.html" class="conf-card">
@@ -492,7 +492,7 @@
           <div class="conf-card-acronym">METC</div>
           <div class="conf-card-name">Melbourne Empirical Trade Conference</div>
           <div class="conf-card-meta"><span class="conf-dot"></span> Australia</div>
-          <div class="conf-card-organizers"><span>Organizers</span>Laura Puzzello, Reshad Ahsan, Tibor Besedeš</div>
+          <div class="conf-card-organizers"><span>Organizers</span>Laura Puzzello, Reshad Ahsan, Maria Ptashkina, Tibor Besedeš</div>
         </a>
 
         <a href="ketc/index.html" class="conf-card">
@@ -502,6 +502,20 @@
           <div class="conf-card-organizers"><span>Organizers</span>Jaerim Choi, Ryan Kim, Eunhee Lee, Seung Hoon Lee, Tibor Besedeš</div>
         </a>
 
+        <a href="sret/index.html" class="conf-card">
+          <div class="conf-card-acronym">SRET</div>
+          <div class="conf-card-name">Silk Road Empirical Trade Conference</div>
+          <div class="conf-card-meta"><span class="conf-dot"></span> Kazakhstan</div>
+          <div class="conf-card-organizers"><span>Organizers</span>David DeRemer, Yao Amber Li, Jozef Konings, Tibor Besedeš</div>
+        </a>
+<!--
+        <a href="betc/index.html" class="conf-card">
+          <div class="conf-card-acronym">BETC</div>
+          <div class="conf-card-name">Belgian Empirical Trade Conference</div>
+          <div class="conf-card-meta"><span class="conf-dot"></span> Blegium</div>
+          <div class="conf-card-organizers"><span>Organizers</span>Hylke Vandenbussche, Glenn Magerman, Tibor Besedeš</div>
+        </a>
+-->
       </div>
     </div>
 
@@ -532,7 +546,7 @@
 
         <a href="eitg/index.html" class="conf-card">
           <div class="conf-card-acronym">EITG <span class="note-badge">2009</span></div>
-          <div class="conf-card-name">Empirical Investigations in Trade &amp; Geography</div>
+          <div class="conf-card-name">Empirical Investigations in Trade and Geography</div>
           <div class="conf-card-meta"><span class="conf-dot"></span> Australia</div>
           <div class="conf-card-organizers"><span>Organizers</span>Jon Haveman, Russell Hillberry</div>
         </a>
@@ -545,8 +559,8 @@
   <!-- FOOTER -->
   <footer class="footer">
     <div class="footer-inner">
-      <span>&copy; 2026 FREIT. Based at Georgia Institute of Technology..</span>
-      <a href="mailto:freit@gatech.edu">freit@gatech.edu</a>
+      <span>&copy; 2026 FREIT. All rights reserved. Based at Georgia Institute of Technology.</span>
+      <span id="footer-email"></span>
     </div>
   </footer>
 
@@ -569,6 +583,23 @@
         panelActive.classList.remove('active');
       }
     }
+  </script>
+
+  <script>
+    (function() {
+      var u = 'freit';
+      var d = 'gatech.edu';
+      var e = u + '@' + d;
+      var m = 'mailto:' + e;
+      var nav = document.getElementById('nav-contact');
+      if (nav) { nav.href = m; }
+      var fe = document.getElementById('footer-email');
+      if (fe) { fe.innerHTML = '<a href="' + m + '" style="color:var(--accent-600);transition:color 0.2s;">' + e + '</a>'; }
+      var ce = document.getElementById('contact-email');
+      if (ce) { ce.innerHTML = '<a href="' + m + '" class="contact-email">' + e + '</a>'; }
+      var se = document.getElementById('sidebar-email');
+      if (se) { se.innerHTML = '<a href="' + m + '" style="color:var(--accent-600);text-decoration:none;">' + e + '</a>'; }
+    })();
   </script>
 
 </body>

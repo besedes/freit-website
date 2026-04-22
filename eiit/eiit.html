@@ -203,20 +203,25 @@
       margin: 1.25rem 0 0;
     }
 
-    /* ===== VENUE IMAGE ===== */
+    /* ===== VENUE IMAGE + SPONSORS ===== */
     .venue-image-section {
       background: var(--bg-card);
       padding: 1.5rem var(--side-padding) 2.5rem;
     }
 
     .venue-image-inner {
-      max-width: var(--max-width);
+      width: fit-content;
       margin: 0 auto;
+      display: grid;
+      grid-template-columns: auto 200px;
+      gap: 4rem;
+      align-items: start;
     }
 
+    .venue-image-col {}
+
     .venue-image {
-      width: 100%;
-      max-width: 640px;
+      width: fit-content;
       border-radius: 10px;
       overflow: hidden;
       border: 1px solid var(--accent-100);
@@ -224,8 +229,8 @@
 
     .venue-image img {
       display: block;
-      width: 100%;
-      height: auto;
+      width: 900px;
+      height: 400px;
       object-fit: cover;
     }
 
@@ -234,6 +239,53 @@
       color: var(--navy-200);
       margin-top: 8px;
       font-style: italic;
+    }
+
+    .sponsor-col {}
+
+    .sponsor-label {
+      font-size: 0.6875rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--accent-600);
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .sponsor-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .sponsor-item {
+      display: block;
+    }
+
+    .sponsor-item img {
+      max-width: 100%;
+      max-height: 120px;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      display: block;
+      filter: grayscale(20%);
+      transition: filter 0.2s;
+    }
+
+    .sponsor-item:hover img {
+      filter: grayscale(0%);
+    }
+
+    @media (max-width: 768px) {
+      .venue-image-inner {
+        max-width: var(--max-width);
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        align-items: start;
+      }
     }
 
     /* ===== DETAIL BODY ===== */
@@ -474,7 +526,7 @@
         <li><a href="../index.html">Home</a></li>
         <li><a href="../conferences.html" class="active">Conferences</a></li>
         <li><a href="../about.html">About</a></li>
-        <li><a href="mailto:freit@gatech.edu">Contact</a></li>
+        <li><a href="#" id="nav-contact">Contact</a></li>
       </ul>
     </div>
   </nav>
@@ -492,13 +544,21 @@
     </div>
   </header>
 
-  <!-- VENUE IMAGE -->
+  <!-- VENUE IMAGE + SPONSORS -->
   <section class="venue-image-section">
     <div class="venue-image-inner">
-      <div class="venue-image">
-        <img src="images/iu.jpg" alt="Indiana University Bloomington campus">
+      <div class="venue-image-col">
+        <div class="venue-image">
+          <img src="images/iu.jpg" alt="Indiana University Bloomington campus">
+        </div>
+        <div class="venue-caption">Indiana University Bloomington campus</div>
       </div>
-      <div class="venue-caption">Indiana University Bloomington campus</div>
+      <div class="sponsor-col">
+        <div class="sponsor-label">Sponsored by</div>
+        <div class="sponsor-list">
+          <!-- Add sponsor logos here -->
+        </div>
+      </div>
     </div>
   </section>
 
@@ -579,20 +639,25 @@
 
         <div class="info-card">
           <div class="label">Keynote speaker</div>
-          <div class="value">TBA</div>
+          <div class="value"><a href="" style="color: var(--navy-900); text-decoration: none;" target="_blank">TBA</a></div>
+          <div class="sub"></div>
         </div>
 
         <div class="cta-card">
-          <!--
-          <p>Submit your paper via EasyChair</p>
-          -->
           <a href="https://gatech.co1.qualtrics.com/jfe/form/SV_0CHDHhVyAfR2rEq" target="_blank" class="cta-btn">Submit paper</a>
         </div>
+
+<!--
+        <div class="info-card">
+          <div class="label">Program</div>
+          <div class="value"><a href="" style="color:var(--accent-900);text-decoration:none;">Download conference program (PDF)</a></div>
+        </div>
+-->
 
         <div class="info-card">
           <div class="label">Contact</div>
           <div class="value" style="font-size: 0.875rem;">Tibor Besedeš</div>
-          <div class="sub"><a href="mailto:freit@gatech.edu">freit@gatech.edu</a></div>
+          <div class="sub"><span id="sidebar-email"></span></div>
         </div>
 
         <div class="info-card">
@@ -600,7 +665,7 @@
           <!--
           <div class="sub"><a href="../EIIT/2026/PUmeals.php">Meals information</a></div>
           -->
-          <div class="sub" style="margin-top: 5px;"><a href="../EIIT/2026/GradComp.php">Graduate student competition</a></div>
+          <div class="sub" style="margin-top: 5px;"><a href="grad-competition.html">Graduate student competition</a></div>
         </div>
 
       </aside>
@@ -611,10 +676,27 @@
   <!-- FOOTER -->
   <footer class="footer">
     <div class="footer-inner">
-      <span>&copy; 2026 FREIT. Based at Georgia Institute of Technology.</span>
-      <a href="mailto:freit@gatech.edu">freit@gatech.edu</a>
+      <span>&copy; 2026 FREIT. All rights reserved. Based at Georgia Institute of Technology.</span>
+      <span id="footer-email"></span>
     </div>
   </footer>
+
+  <script>
+    (function() {
+      var u = 'freit';
+      var d = 'gatech.edu';
+      var e = u + '@' + d;
+      var m = 'mailto:' + e;
+      var nav = document.getElementById('nav-contact');
+      if (nav) { nav.href = m; }
+      var fe = document.getElementById('footer-email');
+      if (fe) { fe.innerHTML = '<a href="' + m + '" style="color:var(--accent-600);transition:color 0.2s;">' + e + '</a>'; }
+      var ce = document.getElementById('contact-email');
+      if (ce) { ce.innerHTML = '<a href="' + m + '" class="contact-email">' + e + '</a>'; }
+      var se = document.getElementById('sidebar-email');
+      if (se) { se.innerHTML = '<a href="' + m + '" style="color:var(--accent-600);text-decoration:none;">' + e + '</a>'; }
+    })();
+  </script>
 
 </body>
 </html>

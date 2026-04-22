@@ -359,7 +359,7 @@
         <li><a href="../index.html">Home</a></li>
         <li><a href="../conferences.html" class="active">Conferences</a></li>
         <li><a href="../about.html">About</a></li>
-        <li><a href="mailto:tibor@freit.org">Contact</a></li>
+        <li><a href="#" id="nav-contact">Contact</a></li>
       </ul>
     </div>
   </nav>
@@ -418,10 +418,27 @@
 
   <footer class="footer">
     <div class="footer-inner">
-      <span>&copy; 2026 FREIT. Based at Georgia Institute of Technology..</span>
-      <a href="mailto:tibor@freit.org">tibor@freit.org</a>
+      <span>&copy; 2026 FREIT. All rights reserved. Based at Georgia Institute of Technology.</span>
+      <span id="footer-email"></span>
     </div>
   </footer>
+
+  <script>
+    (function() {
+      var u = 'freit';
+      var d = 'gatech.edu';
+      var e = u + '@' + d;
+      var m = 'mailto:' + e;
+      var nav = document.getElementById('nav-contact');
+      if (nav) { nav.href = m; }
+      var fe = document.getElementById('footer-email');
+      if (fe) { fe.innerHTML = '<a href="' + m + '" style="color:var(--accent-600);transition:color 0.2s;">' + e + '</a>'; }
+      var ce = document.getElementById('contact-email');
+      if (ce) { ce.innerHTML = '<a href="' + m + '" class="contact-email">' + e + '</a>'; }
+      var se = document.getElementById('sidebar-email');
+      if (se) { se.innerHTML = '<a href="' + m + '" style="color:var(--accent-600);text-decoration:none;">' + e + '</a>'; }
+    })();
+  </script>
 
 </body>
 </html>
