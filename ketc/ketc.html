@@ -280,11 +280,17 @@
 
     @media (max-width: 768px) {
       .venue-image-inner {
-  		  max-width: var(--max-width);
-  			margin: 0 auto;
-  			display: flex;
-  			gap: 2rem;
-  			align-items: start;
+        max-width: var(--max-width);
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        align-items: start;
+      }
+
+      .venue-image img {
+        width: 100%;
+        height: auto;
       }
     }
 
