@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visitor Information — SETC 2026 | FREIT</title>
+  <meta name="description" content="Travel, accommodation, and practical information for the Sardinian Empirical Trade Conference 2026 in Alghero, Italy.">
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+  <link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96x96.png">
+  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,300;8..60,400;8..60,600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    :root {
+      --navy-900: #1a1f3a;
+      --navy-800: #242b4a;
+      --navy-700: #2e3660;
+      --navy-600: #3d4578;
+      --navy-400: #6b7199;
+      --navy-200: #b0b4cc;
+      --navy-100: #d8dae6;
+      --navy-50: #eef0f5;
+      --accent-700: #8a6d3b;
+      --accent-600: #a07d45;
+      --accent-500: #c4985a;
+      --accent-400: #d4b07a;
+      --accent-300: #e0c99e;
+      --accent-200: #e8dcc8;
+      --accent-100: #f0e8d8;
+      --accent-50: #f7f3eb;
+      --bg-page: #faf9f7;
+      --bg-card: #ffffff;
+      --font-display: 'Source Serif 4', Georgia, serif;
+      --font-body: 'DM Sans', system-ui, sans-serif;
+      --max-width: 1080px;
+      --side-padding: 2.5rem;
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--navy-900);
+      background: var(--bg-page);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* ===== NAVIGATION ===== */
+    .nav {
+      background: var(--bg-card);
+      border-bottom: 1px solid var(--accent-100);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0.65rem var(--side-padding);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo { display: flex; align-items: center; gap: 10px; }
+
+    .nav-logo-img {
+      width: 36px; height: 36px; border-radius: 50%;
+      background: var(--accent-50); border: 1px solid var(--accent-200);
+      display: flex; align-items: center; justify-content: center; overflow: hidden;
+    }
+
+    .nav-logo-img img { width: 26px; height: 26px; object-fit: contain; }
+
+    .nav-logo-text {
+      font-family: var(--font-display); font-weight: 600;
+      font-size: 1.125rem; color: var(--navy-900); letter-spacing: 2px;
+    }
+
+    .nav-links {
+      display: flex; gap: 2rem; list-style: none;
+      font-size: 0.8125rem; font-weight: 500; letter-spacing: 0.5px; text-transform: uppercase;
+    }
+
+    .nav-links a { color: var(--navy-400); transition: color 0.2s; }
+    .nav-links a:hover { color: var(--navy-900); }
+    .nav-links a.active { color: var(--accent-600); border-bottom: 1.5px solid var(--accent-500); padding-bottom: 2px; }
+
+    .nav-toggle {
+      display: none; background: none; border: none; cursor: pointer; padding: 4px;
+    }
+
+    .nav-toggle svg {
+      display: block; width: 24px; height: 24px;
+      stroke: var(--navy-900); stroke-width: 2; fill: none;
+    }
+
+    /* ===== HERO ===== */
+    .detail-hero {
+      background: var(--bg-card);
+      padding: 2.5rem var(--side-padding) 0;
+    }
+
+    .detail-hero-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .breadcrumb { font-size: 0.8125rem; color: var(--navy-200); margin-bottom: 1rem; }
+    .breadcrumb a { color: var(--accent-600); transition: color 0.2s; }
+    .breadcrumb a:hover { color: var(--accent-700); }
+
+    .edition-badge {
+      font-size: 0.6875rem; font-weight: 600; text-transform: uppercase;
+      letter-spacing: 0.5px; padding: 3px 12px; border-radius: 4px;
+      background: var(--accent-50); color: var(--accent-700);
+      display: inline-block; margin-bottom: 8px;
+    }
+
+    .detail-hero h1 {
+      font-family: var(--font-display); font-weight: 600; font-size: 1.5rem;
+      color: var(--navy-900); margin-bottom: 0.25rem;
+    }
+
+    .detail-subtitle { font-size: 0.9375rem; color: var(--navy-400); }
+
+    .hero-divider { width: 40px; height: 2px; background: var(--accent-500); margin: 1.25rem 0 0; }
+
+    /* ===== VENUE IMAGE ===== */
+    .venue-image-section {
+      background: var(--bg-card);
+      padding: 1.5rem var(--side-padding) 2.5rem;
+    }
+
+    .venue-image-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .venue-image {
+      width: fit-content;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid var(--accent-100);
+    }
+
+    .venue-image img {
+      display: block;
+      width: 100%;
+      max-width: 640px;
+      height: auto;
+      object-fit: cover;
+    }
+
+    .venue-caption {
+      font-size: 0.75rem;
+      color: var(--navy-200);
+      margin-top: 8px;
+      font-style: italic;
+    }
+
+    /* ===== CONTENT BODY ===== */
+    .content-body {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 2.5rem var(--side-padding) 3rem;
+    }
+
+    .info-section {
+      margin-bottom: 2.5rem;
+    }
+
+    .info-section:last-child {
+      margin-bottom: 0;
+    }
+
+    .info-section h2 {
+      font-size: 0.6875rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--accent-600);
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .info-card {
+      background: var(--bg-card);
+      border: 1px solid var(--accent-100);
+      border-radius: 10px;
+      padding: 1.5rem;
+    }
+
+    .info-card h3 {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--navy-900);
+      margin-bottom: 0.75rem;
+    }
+
+    .info-card p {
+      font-size: 0.875rem;
+      color: var(--navy-400);
+      line-height: 1.7;
+      margin-bottom: 0.75rem;
+    }
+
+    .info-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .info-card a {
+      color: var(--accent-600);
+    }
+
+    .info-card a:hover {
+      color: var(--accent-700);
+    }
+
+    .info-card .sub-heading {
+      font-weight: 600;
+      color: var(--navy-600);
+      font-size: 0.875rem;
+      margin-top: 1rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .info-card .sub-heading:first-child {
+      margin-top: 0;
+    }
+
+    .hotel-item {
+      background: var(--accent-50);
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .hotel-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .hotel-name {
+      font-weight: 600;
+      color: var(--navy-900);
+      font-size: 0.875rem;
+    }
+
+    .hotel-name a {
+      color: var(--navy-900);
+    }
+
+    .hotel-name a:hover {
+      color: var(--accent-600);
+    }
+
+    .hotel-detail {
+      font-size: 0.8125rem;
+      color: var(--navy-400);
+      margin-top: 2px;
+    }
+
+    .tip-box {
+      background: var(--accent-50);
+      border-left: 3px solid var(--accent-500);
+      border-radius: 0 8px 8px 0;
+      padding: 1rem 1.25rem;
+      margin-top: 1rem;
+    }
+
+    .tip-box p {
+      font-size: 0.8125rem;
+      color: var(--navy-600);
+      margin-bottom: 0;
+    }
+
+    .tip-label {
+      font-weight: 600;
+      color: var(--accent-700);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      background: var(--bg-card);
+      border-top: 1px solid var(--accent-100);
+    }
+
+    .footer-inner {
+      max-width: var(--max-width); margin: 0 auto;
+      padding: 1.25rem var(--side-padding);
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: 0.75rem; color: var(--navy-200);
+    }
+
+    .footer a { color: var(--accent-600); transition: color 0.2s; }
+    .footer a:hover { color: var(--accent-700); }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      :root { --side-padding: 1.25rem; }
+
+      .nav-links {
+        display: none; position: absolute; top: 100%; left: 0; right: 0;
+        background: var(--bg-card); border-bottom: 1px solid var(--accent-100);
+        flex-direction: column; padding: 1rem 1.25rem; gap: 0;
+      }
+
+      .nav-links.open { display: flex; }
+      .nav-links li { padding: 0.75rem 0; border-bottom: 1px solid var(--accent-50); }
+      .nav-links li:last-child { border-bottom: none; }
+      .nav-toggle { display: block; }
+      .detail-hero h1 { font-size: 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">
+        <span class="nav-logo-img"><img src="../images/freit_logo_new.svg" alt="FREIT logo"></span>
+        <span class="nav-logo-text">FREIT</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+        <svg viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../conferences.html" class="active">Conferences</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="#" id="nav-contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="detail-hero">
+    <div class="detail-hero-inner">
+      <div class="breadcrumb">
+        <a href="../conferences.html">Conferences</a> / <a href="index.html">SETC</a> / <a href="setc.html">2026</a> / Visitor Information
+      </div>
+      <span class="edition-badge">Visitor Information</span>
+      <h1>SETC 2026 — Alghero, Italy</h1>
+      <div class="detail-subtitle">Sardinian Empirical Trade Conference &middot; September 14&ndash;15, 2026</div>
+      <div class="hero-divider"></div>
+    </div>
+  </header>
+
+  <!-- VENUE IMAGE -->
+  <section class="venue-image-section">
+    <div class="venue-image-inner">
+      <div class="venue-image">
+        <img src="images/alghero3.jpg" alt="Alghero, Sardinia, Italy">
+      </div>
+      <div class="venue-caption">Alghero, Italy</div>
+    </div>
+  </section>
+
+  <!-- CONTENT -->
+  <main class="content-body">
+
+    <!-- VENUE -->
+    <div class="info-section">
+      <h2>Venue</h2>
+      <div class="info-card">
+        <h3>Conference location</h3>
+        <p>The conference will be held at the University of Sassari, Department of Architecture, Design and Urban Planning, Alghero Campus.</p>
+        <div class="sub-heading">Address</div>
+        <p>Bastioni Pigafetta, 07041 Alghero (SS), Italy</p>
+        <p style="margin-top: 0.75rem;"><a href="https://www.google.com/maps/search/?api=1&query=Bastioni+Pigafetta+Alghero+Italy" target="_blank" style="color: var(--accent-600); font-weight: 500;">View venue on Google Maps →</a></p>
+      </div>
+    </div>
+
+    <!-- GETTING THERE -->
+    <div class="info-section">
+      <h2>Getting there</h2>
+      <div class="info-card">
+        <div class="sub-heading">By air</div>
+        <p>Alghero-Fertilia Airport (AHO) is located approximately 10 km from the city center. The airport has direct connections to several European cities including Rome, Milan, London (Stansted), and Barcelona. From the airport, you can reach the city center by bus (ARST line, about 20 minutes) or taxi (approximately €25–30).</p>
+        <p>Alternatively, Cagliari Elmas Airport (CAG) and Olbia Costa Smeralda Airport (OLB) are larger airports on the island, each roughly 2.5–3 hours by car from Alghero.</p>
+
+        <div class="sub-heading">By ferry</div>
+        <p>The nearest ferry port is Porto Torres, about 35 km from Alghero, with connections to Genoa, Barcelona, and Civitavecchia (Rome). Buses and taxis connect Porto Torres to Alghero.</p>
+
+        <div class="sub-heading">By car</div>
+        <p>Alghero is well connected by road. Car rental is available at the airport and is useful for exploring the surrounding area.</p>
+
+        <div class="tip-box">
+          <div class="tip-label">Tip</div>
+          <p>Book flights early, especially during summer months when Sardinia is a popular tourist destination. Ryanair operates frequent low-cost flights to Alghero from several European cities.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ACCOMMODATION -->
+    <div class="info-section">
+      <h2>Accommodation</h2>
+      <div class="info-card">
+        <p>Below are some recommended hotels in Alghero. The conference venue is located on the Bastioni Pigafetta, along the old town's seafront walls. </p>
+        <p style="margin-top: 0.5rem; margin-bottom: 1rem;"><a href="https://www.google.com/maps/d/u/0/edit?mid=19Qd35JlT-5GnbelkKcYBOb9WrcluAYs&usp=sharing" target="_blank" style="color: var(--accent-600); font-weight: 500;">View venue and all hotels on Google Maps →</a></p>
+
+        <div class="hotel-item">
+          <div class="hotel-name"><a href="https://www.hotelcatalunya.it/en/" target="_blank">Hotel Catalunya</a></div>
+          <div class="hotel-detail">4-star · Facing the harbour, 5 min walk to venue along the seafront · 121 rooms · Skybar with panoramic views · Breakfast included</div>
+          <!--<div class="hotel-detail"><a href="https://www.google.com/maps/search/?api=1&query=Hotel+Catalunya+Via+Catalogna+Alghero" target="_blank" style="color: var(--accent-600); font-size: 0.75rem;">View on map</a></div>-->
+        </div>
+
+        <div class="hotel-item">
+          <div class="hotel-name"><a href="https://www.smyhotels.com/smy-carlos-v-wellness--spa-alghero.html" target="_blank">Smy Carlos V Wellness &amp; Spa</a></div>
+          <div class="hotel-detail">5-star · On the seafront, 10–15 min walk along the coastal promenade to venue · 179 rooms · Seawater pool, spa, sea-view restaurants · Free parking</div>
+          <!--<div class="hotel-detail"><a href="https://www.google.com/maps/search/?api=1&query=Smy+Carlos+V+Lungomare+Valencia+Alghero" target="_blank" style="color: var(--accent-600); font-size: 0.75rem;">View on map</a></div>-->
+        </div>
+
+        <div class="hotel-item">
+          <div class="hotel-name"><a href="https://luxurylibertyhouse.it/en/" target="_blank">Luxury Liberty House</a></div>
+          <div class="hotel-detail">Boutique B&amp;B · Historic 1914 villa, 150m from old town, 5 min walk to venue · 6 rooms · Breakfast terrace, spa · Intimate and elegant</div>
+          <!--<div class="hotel-detail"><a href="https://www.google.com/maps/search/?api=1&query=Luxury+Liberty+House+Via+Mazzini+Alghero" target="_blank" style="color: var(--accent-600); font-size: 0.75rem;">View on map</a></div>-->
+        </div>
+
+        <div class="hotel-item">
+          <div class="hotel-name"><a href="https://www.hoteldomomea.it/en/" target="_blank">Hotel Domomea</a></div>
+          <div class="hotel-detail">4-star · Quiet street near the centre, 10 min walk to venue · 21 rooms · Rooftop pool, garden breakfast · Good value</div>
+          <!--<div class="hotel-detail"><a href="https://www.google.com/maps/search/?api=1&query=Hotel+Domomea+Via+Vittorio+Veneto+Alghero" target="_blank" style="color: var(--accent-600); font-size: 0.75rem;">View on map</a></div>-->
+        </div>
+
+        <div class="hotel-item">
+          <div class="hotel-name"><a href="https://www.elfarohotel.it/en/" target="_blank">El Faro Hotel &amp; Spa</a></div>
+          <div class="hotel-detail">4-star luxury · Baia delle Ninfe, 10 min drive from Alghero (car recommended) · 90 rooms · Beachfront, seawater pools, thalasso spa · Ideal for combining conference with a resort stay, before or after the conference </div>
+        </div>
+
+        <div class="tip-box">
+          <div class="tip-label">Tip</div>
+          <p>September is still high season in Sardinia. Book accommodation well in advance to secure availability and better rates.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- LOCAL TRANSPORTATION -->
+    <div class="info-section">
+      <h2>Local transportation</h2>
+      <div class="info-card">
+        <div class="sub-heading">Walking</div>
+        <p>Alghero's old town is small and very walkable. The conference venue and most recommended hotels are within a 10-minute walk of each other. Walking is the easiest way to get around.</p>
+
+        <div class="sub-heading">Taxis</div>
+        <p>Taxis are available but limited in number. It is advisable to book in advance, especially for airport transfers. A ride from the airport to the city center costs approximately €25–30.</p>
+
+        <div class="sub-heading">Bus</div>
+        <p>Local and regional buses are operated by ARST. The bus from the airport to the city center runs regularly during the day.</p>
+      </div>
+    </div>
+
+    <!-- MEALS -->
+    <div class="info-section">
+      <h2>Meals</h2>
+      <div class="info-card">
+        <p>Conference organizers witll provide lunches on both conference days and a conference dinner the first day of the conference. Details about the dinner location and menu will be communicated at a later point.</p>
+        <p>Alghero is renowned for its Catalan-influenced cuisine and fresh seafood, especially lobster (aragosta alla catalana). The old town is full of excellent restaurants, particularly along the seafront bastions and in the narrow streets of the centro storico.</p>
+      </div>
+    </div>
+
+    <!-- PRACTICAL INFORMATION -->
+    <div class="info-section">
+      <h2>Practical information</h2>
+      <div class="info-card">
+        <div class="sub-heading">Currency</div>
+        <p>Euro (€). Credit and debit cards are widely accepted. ATMs are readily available throughout the city.</p>
+
+        <div class="sub-heading">Language</div>
+        <p>Italian. English is spoken at hotels and tourist areas, though less commonly in smaller shops and restaurants.</p>
+
+        <div class="sub-heading">Weather</div>
+        <p>September in Alghero is warm and pleasant, with average temperatures around 23–28°C (73–82°F). Rain is infrequent. Light clothing is recommended, with a light layer for air-conditioned conference rooms and cooler evenings by the sea.</p>
+
+        <div class="sub-heading">Visa requirements</div>
+        <p>Italy is part of the Schengen Area. Visitors from the EU/EEA do not need a visa. Citizens of many other countries (including the US, Canada, UK, Japan, Australia) can enter visa-free for stays up to 90 days. Please check with your nearest Italian consulate for specific requirements.</p>
+
+        <div class="sub-heading">Wi-Fi</div>
+        <p>Wi-Fi will be available at the conference venue. Eduroam is available at the University of Sassari campus for participants with eduroam credentials.</p>
+
+        <div class="sub-heading">Emergency numbers</div>
+        <p>General emergency: 112 · Police: 113 · Ambulance: 118 · Fire: 115</p>
+      </div>
+    </div>
+
+    <!-- SIGHTSEEING -->
+    <div class="info-section">
+      <h2>Sightseeing</h2>
+      <div class="info-card">
+        <h3>Grotta di Nettuno (Neptune's Grotto)</h3>
+        <p>A planned group excursion to the Grotta di Nettuno is being planned for conference participants Sunday before the conference starts. Neptune's Grotto is a spectacular sea cave located at the base of the Capo Caccia cliffs, about 24 km from Alghero. The grotto features dramatic stalactites and stalagmites, an underground salt lake, and stunning rock formations.</p>
+        <div class="sub-heading">Getting there</div>
+        <p>The most scenic way to reach the grotto is by boat from Alghero's harbour (approximately 40 minutes each way). Boats depart regularly during the season. Alternatively, the grotto can be reached by car or bus, followed by a descent down the 654 steps of the Escala del Cabirol (a staircase carved into the cliff face).</p>
+        <p>We plan on using a boat, wind permitting.</p>
+        <div class="sub-heading">What to know</div>
+        <p>The grotto maintains a constant temperature of about 16°C (61°F), so bringing a light jacket is recommended even in September. Comfortable, non-slip shoes are advised. The guided tour inside the grotto lasts about 30–40 minutes. Further details about timing and logistics for the group excursion will be communicated to registered participants.</p>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <span>&copy; 2026 FREIT. All rights reserved. Based at Georgia Institute of Technology.</span>
+      <span id="footer-email"></span>
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      var u = 'freit';
+      var d = 'gatech.edu';
+      var e = u + '@' + d;
+      var m = 'mailto:' + e;
+      var nav = document.getElementById('nav-contact');
+      if (nav) { nav.href = m; }
+      var fe = document.getElementById('footer-email');
+      if (fe) { fe.innerHTML = '<a href="' + m + '" style="color:var(--accent-600);transition:color 0.2s;">' + e + '</a>'; }
+    })();
+  </script>
+
+</body>
+</html>
