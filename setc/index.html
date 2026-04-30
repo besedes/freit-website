@@ -202,6 +202,48 @@
       margin-bottom: 1rem;
     }
 
+    .grad-callout-inner {
+      background: var(--accent-50);
+      border-left: 3px solid var(--accent-500);
+      padding: 1.15rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .grad-callout-inner h4 {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 0.9375rem;
+      color: var(--navy-900);
+      margin-bottom: 2px;
+    }
+
+    .grad-callout-inner p {
+      font-size: 0.8125rem;
+      color: var(--accent-700);
+      line-height: 1.5;
+    }
+
+    .grad-btn {
+      display: inline-block;
+      background: var(--bg-card);
+      border: 1px solid var(--accent-200);
+      color: var(--accent-700);
+      font-size: 0.75rem;
+      font-weight: 500;
+      padding: 7px 16px;
+      border-radius: 6px;
+      white-space: nowrap;
+      transition: border-color 0.15s, background 0.15s;
+    }
+
+    .grad-btn:hover {
+      border-color: var(--accent-400);
+      background: var(--accent-50);
+    }
+
     .next-card {
       background: var(--bg-card);
       border-radius: 10px;
@@ -377,6 +419,14 @@
   <section class="conf-description">
     <div class="conf-description-inner">
       <p>SETC is held annually on Sardinia, Italy, combining rigorous empirical trade research with the unique setting of the Mediterranean. The conference has run since 2017 and brings together an international group of researchers for presentations and open discussion.</p>
+
+      <div class="grad-callout-inner" style="margin-top: 1.5rem;">
+        <div>
+          <h4>Graduate student paper competition</h4>
+          <p>SETC holds a graduate student paper competition. Graduate students are encouraged to submit their work. See competition details.</p>
+        </div>
+        <a href="grad-competition.html" class="grad-btn">Learn more</a>
+      </div>
     </div>
   </section>
 
