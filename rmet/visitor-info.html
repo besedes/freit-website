@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visitor Information — RMET 2026 | FREIT</title>
+  <meta name="description" content="Travel, accommodation, and practical information for the Rocky Mountain Empirical Trade Conference 2026 in Banff, Canada.">
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+  <link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96x96.png">
+  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,300;8..60,400;8..60,600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    :root {
+      --navy-900: #1a1f3a;
+      --navy-800: #242b4a;
+      --navy-700: #2e3660;
+      --navy-600: #3d4578;
+      --navy-400: #6b7199;
+      --navy-200: #b0b4cc;
+      --navy-100: #d8dae6;
+      --navy-50: #eef0f5;
+      --accent-700: #8a6d3b;
+      --accent-600: #a07d45;
+      --accent-500: #c4985a;
+      --accent-400: #d4b07a;
+      --accent-300: #e0c99e;
+      --accent-200: #e8dcc8;
+      --accent-100: #f0e8d8;
+      --accent-50: #f7f3eb;
+      --bg-page: #faf9f7;
+      --bg-card: #ffffff;
+      --font-display: 'Source Serif 4', Georgia, serif;
+      --font-body: 'DM Sans', system-ui, sans-serif;
+      --max-width: 1080px;
+      --side-padding: 2.5rem;
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--navy-900);
+      background: var(--bg-page);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* ===== NAVIGATION ===== */
+    .nav {
+      background: var(--bg-card);
+      border-bottom: 1px solid var(--accent-100);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0.65rem var(--side-padding);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo { display: flex; align-items: center; gap: 10px; }
+
+    .nav-logo-img {
+      width: 36px; height: 36px; border-radius: 50%;
+      background: var(--accent-50); border: 1px solid var(--accent-200);
+      display: flex; align-items: center; justify-content: center; overflow: hidden;
+    }
+
+    .nav-logo-img img { width: 26px; height: 26px; object-fit: contain; }
+
+    .nav-logo-text {
+      font-family: var(--font-display); font-weight: 600;
+      font-size: 1.125rem; color: var(--navy-900); letter-spacing: 2px;
+    }
+
+    .nav-links {
+      display: flex; gap: 2rem; list-style: none;
+      font-size: 0.8125rem; font-weight: 500; letter-spacing: 0.5px; text-transform: uppercase;
+    }
+
+    .nav-links a { color: var(--navy-400); transition: color 0.2s; }
+    .nav-links a:hover { color: var(--navy-900); }
+    .nav-links a.active { color: var(--accent-600); border-bottom: 1.5px solid var(--accent-500); padding-bottom: 2px; }
+
+    .nav-toggle {
+      display: none; background: none; border: none; cursor: pointer; padding: 4px;
+    }
+
+    .nav-toggle svg {
+      display: block; width: 24px; height: 24px;
+      stroke: var(--navy-900); stroke-width: 2; fill: none;
+    }
+
+    /* ===== HERO ===== */
+    .detail-hero {
+      background: var(--bg-card);
+      padding: 2.5rem var(--side-padding) 0;
+    }
+
+    .detail-hero-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .breadcrumb { font-size: 0.8125rem; color: var(--navy-200); margin-bottom: 1rem; }
+    .breadcrumb a { color: var(--accent-600); transition: color 0.2s; }
+    .breadcrumb a:hover { color: var(--accent-700); }
+
+    .edition-badge {
+      font-size: 0.6875rem; font-weight: 600; text-transform: uppercase;
+      letter-spacing: 0.5px; padding: 3px 12px; border-radius: 4px;
+      background: var(--accent-50); color: var(--accent-700);
+      display: inline-block; margin-bottom: 8px;
+    }
+
+    .detail-hero h1 {
+      font-family: var(--font-display); font-weight: 600; font-size: 1.5rem;
+      color: var(--navy-900); margin-bottom: 0.25rem;
+    }
+
+    .detail-subtitle { font-size: 0.9375rem; color: var(--navy-400); }
+
+    .hero-divider { width: 40px; height: 2px; background: var(--accent-500); margin: 1.25rem 0 0; }
+
+    /* ===== VENUE IMAGE ===== */
+    .venue-image-section {
+      background: var(--bg-card);
+      padding: 1.5rem var(--side-padding) 2.5rem;
+    }
+
+    .venue-image-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .venue-image-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .venue-image-item {
+      flex: 1;
+    }
+
+    .venue-image {
+      width: 100%;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid var(--accent-100);
+    }
+
+    .venue-image img {
+      display: block;
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+    }
+
+    .venue-caption {
+      font-size: 0.75rem;
+      color: var(--navy-200);
+      margin-top: 8px;
+      font-style: italic;
+    }
+
+    /* ===== CONTENT BODY ===== */
+    .content-body {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 2.5rem var(--side-padding) 3rem;
+    }
+
+    .info-section {
+      margin-bottom: 2.5rem;
+    }
+
+    .info-section:last-child {
+      margin-bottom: 0;
+    }
+
+    .info-section h2 {
+      font-size: 0.6875rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--accent-600);
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .info-card {
+      background: var(--bg-card);
+      border: 1px solid var(--accent-100);
+      border-radius: 10px;
+      padding: 1.5rem;
+    }
+
+    .info-card h3 {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--navy-900);
+      margin-bottom: 0.75rem;
+    }
+
+    .info-card p {
+      font-size: 0.875rem;
+      color: var(--navy-400);
+      line-height: 1.7;
+      margin-bottom: 0.75rem;
+    }
+
+    .info-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .info-card a {
+      color: var(--accent-600);
+    }
+
+    .info-card a:hover {
+      color: var(--accent-700);
+    }
+
+    .info-card .sub-heading {
+      font-weight: 600;
+      color: var(--navy-600);
+      font-size: 0.875rem;
+      margin-top: 1rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .info-card .sub-heading:first-child {
+      margin-top: 0;
+    }
+
+    .hotel-item {
+      background: var(--accent-50);
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .hotel-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .hotel-name {
+      font-weight: 600;
+      color: var(--navy-900);
+      font-size: 0.875rem;
+    }
+
+    .hotel-name a {
+      color: var(--navy-900);
+    }
+
+    .hotel-name a:hover {
+      color: var(--accent-600);
+    }
+
+    .hotel-detail {
+      font-size: 0.8125rem;
+      color: var(--navy-400);
+      margin-top: 2px;
+    }
+
+    .tip-box {
+      background: var(--accent-50);
+      border-left: 3px solid var(--accent-500);
+      border-radius: 0 8px 8px 0;
+      padding: 1rem 1.25rem;
+      margin-top: 1rem;
+    }
+
+    .tip-box p {
+      font-size: 0.8125rem;
+      color: var(--navy-600);
+      margin-bottom: 0;
+    }
+
+    .tip-label {
+      font-weight: 600;
+      color: var(--accent-700);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      background: var(--bg-card);
+      border-top: 1px solid var(--accent-100);
+    }
+
+    .footer-inner {
+      max-width: var(--max-width); margin: 0 auto;
+      padding: 1.25rem var(--side-padding);
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: 0.75rem; color: var(--navy-200);
+    }
+
+    .footer a { color: var(--accent-600); transition: color 0.2s; }
+    .footer a:hover { color: var(--accent-700); }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      :root { --side-padding: 1.25rem; }
+
+      .nav-links {
+        display: none; position: absolute; top: 100%; left: 0; right: 0;
+        background: var(--bg-card); border-bottom: 1px solid var(--accent-100);
+        flex-direction: column; padding: 1rem 1.25rem; gap: 0;
+      }
+
+      .nav-links.open { display: flex; }
+      .nav-links li { padding: 0.75rem 0; border-bottom: 1px solid var(--accent-50); }
+      .nav-links li:last-child { border-bottom: none; }
+      .nav-toggle { display: block; }
+      .detail-hero h1 { font-size: 1.25rem; }
+
+      .venue-image-inner {
+        flex-direction: column;
+      }
+
+      .venue-image img {
+        height: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">
+        <span class="nav-logo-img"><img src="../images/freit_logo_new.svg" alt="FREIT logo"></span>
+        <span class="nav-logo-text">FREIT</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+        <svg viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../conferences.html" class="active">Conferences</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="#" id="nav-contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="detail-hero">
+    <div class="detail-hero-inner">
+      <div class="breadcrumb">
+        <a href="../conferences.html">Conferences</a> / <a href="index.html">RMET</a> / <a href="rmet.html">2026</a> / Visitor Information
+      </div>
+      <span class="edition-badge">Visitor Information</span>
+      <h1>RMET 2026 — Banff, Canada</h1>
+      <div class="detail-subtitle">Rocky Mountain Empirical Trade Conference &middot; May 15&ndash;17, 2026</div>
+      <div class="hero-divider"></div>
+    </div>
+  </header>
+
+  <!-- VENUE IMAGES -->
+  <section class="venue-image-section">
+    <div class="venue-image-inner">
+      <div class="venue-image-item">
+        <div class="venue-image">
+          <img src="images/banff.jpg" alt="Banff, Alberta, Canada">
+        </div>
+        <div class="venue-caption">Banff, Alberta, Canada</div>
+      </div>
+      <div class="venue-image-item">
+        <div class="venue-image">
+          <img src="images/banff2.jpg" alt="Banff Centre">
+        </div>
+        <div class="venue-caption">Banff Centre</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTENT -->
+  <main class="content-body">
+
+    <!-- VENUE -->
+    <div class="info-section">
+      <h2>Venue &amp; accommodation</h2>
+      <div class="info-card">
+        <h3>Banff Centre for Arts and Creativity</h3>
+        <p>The conference venue and accommodation are both at the Banff Centre, situated on the slopes of Tunnel Mountain in the heart of Banff National Park. The Centre offers purpose-built meeting spaces with mountain views, on-site dining, and comfortable hotel rooms — all in one location. Participants stay where the conference takes place, making logistics simple.</p>
+        <div class="sub-heading">Address</div>
+        <p>107 Tunnel Mountain Drive, Banff, AB T1L 1H5, Canada</p>
+        <p style="margin-top: 0.75rem;"><a href="https://www.google.com/maps/search/?api=1&query=Banff+Centre+for+Arts+and+Creativity+107+Tunnel+Mountain+Drive+Banff" target="_blank" style="color: var(--accent-600); font-weight: 500;">View on Google Maps →</a></p>
+        <div class="sub-heading">On-site facilities</div>
+        <p>The Banff Centre campus includes the Sally Borden Recreation Centre with a swimming pool, hot tub, steam rooms, fitness equipment, indoor running track, and climbing wall. Free parking and Wi-Fi are included for all guests.</p>
+<!--
+        <div class="sub-heading">Booking</div>
+        <p>Accommodation at the Banff Centre will be arranged as part of your conference registration. Details will be communicated to registered participants.</p>
+-->
+      </div>
+    </div>
+
+    <!-- GETTING THERE -->
+    <div class="info-section">
+      <h2>Getting there</h2>
+      <div class="info-card">
+        <div class="sub-heading">By air</div>
+        <p>The nearest major airport is Calgary International Airport (YYC), located approximately 130 km (80 miles) east of Banff. The drive from Calgary to Banff takes about 1.5 hours along the Trans-Canada Highway (Hwy 1), a scenic route through the foothills and into the Rocky Mountains.</p>
+
+        <div class="sub-heading">Airport shuttle</div>
+      <p>Several shuttle services operate between Calgary Airport and Banff, including <a href="https://banffairporter.com/" target="_blank">Banff Airporter</a> and <a href="https://www.banffjaspercollection.com/brewster-express/" target="_blank">Brewster Express</a>. The ride takes approximately 2 hours with scheduled departures throughout the day. Advance booking is recommended.</p>
+
+        <div class="sub-heading">By car</div>
+        <p>From Calgary, take the Trans-Canada Highway (Hwy 1) west. Banff is well-signed from the highway. Note that a Parks Canada pass is required to stop within Banff National Park. Day passes and annual passes can be purchased at the park gate or online.</p>
+
+        <div class="sub-heading">Car rental</div>
+        <p>Rental cars are available at Calgary Airport. While not essential for the conference (the Banff Centre is self-contained and downtown Banff is walkable), a car is useful for exploring the park and surrounding area.</p>
+
+<!--
+        <div class="tip-box">
+          <div class="tip-label">Tip</div>
+          <p>If flying internationally, Calgary Airport has direct connections to many major cities. Book the airport shuttle in advance, especially during the busy spring season.</p>
+        </div>
+-->
+      </div>
+    </div>
+
+    <!-- MEALS & CONFERENCE DINNERS -->
+    <div class="info-section">
+      <h2>Meals &amp; conference dinners</h2>
+      <div class="info-card">
+        <p>Conference registration includes lunch during the conference. Two special dinners are planned:</p>
+
+        <div class="sub-heading">Day 1 — Sky Bistro dinner &amp; gondola ride</div>
+        <p>On the first evening, participants will take the Banff Gondola to the summit of Sulphur Mountain (2,281 m / 7,486 ft) for dinner at Sky Bistro, the mountain-top restaurant offering panoramic views of six mountain ranges, the Bow Valley, and the town of Banff below. The gondola ride and dinner are included with conference registration.</p>
+
+        <div class="sub-heading">Day 2 — Park Distillery</div>
+        <p>The second evening dinner will be at <a href="https://www.parkdistillery.com/" target="_blank" style="color: var(--accent-600);">Park Distillery</a> in downtown Banff, known for its campfire-inspired cuisine and craft spirits distilled on-site using glacial water from the Rockies. This dinner is pay-your-own-way.</p>
+      </div>
+    </div>
+
+    <!-- CONFERENCE ACTIVITIES -->
+    <div class="info-section">
+      <h2>Conference activities</h2>
+      <div class="info-card">
+        <p>We have planned several outdoor activities to take advantage of Banff's spectacular setting. All activities are optional and weather-dependent.</p>
+
+        <div class="sub-heading">Morning walks</div>
+        <p>Before morning sessions, guided walks are planned to some of Banff's most scenic nearby spots. Routes include a walk to Bow Falls, a short but stunning waterfall on the Bow River just below the Fairmont Banff Springs Hotel, and a walk towards Hoodoos Viewpoint, where you can see the striking geological formations along the Bow River valley.</p>
+
+        <div class="sub-heading">Tunnel Mountain hike</div>
+        <p>A bagged lunch hike to the summit of Tunnel Mountain (1,692 m / 5,551 ft) is planned for the second day. The trail is approximately 4.3 km round trip with 260 m of elevation gain, taking about 1.5–2 hours. The summit offers 360-degree views of the Bow Valley, Mount Rundle, Cascade Mountain, and the town of Banff. This is a moderate hike suitable for most fitness levels. Sturdy walking shoes are recommended.</p>
+
+        <div class="tip-box">
+          <div class="tip-label">Tip</div>
+          <p>Banff sits at 1,383 m (4,537 ft) elevation. If you're not accustomed to altitude, take it easy on the first day and stay well hydrated.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- BANFF NATIONAL PARK -->
+    <div class="info-section">
+      <h2>Banff National Park</h2>
+      <div class="info-card">
+        <h3>Canada's first national park</h3>
+        <p>Banff National Park, established in 1885, is Canada's oldest national park and a UNESCO World Heritage Site. The park covers 6,641 square kilometres of valleys, mountains, glaciers, forests, and alpine meadows in the heart of the Canadian Rockies. It is one of the most visited national parks in the world and offers extraordinary natural beauty at every turn.</p>
+        <p>In mid-May, the park is coming alive with spring — snow-capped peaks, turquoise rivers fed by glacial melt, and wildlife emerging from winter. You may spot elk, deer, bighorn sheep, and occasionally bears along the roadsides and trails.</p>
+        <div class="sub-heading">Popular nearby destinations</div>
+        <p>If you have extra time before or after the conference, consider visiting Lake Louise (58 km from Banff), Moraine Lake (if open — typically opens late May to early June), Johnston Canyon, and the Icefields Parkway, one of the most scenic drives in the world.</p>
+        <div class="sub-heading">Park pass</div>
+        <p>A Parks Canada pass is required. Daily passes cost approximately $11 CAD per person. Passes can be purchased at the park gate, at the Banff Visitor Centre, or online at <a href="https://parks.canada.ca/" target="_blank" style="color: var(--accent-600);">parks.canada.ca</a>.</p>
+      </div>
+    </div>
+
+    <!-- PRACTICAL INFORMATION -->
+    <div class="info-section">
+      <h2>Practical information</h2>
+      <div class="info-card">
+<!--
+        <div class="sub-heading">Currency</div>
+        <p>Canadian Dollar (CAD). Credit and debit cards are widely accepted everywhere. ATMs are available in downtown Banff.</p>
+-->
+
+        <div class="sub-heading">Weather</div>
+        <p>Mid-May in Banff is spring in the mountains. Daytime temperatures typically range from 5–15°C (41–59°F), with cooler evenings near 0°C (32°F). Weather can change quickly — layers are essential. Bring a warm jacket, rain shell, and comfortable walking shoes. Snow is still possible at higher elevations.</p>
+
+        <div class="sub-heading">Visa requirements</div>
+        <p>Most international visitors need either a visa or an Electronic Travel Authorization (eTA) to enter Canada. Citizens of the US do not need an eTA but require a valid passport. EU, UK, Australian, and Japanese citizens typically need an eTA ($7 CAD, applied online). Check with <a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/visit-canada.html" target="_blank" style="color: var(--accent-600);">Immigration, Refugees and Citizenship Canada</a> for specific requirements.</p>
+
+        <div class="sub-heading">Time zone</div>
+        <p>Mountain Time (MT), UTC−7 in summer (Mountain Daylight Time).</p>
+
+        <div class="sub-heading">Wi-Fi</div>
+        <p>Free Wi-Fi is available throughout the Banff Centre campus, including guest rooms and meeting spaces.</p>
+
+        <div class="sub-heading">Emergency numbers</div>
+        <p>Emergency: 911 · Parks Canada emergency dispatch: 403-762-4506 · Banff Mineral Springs Hospital: 403-762-2222</p>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <span>&copy; 2026 FREIT. All rights reserved. Based at Georgia Institute of Technology.</span>
+      <span id="footer-email"></span>
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      var u = 'freit';
+      var d = 'gatech.edu';
+      var e = u + '@' + d;
+      var m = 'mailto:' + e;
+      var nav = document.getElementById('nav-contact');
+      if (nav) { nav.href = m; }
+      var fe = document.getElementById('footer-email');
+      if (fe) { fe.innerHTML = '<a href="' + m + '" style="color:var(--accent-600);transition:color 0.2s;">' + e + '</a>'; }
+    })();
+  </script>
+
+</body>
+</html>
