@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visitor Information — METC 2026 | FREIT</title>
+  <meta name="description" content="Travel, accommodation, and practical information for the Melbourne Empirical Trade Conference 2026 in Melbourne, Australia.">
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+  <link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96x96.png">
+  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,300;8..60,400;8..60,600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    :root {
+      --navy-900: #1a1f3a;
+      --navy-800: #242b4a;
+      --navy-700: #2e3660;
+      --navy-600: #3d4578;
+      --navy-400: #6b7199;
+      --navy-200: #b0b4cc;
+      --navy-100: #d8dae6;
+      --navy-50: #eef0f5;
+      --accent-700: #8a6d3b;
+      --accent-600: #a07d45;
+      --accent-500: #c4985a;
+      --accent-400: #d4b07a;
+      --accent-300: #e0c99e;
+      --accent-200: #e8dcc8;
+      --accent-100: #f0e8d8;
+      --accent-50: #f7f3eb;
+      --bg-page: #faf9f7;
+      --bg-card: #ffffff;
+      --font-display: 'Source Serif 4', Georgia, serif;
+      --font-body: 'DM Sans', system-ui, sans-serif;
+      --max-width: 1080px;
+      --side-padding: 2.5rem;
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--navy-900);
+      background: var(--bg-page);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .nav {
+      background: var(--bg-card);
+      border-bottom: 1px solid var(--accent-100);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0.65rem var(--side-padding);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo { display: flex; align-items: center; gap: 10px; }
+
+    .nav-logo-img {
+      width: 36px; height: 36px; border-radius: 50%;
+      background: var(--accent-50); border: 1px solid var(--accent-200);
+      display: flex; align-items: center; justify-content: center; overflow: hidden;
+    }
+
+    .nav-logo-img img { width: 26px; height: 26px; object-fit: contain; }
+
+    .nav-logo-text {
+      font-family: var(--font-display); font-weight: 600;
+      font-size: 1.125rem; color: var(--navy-900); letter-spacing: 2px;
+    }
+
+    .nav-links {
+      display: flex; gap: 2rem; list-style: none;
+      font-size: 0.8125rem; font-weight: 500; letter-spacing: 0.5px; text-transform: uppercase;
+    }
+
+    .nav-links a { color: var(--navy-400); transition: color 0.2s; }
+    .nav-links a:hover { color: var(--navy-900); }
+    .nav-links a.active { color: var(--accent-600); border-bottom: 1.5px solid var(--accent-500); padding-bottom: 2px; }
+
+    .nav-toggle {
+      display: none; background: none; border: none; cursor: pointer; padding: 4px;
+    }
+
+    .nav-toggle svg {
+      display: block; width: 24px; height: 24px;
+      stroke: var(--navy-900); stroke-width: 2; fill: none;
+    }
+
+    .detail-hero {
+      background: var(--bg-card);
+      padding: 2.5rem var(--side-padding) 0;
+    }
+
+    .detail-hero-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .breadcrumb { font-size: 0.8125rem; color: var(--navy-200); margin-bottom: 1rem; }
+    .breadcrumb a { color: var(--accent-600); transition: color 0.2s; }
+    .breadcrumb a:hover { color: var(--accent-700); }
+
+    .edition-badge {
+      font-size: 0.6875rem; font-weight: 600; text-transform: uppercase;
+      letter-spacing: 0.5px; padding: 3px 12px; border-radius: 4px;
+      background: var(--accent-50); color: var(--accent-700);
+      display: inline-block; margin-bottom: 8px;
+    }
+
+    .detail-hero h1 {
+      font-family: var(--font-display); font-weight: 600; font-size: 1.5rem;
+      color: var(--navy-900); margin-bottom: 0.25rem;
+    }
+
+    .detail-subtitle { font-size: 0.9375rem; color: var(--navy-400); }
+
+    .hero-divider { width: 40px; height: 2px; background: var(--accent-500); margin: 1.25rem 0 0; }
+
+    .venue-image-section {
+      background: var(--bg-card);
+      padding: 1.5rem var(--side-padding) 2.5rem;
+    }
+
+    .venue-image-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .venue-image-item { flex: 1; }
+
+    .venue-image {
+      width: 100%;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid var(--accent-100);
+    }
+
+    .venue-image img {
+      display: block;
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+    }
+
+    .venue-caption {
+      font-size: 0.75rem;
+      color: var(--navy-200);
+      margin-top: 8px;
+      font-style: italic;
+    }
+
+    .content-body {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 2.5rem var(--side-padding) 3rem;
+    }
+
+    .info-section { margin-bottom: 2.5rem; }
+    .info-section:last-child { margin-bottom: 0; }
+
+    .info-section h2 {
+      font-size: 0.6875rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--accent-600);
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .info-card {
+      background: var(--bg-card);
+      border: 1px solid var(--accent-100);
+      border-radius: 10px;
+      padding: 1.5rem;
+    }
+
+    .info-card h3 {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--navy-900);
+      margin-bottom: 0.75rem;
+    }
+
+    .info-card p {
+      font-size: 0.875rem;
+      color: var(--navy-400);
+      line-height: 1.7;
+      margin-bottom: 0.75rem;
+    }
+
+    .info-card p:last-child { margin-bottom: 0; }
+    .info-card a { color: var(--accent-600); }
+    .info-card a:hover { color: var(--accent-700); }
+
+    .info-card .sub-heading {
+      font-weight: 600;
+      color: var(--navy-600);
+      font-size: 0.875rem;
+      margin-top: 1rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .info-card .sub-heading:first-child { margin-top: 0; }
+
+    .hotel-item {
+      background: var(--accent-50);
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .hotel-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .hotel-name {
+      font-weight: 600;
+      color: var(--navy-900);
+      font-size: 0.875rem;
+    }
+
+    .hotel-name a {
+      color: var(--navy-900);
+    }
+
+    .hotel-name a:hover {
+      color: var(--accent-600);
+    }
+
+    .hotel-detail {
+      font-size: 0.8125rem;
+      color: var(--navy-400);
+      margin-top: 2px;
+    }
+
+    .tip-box {
+      background: var(--accent-50);
+      border-left: 3px solid var(--accent-500);
+      border-radius: 0 8px 8px 0;
+      padding: 1rem 1.25rem;
+      margin-top: 1rem;
+    }
+
+    .tip-box p {
+      font-size: 0.8125rem;
+      color: var(--navy-600);
+      margin-bottom: 0;
+    }
+
+    .tip-label {
+      font-weight: 600;
+      color: var(--accent-700);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+    }
+
+    .placeholder-note {
+      background: var(--navy-50);
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      font-size: 0.8125rem;
+      color: var(--navy-400);
+      font-style: italic;
+    }
+
+    .footer {
+      background: var(--bg-card);
+      border-top: 1px solid var(--accent-100);
+    }
+
+    .footer-inner {
+      max-width: var(--max-width); margin: 0 auto;
+      padding: 1.25rem var(--side-padding);
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: 0.75rem; color: var(--navy-200);
+    }
+
+    .footer a { color: var(--accent-600); transition: color 0.2s; }
+    .footer a:hover { color: var(--accent-700); }
+
+    @media (max-width: 768px) {
+      :root { --side-padding: 1.25rem; }
+
+      .nav-links {
+        display: none; position: absolute; top: 100%; left: 0; right: 0;
+        background: var(--bg-card); border-bottom: 1px solid var(--accent-100);
+        flex-direction: column; padding: 1rem 1.25rem; gap: 0;
+      }
+
+      .nav-links.open { display: flex; }
+      .nav-links li { padding: 0.75rem 0; border-bottom: 1px solid var(--accent-50); }
+      .nav-links li:last-child { border-bottom: none; }
+      .nav-toggle { display: block; }
+      .detail-hero h1 { font-size: 1.25rem; }
+
+      .venue-image-inner {
+        flex-direction: column;
+      }
+
+      .venue-image img {
+        height: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">
+        <span class="nav-logo-img"><img src="../images/freit_logo_new.svg" alt="FREIT logo"></span>
+        <span class="nav-logo-text">FREIT</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+        <svg viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../conferences.html" class="active">Conferences</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="#" id="nav-contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="detail-hero">
+    <div class="detail-hero-inner">
+      <div class="breadcrumb">
+        <a href="../conferences.html">Conferences</a> / <a href="index.html">METC</a> / <a href="metc.html">2026</a> / Visitor Information
+      </div>
+      <span class="edition-badge">Visitor Information</span>
+      <h1>METC 2026 — Melbourne, Australia</h1>
+      <div class="detail-subtitle">Melbourne Empirical Trade Conference &middot; July 23&ndash;25, 2026</div>
+      <div class="hero-divider"></div>
+    </div>
+  </header>
+
+  <section class="venue-image-section">
+    <div class="venue-image-inner">
+      <div class="venue-image-item">
+        <div class="venue-image">
+          <img src="images/melbourne_cbd.webp" alt="Melbourne, Australia">
+        </div>
+        <div class="venue-caption">Melbourne, Australia</div>
+      </div>
+      <div class="venue-image-item">
+        <div class="venue-image">
+          <img src="images/unimelb_aerial.jpg" alt="University of Melbourne">
+        </div>
+        <div class="venue-caption">University of Melbourne</div>
+      </div>
+    </div>
+  </section>
+
+  <main class="content-body">
+
+    <!-- VENUE -->
+    <div class="info-section">
+      <h2>Venue</h2>
+      <div class="info-card">
+        <h3>The Spot — University of Melbourne</h3>
+        <p>The conference will be hosted at The Spot (Building 110), the home of the Faculty of Business and Economics at the University of Melbourne. Located at 198 Berkeley Street in Carlton, The Spot is a purpose-built, 5 Star Green Star certified teaching and research centre on the southern edge of the main Parkville campus. The building is easy to spot from a distance thanks to its distinctive dotted facade.</p>
+        <div class="sub-heading">Address</div>
+        <p>The Spot, 198 Berkeley Street, Carlton, VIC 3010, Australia</p>
+        <p style="margin-top: 0.75rem;"><a href="https://www.google.com/maps/search/?api=1&query=The+Spot+198+Berkeley+Street+University+of+Melbourne" target="_blank" style="color: var(--accent-600); font-weight: 500;">View on Google Maps →</a></p>
+      </div>
+    </div>
+
+    <!-- GETTING THERE -->
+    <div class="info-section">
+      <h2>Getting there</h2>
+      <div class="info-card">
+        <div class="sub-heading">By air</div>
+        <p>Melbourne Airport (MEL), also known as Tullamarine, is the main international airport, located approximately 23 km northwest of the city center. It serves direct flights from major cities across Asia, the Middle East, North America, and the Pacific. Qantas, Virgin Australia, Jetstar, and numerous international carriers operate from Tullamarine.</p>
+
+        <div class="sub-heading">From the airport</div>
+        <p>SkyBus operates an express shuttle between Melbourne Airport and the city center (Southern Cross Station), running approximately every 10 minutes during the day. The journey takes about 30 minutes and costs approximately $20 AUD one way. Taxis and ride-share services (Uber, Didi) are also available from the airport and cost approximately $55–70 AUD to the CBD.</p>
+
+        <div class="sub-heading">Avalon Airport</div>
+        <p>Some domestic and budget carriers (notably Jetstar) use Avalon Airport (AVV), located approximately 55 km southwest of Melbourne. SkyBus also services Avalon, but the journey to the city is longer (approximately 50 minutes).</p>
+
+        <div class="tip-box">
+          <div class="tip-label">Tip</div>
+          <p>Get a Myki card (Melbourne's transit card) at the airport or at any train station. It works on all trams, trains, and buses across Melbourne and is required for public transport — cash is not accepted on board.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ACCOMMODATION -->
+    <div class="info-section">
+      <h2>Accommodation</h2>
+      <div class="info-card">
+        <p>Melbourne offers a wide range of accommodation. Hotels in the CBD and Carlton are the most convenient for The Spot, which is easily reached by tram or on foot from the city centre.</p>
+        <p style="margin-top: 0.5rem; margin-bottom: 1rem;"><a href="https://www.google.com/maps/d/u/0/edit?mid=1oxG-QHHG9jj0KlrXiY1qYzDBmOSGAGQ&usp=sharing" target="_blank" style="color: var(--accent-600); font-weight: 500;">View venue and all hotels on Google Maps →</a></p>
+
+        <div class="hotel-item">
+          <div class="hotel-name"><a href="https://www.ihg.com/voco/hotels/us/en/melbourne/melct/hoteldetail" target="_blank">voco Melbourne Central</a></div>
+          <div class="hotel-detail">4-star · Heart of CBD near Melbourne Central Station and Bourke Street Mall · 252 rooms · Rooftop plunge pool with panoramic city views, Blacksmith Bar &amp; Grill · 15 min walk or short tram ride to The Spot</div>
+        </div>
+
+        <div class="hotel-item">
+          <div class="hotel-name"><a href="https://veriu.com.au/hotels/veriu-queen-victoria-market/" target="_blank">Veriu Queen Victoria Market</a></div>
+          <div class="hotel-detail">Boutique apartment hotel · Steps from Queen Victoria Market, 10 min walk to The Spot · 110 suites with full kitchens · Indoor pool, gym, café · Ideal for longer stays</div>
+        </div>
+
+        <div class="hotel-item">
+          <div class="hotel-name"><a href="https://www.discoverasr.com/en/citadines/australia/citadines-on-bourke-melbourne" target="_blank">Citadines on Bourke Melbourne</a></div>
+          <div class="hotel-detail">Apartment hotel · Bourke Street in the CBD · Studio and 1-bedroom apartments with kitchenettes · Indoor pool, gym, sauna · 15 min walk or short tram ride to The Spot</div>
+        </div>
+
+        <div class="hotel-item">
+          <div class="hotel-name"><a href="https://www.avanihotels.com/en/melbourne-central-residences" target="_blank">Avani Melbourne Central Residences</a></div>
+          <div class="hotel-detail">Apartment hotel · CBD location near Queen Victoria Market · Studio to 2-bedroom apartments with full kitchens · Indoor pool, gym · 10 min walk to The Spot</div>
+        </div>
+
+        <div class="hotel-item">
+          <div class="hotel-name"><a href="https://www.oakshotels.com/en/oaks-melbourne-on-collins" target="_blank">Oaks Melbourne on Collins</a></div>
+          <div class="hotel-detail">Apartment hotel · Collins Street in the CBD · Studio to 2-bedroom apartments · Indoor pool, gym, spa · 20 min walk or short tram ride to The Spot</div>
+        </div>
+
+        <div class="tip-box">
+          <div class="tip-label">Tip</div>
+          <p>Melbourne's Free Tram Zone covers the CBD, making it easy and free to get around the city centre. The Spot is just outside this zone but easily reached by tram routes 1, 6, or 16 from the CBD.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- LOCAL TRANSPORTATION -->
+    <div class="info-section">
+      <h2>Local transportation</h2>
+      <div class="info-card">
+        <div class="sub-heading">Trams</div>
+        <p>Melbourne has the largest tram network in the world. Trams run frequently throughout the city and are the easiest way to reach the University of Melbourne from the CBD. Routes 1, 3, 5, 6, 16, 64, 67, and 72 all stop near the university. The CBD and surrounding inner suburbs have a Free Tram Zone — travel within this zone requires no ticket.</p>
+
+        <div class="sub-heading">Trains</div>
+        <p>Melbourne's suburban train network connects the city to outer suburbs and regional areas. The closest train stations to the university are Melbourne Central and Flagstaff, both a short tram ride or 15–20 minute walk from campus.</p>
+
+        <div class="sub-heading">Ride-share &amp; taxis</div>
+        <p>Uber and Didi are widely available. Taxis can be hailed on the street or booked via the 13CABS app. Rides within the inner city typically cost $10–20 AUD.</p>
+
+        <div class="sub-heading">Walking &amp; cycling</div>
+        <p>The University of Melbourne is a comfortable 20–25 minute walk from the CBD through Carlton, one of Melbourne's most charming neighbourhoods. Melbourne Bike Share stations are located around the campus and CBD.</p>
+      </div>
+    </div>
+
+    <!-- MEALS -->
+    <div class="info-section">
+      <h2>Meals</h2>
+      <div class="info-card">
+        <p>Conference registration includes lunches and a conference dinner. Details about the dinner venue will be communicated to registered participants.</p>
+        <p>Melbourne is widely considered Australia's food capital, with an exceptional café culture and diverse restaurant scene. Lygon Street (a short walk from campus) is Melbourne's historic Italian dining strip. The CBD laneways are famous for hidden cafés, bars, and restaurants. Carlton, Fitzroy, and Collingwood — all within a few tram stops — offer everything from Vietnamese pho to contemporary Australian cuisine.</p>
+      </div>
+    </div>
+
+    <!-- POST-CONFERENCE ACTIVITY -->
+    <div class="info-section">
+      <h2>Post-conference activity</h2>
+      <div class="info-card">
+        <h3>Winery excursion</h3>
+        <p>A post-conference winery excursion is being organized for participants. Victoria is home to some of Australia's finest wine regions, with the Yarra Valley and Mornington Peninsula both within easy reach of Melbourne.</p>
+        <p>The Yarra Valley, approximately one hour northeast of Melbourne, is renowned for its cool-climate Pinot Noir, Chardonnay, and sparkling wines. The Mornington Peninsula, about one hour south, offers a stunning coastal setting with cellar doors, artisan producers, and ocean views.</p>
+        <p>The excursion will include wine tastings, a vineyard lunch, and transport to and from Melbourne. Further details about the specific winery, date, and logistics will be communicated to registered participants.</p>
+        <div class="tip-box">
+          <div class="tip-label">Tip</div>
+          <p>If you plan to extend your stay, consider spending an extra day exploring the Great Ocean Road (2–3 hours west of Melbourne), one of the world's most scenic coastal drives, featuring the Twelve Apostles rock formations.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- PRACTICAL INFORMATION -->
+    <div class="info-section">
+      <h2>Practical information</h2>
+      <div class="info-card">
+        <div class="sub-heading">Currency</div>
+        <p>Australian Dollar (AUD). Credit and debit cards (including contactless/tap) are accepted almost everywhere. Many places in Melbourne are cashless. ATMs are widely available.</p>
+
+        <div class="sub-heading">Weather</div>
+        <p>Late July is mid-winter in Melbourne. Expect daytime temperatures of 8–14°C (46–57°F) and cooler nights around 5–7°C (41–45°F). Melbourne's weather is famously changeable — rain, wind, and sunshine can all occur in the same day. Bring warm layers, a waterproof jacket, and an umbrella.</p>
+
+        <div class="sub-heading">Visa requirements</div>
+        <p>Most international visitors need a visa to enter Australia. Citizens of the US, Canada, and many European countries can apply for an ETA (Electronic Travel Authority) or eVisitor visa online. Processing is usually quick. New Zealand citizens can travel visa-free. Check with the <a href="https://immi.homeaffairs.gov.au/" target="_blank">Australian Department of Home Affairs</a> for specific requirements.</p>
+
+        <div class="sub-heading">Power supply</div>
+        <p>Australia uses Type I plugs (230V, 50Hz). Visitors from North America, Europe, and Asia will need an adapter. These can be purchased at the airport or at convenience stores.</p>
+
+        <div class="sub-heading">Time zone</div>
+        <p>Australian Eastern Standard Time (AEST), UTC+10. No daylight saving in July.</p>
+
+        <div class="sub-heading">Wi-Fi</div>
+        <p>Wi-Fi will be available at the conference venue. Eduroam is available across the University of Melbourne campus for participants with eduroam credentials. Free Wi-Fi is also available at many cafés and public spaces in Melbourne.</p>
+
+        <div class="sub-heading">Emergency numbers</div>
+        <p>Emergency (police, fire, ambulance): 000 · Non-emergency police: 131 444</p>
+      </div>
+    </div>
+
+    <!-- ABOUT MELBOURNE -->
+    <div class="info-section">
+      <h2>About Melbourne</h2>
+      <div class="info-card">
+        <p>Melbourne, capital of the state of Victoria, is Australia's second-largest city and is consistently ranked among the world's most liveable cities. Known for its vibrant arts scene, iconic laneways filled with street art, world-class coffee culture, and passion for sport, Melbourne offers a rich experience for visitors.</p>
+        <p>For those with extra time, consider exploring the Queen Victoria Market — the largest open-air market in the Southern Hemisphere and a Melbourne institution since 1878, offering everything from fresh produce and artisan food to clothing and souvenirs. Other highlights include the Royal Botanic Gardens, the National Gallery of Victoria, and catching a match at the Melbourne Cricket Ground (MCG) — the spiritual home of Australian Rules Football. The Great Ocean Road, Phillip Island's penguin parade, and the Dandenong Ranges are popular day trips from the city.</p>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <span>&copy; 2026 FREIT. All rights reserved. Based at Georgia Institute of Technology.</span>
+      <span id="footer-email"></span>
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      var u = 'freit';
+      var d = 'gatech.edu';
+      var e = u + '@' + d;
+      var m = 'mailto:' + e;
+      var nav = document.getElementById('nav-contact');
+      if (nav) { nav.href = m; }
+      var fe = document.getElementById('footer-email');
+      if (fe) { fe.innerHTML = '<a href="' + m + '" style="color:var(--accent-600);transition:color 0.2s;">' + e + '</a>'; }
+    })();
+  </script>
+
+</body>
+</html>

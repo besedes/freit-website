@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visitor Information — KETC 2027 | FREIT</title>
+  <meta name="description" content="Travel, accommodation, and practical information for the Korean Empirical Trade Conference 2027 in Seoul, South Korea.">
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+  <link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96x96.png">
+  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,300;8..60,400;8..60,600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    :root {
+      --navy-900: #1a1f3a;
+      --navy-800: #242b4a;
+      --navy-700: #2e3660;
+      --navy-600: #3d4578;
+      --navy-400: #6b7199;
+      --navy-200: #b0b4cc;
+      --navy-100: #d8dae6;
+      --navy-50: #eef0f5;
+      --accent-700: #8a6d3b;
+      --accent-600: #a07d45;
+      --accent-500: #c4985a;
+      --accent-400: #d4b07a;
+      --accent-300: #e0c99e;
+      --accent-200: #e8dcc8;
+      --accent-100: #f0e8d8;
+      --accent-50: #f7f3eb;
+      --bg-page: #faf9f7;
+      --bg-card: #ffffff;
+      --font-display: 'Source Serif 4', Georgia, serif;
+      --font-body: 'DM Sans', system-ui, sans-serif;
+      --max-width: 1080px;
+      --side-padding: 2.5rem;
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--navy-900);
+      background: var(--bg-page);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .nav {
+      background: var(--bg-card);
+      border-bottom: 1px solid var(--accent-100);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0.65rem var(--side-padding);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo { display: flex; align-items: center; gap: 10px; }
+
+    .nav-logo-img {
+      width: 36px; height: 36px; border-radius: 50%;
+      background: var(--accent-50); border: 1px solid var(--accent-200);
+      display: flex; align-items: center; justify-content: center; overflow: hidden;
+    }
+
+    .nav-logo-img img { width: 26px; height: 26px; object-fit: contain; }
+
+    .nav-logo-text {
+      font-family: var(--font-display); font-weight: 600;
+      font-size: 1.125rem; color: var(--navy-900); letter-spacing: 2px;
+    }
+
+    .nav-links {
+      display: flex; gap: 2rem; list-style: none;
+      font-size: 0.8125rem; font-weight: 500; letter-spacing: 0.5px; text-transform: uppercase;
+    }
+
+    .nav-links a { color: var(--navy-400); transition: color 0.2s; }
+    .nav-links a:hover { color: var(--navy-900); }
+    .nav-links a.active { color: var(--accent-600); border-bottom: 1.5px solid var(--accent-500); padding-bottom: 2px; }
+
+    .nav-toggle {
+      display: none; background: none; border: none; cursor: pointer; padding: 4px;
+    }
+
+    .nav-toggle svg {
+      display: block; width: 24px; height: 24px;
+      stroke: var(--navy-900); stroke-width: 2; fill: none;
+    }
+
+    .detail-hero {
+      background: var(--bg-card);
+      padding: 2.5rem var(--side-padding) 0;
+    }
+
+    .detail-hero-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .breadcrumb { font-size: 0.8125rem; color: var(--navy-200); margin-bottom: 1rem; }
+    .breadcrumb a { color: var(--accent-600); transition: color 0.2s; }
+    .breadcrumb a:hover { color: var(--accent-700); }
+
+    .edition-badge {
+      font-size: 0.6875rem; font-weight: 600; text-transform: uppercase;
+      letter-spacing: 0.5px; padding: 3px 12px; border-radius: 4px;
+      background: var(--accent-50); color: var(--accent-700);
+      display: inline-block; margin-bottom: 8px;
+    }
+
+    .detail-hero h1 {
+      font-family: var(--font-display); font-weight: 600; font-size: 1.5rem;
+      color: var(--navy-900); margin-bottom: 0.25rem;
+    }
+
+    .detail-subtitle { font-size: 0.9375rem; color: var(--navy-400); }
+
+    .hero-divider { width: 40px; height: 2px; background: var(--accent-500); margin: 1.25rem 0 0; }
+
+    .venue-image-section {
+      background: var(--bg-card);
+      padding: 1.5rem var(--side-padding) 2.5rem;
+    }
+
+    .venue-image-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .venue-image-item { flex: 1; }
+
+    .venue-image {
+      width: 100%;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid var(--accent-100);
+    }
+
+    .venue-image img {
+      display: block;
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+    }
+
+    .venue-caption {
+      font-size: 0.75rem;
+      color: var(--navy-200);
+      margin-top: 8px;
+      font-style: italic;
+    }
+
+    .content-body {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 2.5rem var(--side-padding) 3rem;
+    }
+
+    .info-section { margin-bottom: 2.5rem; }
+    .info-section:last-child { margin-bottom: 0; }
+
+    .info-section h2 {
+      font-size: 0.6875rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--accent-600);
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .info-card {
+      background: var(--bg-card);
+      border: 1px solid var(--accent-100);
+      border-radius: 10px;
+      padding: 1.5rem;
+    }
+
+    .info-card h3 {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--navy-900);
+      margin-bottom: 0.75rem;
+    }
+
+    .info-card p {
+      font-size: 0.875rem;
+      color: var(--navy-400);
+      line-height: 1.7;
+      margin-bottom: 0.75rem;
+    }
+
+    .info-card p:last-child { margin-bottom: 0; }
+    .info-card a { color: var(--accent-600); }
+    .info-card a:hover { color: var(--accent-700); }
+
+    .info-card .sub-heading {
+      font-weight: 600;
+      color: var(--navy-600);
+      font-size: 0.875rem;
+      margin-top: 1rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .info-card .sub-heading:first-child { margin-top: 0; }
+
+    .hotel-item {
+      background: var(--accent-50);
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .hotel-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .hotel-name {
+      font-weight: 600;
+      color: var(--navy-900);
+      font-size: 0.875rem;
+    }
+
+    .hotel-name a {
+      color: var(--navy-900);
+    }
+
+    .hotel-name a:hover {
+      color: var(--accent-600);
+    }
+
+    .hotel-detail {
+      font-size: 0.8125rem;
+      color: var(--navy-400);
+      margin-top: 2px;
+    }
+
+    .hotel-area-label {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 0.9375rem;
+      color: var(--navy-900);
+      margin-top: 1.25rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .hotel-area-label:first-of-type {
+      margin-top: 0.75rem;
+    }
+
+    .tip-box {
+      background: var(--accent-50);
+      border-left: 3px solid var(--accent-500);
+      border-radius: 0 8px 8px 0;
+      padding: 1rem 1.25rem;
+      margin-top: 1rem;
+    }
+
+    .tip-box p {
+      font-size: 0.8125rem;
+      color: var(--navy-600);
+      margin-bottom: 0;
+    }
+
+    .tip-label {
+      font-weight: 600;
+      color: var(--accent-700);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+    }
+
+    .placeholder-note {
+      background: var(--navy-50);
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      font-size: 0.8125rem;
+      color: var(--navy-400);
+      font-style: italic;
+    }
+
+    .footer {
+      background: var(--bg-card);
+      border-top: 1px solid var(--accent-100);
+    }
+
+    .footer-inner {
+      max-width: var(--max-width); margin: 0 auto;
+      padding: 1.25rem var(--side-padding);
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: 0.75rem; color: var(--navy-200);
+    }
+
+    .footer a { color: var(--accent-600); transition: color 0.2s; }
+    .footer a:hover { color: var(--accent-700); }
+
+    @media (max-width: 768px) {
+      :root { --side-padding: 1.25rem; }
+
+      .nav-links {
+        display: none; position: absolute; top: 100%; left: 0; right: 0;
+        background: var(--bg-card); border-bottom: 1px solid var(--accent-100);
+        flex-direction: column; padding: 1rem 1.25rem; gap: 0;
+      }
+
+      .nav-links.open { display: flex; }
+      .nav-links li { padding: 0.75rem 0; border-bottom: 1px solid var(--accent-50); }
+      .nav-links li:last-child { border-bottom: none; }
+      .nav-toggle { display: block; }
+      .detail-hero h1 { font-size: 1.25rem; }
+
+      .venue-image-inner {
+        flex-direction: column;
+      }
+
+      .venue-image img {
+        height: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">
+        <span class="nav-logo-img"><img src="../images/freit_logo_new.svg" alt="FREIT logo"></span>
+        <span class="nav-logo-text">FREIT</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+        <svg viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../conferences.html" class="active">Conferences</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="#" id="nav-contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="detail-hero">
+    <div class="detail-hero-inner">
+      <div class="breadcrumb">
+        <a href="../conferences.html">Conferences</a> / <a href="index.html">KETC</a> / <a href="ketc.html">2027</a> / Visitor Information
+      </div>
+      <span class="edition-badge">Visitor Information</span>
+      <h1>KETC 2027 — Seoul, South Korea</h1>
+      <div class="detail-subtitle">Korean Empirical Trade Conference &middot; January 15&ndash;16, 2027</div>
+      <div class="hero-divider"></div>
+    </div>
+  </header>
+
+  <section class="venue-image-section">
+    <div class="venue-image-inner">
+      <div class="venue-image-item">
+        <div class="venue-image">
+          <img src="images/yonsei4.jpg" alt="Yonsei University">
+        </div>
+        <div class="venue-caption">Yonsei University</div>
+      </div>
+      <div class="venue-image-item">
+        <div class="venue-image">
+          <img src="images/yonsei8.jpg" alt="Yonsei University">
+        </div>
+        <div class="venue-caption">Yonsei University</div>
+      </div>
+    </div>
+  </section>
+
+  <main class="content-body">
+
+    <!-- VENUE -->
+    <div class="info-section">
+      <h2>Venue</h2>
+      <div class="info-card">
+        <h3>Yonsei University</h3>
+        <p>The conference will be hosted by Yonsei University, one of South Korea's most prestigious private research universities. Founded in 1885, Yonsei is located in the Sinchon district of Seoul, a vibrant university neighbourhood in the western part of the city. The campus is known for its beautiful grounds and historic architecture blending with modern facilities.</p>
+        <div class="sub-heading">Address</div>
+        <p>Yonsei University, 50 Yonsei-ro, Seodaemun-gu, Seoul 03722, South Korea</p>
+        <p style="margin-top: 0.75rem;"><a href="https://www.google.com/maps/search/?api=1&query=Yonsei+University+Seoul" target="_blank" style="color: var(--accent-600); font-weight: 500;">View on Google Maps →</a></p>
+      </div>
+    </div>
+
+    <!-- GETTING THERE -->
+    <div class="info-section">
+      <h2>Getting there</h2>
+      <div class="info-card">
+        <div class="sub-heading">By air</div>
+        <p>Incheon International Airport (ICN) is Seoul's main international airport, located approximately 60 km west of the city. It is consistently ranked among the best airports in the world and serves direct flights from major cities across Asia, Europe, North America, and Oceania. Korean Air, Asiana Airlines, and numerous international carriers operate from Incheon.</p>
+        <p>Gimpo International Airport (GMP) handles primarily domestic flights and some short-haul international routes to Tokyo Haneda, Shanghai Hongqiao, Beijing, and Osaka. Gimpo is closer to central Seoul (approximately 18 km).</p>
+
+        <div class="sub-heading">From Incheon Airport</div>
+        <p>The Airport Railroad Express (AREX) runs direct trains to Seoul Station in approximately 43 minutes (express) or 58 minutes (all-stop). From Seoul Station, transfer to the subway to reach Yonsei University. Alternatively, airport limousine buses operate routes throughout Seoul, and taxis to central Seoul cost approximately ₩65,000–80,000 ($50–60 USD).</p>
+
+        <div class="sub-heading">From Gimpo Airport</div>
+        <p>Gimpo is connected to the Seoul subway system (Lines 5, 9, and AREX). The journey to the Sinchon area near Yonsei takes approximately 30–40 minutes by subway.</p>
+
+        <div class="tip-box">
+          <div class="tip-label">Tip</div>
+          <p>Get a T-money card at the airport convenience store or vending machine. It works on all subways, buses, and taxis across Seoul and can also be used at many convenience stores. The card costs ₩2,500 and can be recharged at any subway station.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ACCOMMODATION -->
+    <div class="info-section">
+      <h2>Accommodation</h2>
+      <div class="info-card">
+        <p>Seoul offers an enormous range of accommodation at all price levels. Hotels are grouped below by neighbourhood. Seoul's excellent subway system makes all areas easily accessible to Yonsei University.</p>
+        <p style="margin-top: 0.5rem; margin-bottom: 1rem;"><a href="https://www.google.com/maps/d/u/0/edit?mid=1Hj0n-e9XOOWbxv6CfI8UysHs8HOLrJ0&usp=sharing" target="_blank" style="color: var(--accent-600); font-weight: 500;">View venue and all hotels on Google Maps →</a></p>
+
+        <div class="hotel-area-label">Sinchon / Hongdae — near Yonsei University</div>
+
+        <div class="hotel-item">
+          <div class="hotel-name"><a href="https://www.marriott.com/hotels/travel/selak-ryse-autograph-collection/" target="_blank">RYSE, Autograph Collection</a></div>
+          <div class="hotel-detail">4-star · Hongdae, 10 min walk to Yonsei · Design hotel with rooftop bar · Modern rooms with city views</div>
+        </div>
+
+        <div class="hotel-item">
+          <div class="hotel-name"><a href="https://www.lottehotel.com/hongdae-l7/en.html" target="_blank">L7 Hongdae by Lotte</a></div>
+          <div class="hotel-detail">4-star · Hongdae Station, 15 min walk to Yonsei · Rooftop pool and bar · Trendy location</div>
+        </div>
+
+        <div class="hotel-item">
+          <div class="hotel-name"><a href="https://www.accor.com/en/city/hotels-seoul/mercure-ambassador-seoul-hongdae.html" target="_blank">Mercure Ambassador Seoul Hongdae</a></div>
+          <div class="hotel-detail">4-star · Hongdae, 12 min walk to Yonsei · Pool, fitness centre, restaurant · Family-friendly</div>
+        </div>
+
+        <div class="hotel-item">
+          <div class="hotel-name"><a href="https://www.ihg.com/holidayinnexpress/hotels/us/en/seoul/selhd/hoteldetail" target="_blank">Holiday Inn Express Seoul Hongdae</a></div>
+          <div class="hotel-detail">3-star · Hongdae Station, 15 min walk to Yonsei · Breakfast included · Good value</div>
+        </div>
+
+        <div class="hotel-area-label">Gangnam</div>
+
+        <div class="hotel-item">
+          <div class="hotel-name"><a href="https://www.shillastay.com/seocho/en" target="_blank">Shilla Stay Seocho</a></div>
+          <div class="hotel-detail">4-star · Seocho district · Modern design, fitness centre · 40 min to Yonsei by subway (Line 2 direct)</div>
+        </div>
+
+        <div class="hotel-item">
+          <div class="hotel-name"><a href="https://www.glad-hotel.com/gangnamcoex/en/" target="_blank">Glad Hotel Gangnam COEX</a></div>
+          <div class="hotel-detail">4-star · Near COEX Mall · Contemporary rooms, restaurant · 45 min to Yonsei by subway</div>
+        </div>
+
+        <div class="hotel-item">
+          <div class="hotel-name"><a href="https://www.lottehotel.com/gangnam-l7/en.html" target="_blank">L7 Gangnam by Lotte</a></div>
+          <div class="hotel-detail">4-star · Gangnam Station · Rooftop bar, stylish rooms · 35 min to Yonsei by subway (Line 2 direct)</div>
+        </div>
+
+        <div class="hotel-item">
+          <div class="hotel-name"><a href="https://www.marriott.com/hotels/travel/selga-ac-hotel-seoul-gangnam/" target="_blank">AC Hotel Seoul Gangnam</a></div>
+          <div class="hotel-detail">4-star · Gangnam · European-style design, lounge bar · 35 min to Yonsei by subway</div>
+        </div>
+
+        <div class="hotel-item">
+          <div class="hotel-name"><a href="https://www.marriott.com/hotels/travel/selal-aloft-seoul-gangnam/" target="_blank">Aloft Seoul Gangnam</a></div>
+          <div class="hotel-detail">4-star · Gangnam · Modern and vibrant, W XYZ bar · 35 min to Yonsei by subway</div>
+        </div>
+
+        <div class="hotel-area-label">Myeong-dong</div>
+
+        <div class="hotel-item">
+          <div class="hotel-name"><a href="https://www.marriott.com/hotels/travel/selmd-aloft-seoul-myeongdong/" target="_blank">Aloft Seoul Myeongdong</a></div>
+          <div class="hotel-detail">4-star · Central Myeongdong · Modern rooms, rooftop bar · 30 min to Yonsei by subway</div>
+        </div>
+
+        <div class="hotel-item">
+          <div class="hotel-name"><a href="https://www.lottehotel.com/myeongdong-l7/en.html" target="_blank">L7 Myeongdong by Lotte</a></div>
+          <div class="hotel-detail">4-star · Myeongdong Station · Rooftop terrace, city views · 30 min to Yonsei by subway</div>
+        </div>
+
+        <div class="hotel-item">
+          <div class="hotel-name"><a href="https://www.solariashotels.com/en/seoul-myeongdong/" target="_blank">Solaria Nishitetsu Hotel Seoul Myeongdong</a></div>
+          <div class="hotel-detail">4-star · Japanese-managed, excellent service · Near Myeongdong shopping · 30 min to Yonsei by subway</div>
+        </div>
+
+        <div class="hotel-item">
+          <div class="hotel-name"><a href="https://www.ninetreehotel.com/myeongdong/en/" target="_blank">Nine Tree Hotel Myeongdong</a></div>
+          <div class="hotel-detail">3-star · Central location, modern design · Good value · 30 min to Yonsei by subway</div>
+        </div>
+
+        <div class="hotel-item">
+          <div class="hotel-name"><a href="https://www.hotel28.co.kr/en/" target="_blank">Hotel28 Myeongdong</a></div>
+          <div class="hotel-detail">4-star boutique · Heart of Myeongdong shopping district · Stylish rooms · 30 min to Yonsei by subway</div>
+        </div>
+
+        <div class="hotel-item">
+          <div class="hotel-name"><a href="https://www.marriott.com/hotels/travel/selfp-four-points-seoul-myeongdong/" target="_blank">Four Points by Sheraton Josun, Seoul Myeongdong</a></div>
+          <div class="hotel-detail">4-star · Myeongdong · International brand, reliable quality · 30 min to Yonsei by subway</div>
+        </div>
+
+        <div class="tip-box">
+          <div class="tip-label">Tip</div>
+          <p>All areas listed are connected to Yonsei by Seoul's subway Line 2, which runs in a loop through the city. Sinchon/Hongdae hotels are the closest, while Gangnam and Myeongdong offer more shopping and dining options. January is low season for tourism, so hotel rates are generally reasonable.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- LOCAL TRANSPORTATION -->
+    <div class="info-section">
+      <h2>Local transportation</h2>
+      <div class="info-card">
+        <div class="sub-heading">Subway</div>
+        <p>Seoul's subway system is one of the most extensive and efficient in the world, with 23 lines covering the entire metropolitan area. Signs and announcements are in Korean, English, Chinese, and Japanese. Yonsei University is closest to Sinchon Station (Line 2) and Yonsei University Station (Gyeongui–Jungang Line). Single rides cost ₩1,400 ($1 USD) with a T-money card.</p>
+
+        <div class="sub-heading">Buses</div>
+        <p>Seoul's bus network is comprehensive and colour-coded by route type (blue for trunk routes, green for branch routes, red for express). Payment is by T-money card.</p>
+
+        <div class="sub-heading">Taxis</div>
+        <p>Taxis are plentiful and affordable. Regular taxis (orange or silver) start at ₩4,800. Most drivers use navigation apps, so having your destination in Korean on your phone is helpful. Kakao T is the most popular taxi-hailing app. Uber also operates in Seoul.</p>
+
+        <div class="sub-heading">Walking</div>
+        <p>The Sinchon and Hongdae neighbourhoods around Yonsei are very walkable, with abundant restaurants, cafés, and shops. The campus itself is a pleasant walk from the subway station.</p>
+      </div>
+    </div>
+
+    <!-- MEALS -->
+    <div class="info-section">
+      <h2>Meals</h2>
+      <div class="info-card">
+        <p>Conference registration includes lunches and a conference dinner. Details about the dinner venue will be communicated to registered participants.</p>
+        <p>Seoul is a food lover's paradise, offering everything from Michelin-starred restaurants to extraordinary street food. The Sinchon area near Yonsei is packed with affordable Korean restaurants popular with students and locals. Must-try dishes include Korean BBQ (samgyeopsal, galbi), bibimbap, kimchi jjigae, tteokbokki, and cold noodles (naengmyeon). The Hongdae neighbourhood, a short walk from campus, is one of Seoul's liveliest dining and nightlife districts.</p>
+      </div>
+    </div>
+
+    <!-- PRACTICAL INFORMATION -->
+    <div class="info-section">
+      <h2>Practical information</h2>
+      <div class="info-card">
+        <div class="sub-heading">Currency</div>
+        <p>South Korean Won (₩ / KRW). As of 2027, approximately ₩1,350 = 1 USD. Credit cards are accepted almost everywhere in Seoul — South Korea is one of the most cashless societies in the world. ATMs that accept international cards are available at convenience stores (CU, GS25, 7-Eleven) and banks.</p>
+
+        <div class="sub-heading">Language</div>
+        <p>Korean. English signage is widespread on public transport and in tourist areas. English proficiency varies — it is commonly spoken at hotels, the university, and in tourist-oriented businesses. Having a translation app (Google Translate or Papago, which is particularly good for Korean) on your phone is recommended.</p>
+
+        <div class="sub-heading">Weather</div>
+        <p>January in Seoul is cold and dry, with average temperatures around −6°C to 1°C (21–34°F). Snow is possible. Warm winter clothing is essential — a heavy coat, layers, hat, gloves, and warm shoes. Indoor spaces including the subway, restaurants, and the conference venue are well heated.</p>
+
+        <div class="sub-heading">Visa requirements</div>
+        <p>South Korea offers visa-free entry for citizens of many countries, including the US (up to 90 days), EU member states, UK, Canada, Australia, and Japan. Visitors from visa-free countries must apply for a K-ETA (Korea Electronic Travel Authorization) before travel. Check with the <a href="https://www.visa.go.kr/main/openMain.do" target="_blank">Korea Immigration Service</a> for specific requirements.</p>
+
+        <div class="sub-heading">Power supply</div>
+        <p>South Korea uses Type C and Type F plugs (220V, 60Hz), the same as most of Europe. Visitors from North America, UK, and Australia will need an adapter.</p>
+
+        <div class="sub-heading">Time zone</div>
+        <p>Korea Standard Time (KST), UTC+9. South Korea does not observe daylight saving time.</p>
+
+        <div class="sub-heading">Wi-Fi &amp; connectivity</div>
+        <p>South Korea has some of the fastest internet in the world. Free Wi-Fi is available at the conference venue, on the subway, in most cafés, and in many public spaces. Portable Wi-Fi devices (pocket Wi-Fi) and prepaid SIM cards can be rented or purchased at the airport.</p>
+
+        <div class="sub-heading">Emergency numbers</div>
+        <p>Emergency: 112 (police) / 119 (fire &amp; ambulance) · Tourist helpline (multilingual, 24/7): 1330</p>
+      </div>
+    </div>
+
+    <!-- ABOUT SEOUL -->
+    <div class="info-section">
+      <h2>About Seoul</h2>
+      <div class="info-card">
+        <p>Seoul, the capital of South Korea, is a dynamic megacity of over 10 million people where centuries-old palaces sit alongside gleaming skyscrapers. The city seamlessly blends tradition and modernity — you can visit a 600-year-old Joseon Dynasty palace in the morning and explore cutting-edge technology districts in the afternoon.</p>
+        <p>For those with extra time, highlights include the historic palaces of Gyeongbokgung and Changdeokgung, the traditional Bukchon Hanok Village, the bustling Namdaemun and Gwangjang markets, the trendy Gangnam and Itaewon districts, and N Seoul Tower on Namsan Mountain for panoramic city views. The Demilitarized Zone (DMZ) on the border with North Korea is a popular half-day excursion from Seoul. In winter, the city's excellent heated cafés and the jimjilbang (Korean bathhouse/spa) culture offer a welcome retreat from the cold.</p>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <span>&copy; 2026 FREIT. All rights reserved. Based at Georgia Institute of Technology.</span>
+      <span id="footer-email"></span>
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      var u = 'freit';
+      var d = 'gatech.edu';
+      var e = u + '@' + d;
+      var m = 'mailto:' + e;
+      var nav = document.getElementById('nav-contact');
+      if (nav) { nav.href = m; }
+      var fe = document.getElementById('footer-email');
+      if (fe) { fe.innerHTML = '<a href="' + m + '" style="color:var(--accent-600);transition:color 0.2s;">' + e + '</a>'; }
+    })();
+  </script>
+
+</body>
+</html>
