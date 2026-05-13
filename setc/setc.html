@@ -277,6 +277,47 @@
       filter: grayscale(0%);
     }
 
+    /* ===== SPONSORS ROW ===== */
+    .sponsors-row {
+      max-width: var(--max-width);
+      margin: 0.75rem auto 0;
+      display: flex;
+      align-items: baseline;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .sponsors-row-label {
+      font-size: 0.6875rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--accent-600);
+      font-weight: 600;
+      margin-right: 0.25rem;
+    }
+
+    .sponsors-row-list {
+      display: flex;
+      gap: 0.35rem;
+      flex-wrap: wrap;
+      font-size: 0.875rem;
+      color: var(--navy-400);
+    }
+
+    .sponsors-row-list a {
+      color: var(--navy-600);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .sponsors-row-list a:hover {
+      color: var(--accent-600);
+    }
+
+    .sponsors-row-list .sep {
+      color: var(--navy-200);
+    }
+
     @media (max-width: 768px) {
       .venue-image-inner {
         max-width: var(--max-width);
@@ -290,6 +331,11 @@
       .venue-image img {
         width: 100%;
         height: auto;
+      }
+
+      .sponsors-row {
+        flex-direction: column;
+        gap: 0.35rem;
       }
     }
 
@@ -559,7 +605,7 @@
         <div class="venue-caption">Alghero, Italy</div>
       </div>
       <div class="sponsor-col">
-        <div class="sponsor-label">Sponsored by</div>
+        <div class="sponsor-label">Organizing Institutions</div>
         <div class="sponsor-list">
           <a href="https://www.unimi.it/en" class="sponsor-item" target="_blank">
             <img src="images/unimi.svg" style="height: 120px; max-height: none;" alt="University of Milan">
@@ -570,6 +616,16 @@
           <a href="https://crenos.unica.it/crenos/about" target="_blank">
             <img src="images/crenos2.svg" style="height: 120px; max-height: none;" alt="CRENoS" >
           </a>
+        </div>
+      </div>
+      <div class="sponsors-row">
+        <span class="sponsors-row-label">Sponsors</span>
+        <div class="sponsors-row-list">
+          <a href="https://www.fondazionedisardegna.it/" target="_blank">Fondazione di Sardegna</a>
+          <span class="sep">&middot;</span>
+          <a href="https://web.unica.it/unica/en/dip_scienzeecoaziend.page" target="_blank">SEA Department, UNICA</a>
+          <span class="sep">&middot;</span>
+          <a href="https://www.garanziaetica.it/" target="_blank">Garanzia Etica</a>
         </div>
       </div>
     </div>
