@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — FREIT</title>
+  <meta name="description" content="Privacy Policy for the Forum for Research in Empirical International Trade (FREIT).">
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+  <link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96x96.png">
+  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,300;8..60,400;8..60,600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    :root {
+      --navy-900: #1a1f3a;
+      --navy-800: #242b4a;
+      --navy-700: #2e3660;
+      --navy-600: #3d4578;
+      --navy-400: #6b7199;
+      --navy-200: #b0b4cc;
+      --navy-100: #d8dae6;
+      --navy-50: #eef0f5;
+
+      --accent-700: #8a6d3b;
+      --accent-600: #a07d45;
+      --accent-500: #c4985a;
+      --accent-400: #d4b07a;
+      --accent-300: #e0c99e;
+      --accent-200: #e8dcc8;
+      --accent-100: #f0e8d8;
+      --accent-50: #f7f3eb;
+
+      --bg-page: #faf9f7;
+      --bg-card: #ffffff;
+
+      --font-display: 'Source Serif 4', Georgia, serif;
+      --font-body: 'DM Sans', system-ui, sans-serif;
+
+      --max-width: 1080px;
+      --side-padding: 2.5rem;
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--navy-900);
+      background: var(--bg-page);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* ===== NAVIGATION ===== */
+    .nav {
+      background: var(--bg-card);
+      border-bottom: 1px solid var(--accent-100);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0.65rem var(--side-padding);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .nav-logo-img {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--accent-50);
+      border: 1px solid var(--accent-200);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .nav-logo-img img {
+      width: 26px;
+      height: 26px;
+      object-fit: contain;
+    }
+
+    .nav-logo-text {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 1.125rem;
+      color: var(--navy-900);
+      letter-spacing: 2px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      font-size: 0.8125rem;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    .nav-links a {
+      color: var(--navy-400);
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--navy-900); }
+
+    .nav-links a.active {
+      color: var(--accent-600);
+      border-bottom: 1.5px solid var(--accent-500);
+      padding-bottom: 2px;
+    }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    .nav-toggle svg {
+      display: block;
+      width: 24px;
+      height: 24px;
+      stroke: var(--navy-900);
+      stroke-width: 2;
+      fill: none;
+    }
+
+    /* ===== HERO ===== */
+    .page-hero {
+      background: linear-gradient(135deg, var(--navy-900) 0%, var(--navy-700) 100%);
+      padding: 2.5rem var(--side-padding);
+    }
+
+    .page-hero-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .page-hero h1 {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #ffffff;
+    }
+
+    /* ===== CONTENT ===== */
+    .content-section {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 2.5rem var(--side-padding) 3rem;
+    }
+
+    .policy-content h2 {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--navy-800);
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .policy-content h2:first-child {
+      margin-top: 0;
+    }
+
+    .policy-content p {
+      font-size: 0.9375rem;
+      line-height: 1.7;
+      color: var(--navy-600);
+      margin-bottom: 1rem;
+    }
+
+    .policy-content ul {
+      list-style: disc;
+      margin-left: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .policy-content ul li {
+      font-size: 0.9375rem;
+      line-height: 1.7;
+      color: var(--navy-600);
+      margin-bottom: 0.35rem;
+    }
+
+    .policy-content a {
+      color: var(--accent-600);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .policy-content a:hover {
+      color: var(--accent-700);
+    }
+
+    .last-updated {
+      font-size: 0.8125rem;
+      color: var(--navy-400);
+      margin-bottom: 2rem;
+      font-style: italic;
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      background: var(--bg-card);
+      border-top: 1px solid var(--accent-100);
+    }
+
+    .footer-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 1.25rem var(--side-padding);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.75rem;
+      color: var(--navy-200);
+    }
+
+    .footer a {
+      color: var(--accent-600);
+      transition: color 0.2s;
+    }
+
+    .footer a:hover { color: var(--accent-700); }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      :root {
+        --side-padding: 1.25rem;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--bg-card);
+        border-bottom: 1px solid var(--accent-100);
+        flex-direction: column;
+        padding: 1rem 1.25rem;
+        gap: 0;
+      }
+
+      .nav-links.open { display: flex; }
+
+      .nav-links li {
+        padding: 0.75rem 0;
+        border-bottom: 1px solid var(--accent-50);
+      }
+
+      .nav-links li:last-child { border-bottom: none; }
+
+      .nav-toggle { display: block; }
+
+      .page-hero h1 { font-size: 1.25rem; }
+
+      .footer-inner {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <span class="nav-logo-img"><img src="images/freit_logo_new.svg" alt="FREIT logo"></span>
+        <span class="nav-logo-text">FREIT</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+        <svg viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="conferences.html">Conferences</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="#" id="nav-contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="page-hero">
+    <div class="page-hero-inner">
+      <h1>Privacy Policy</h1>
+    </div>
+  </header>
+
+  <!-- CONTENT -->
+  <section class="content-section">
+    <div class="policy-content">
+      <p class="last-updated">Last updated: 17 May 2026</p>
+
+      <h2>Who We Are</h2>
+      <p>The Forum for Research in Empirical International Trade (FREIT) is an international academic organization dedicated to furthering research in empirical international trade. FREIT is based at the Georgia Institute of Technology. For any privacy-related inquiries, you may contact us at <span id="contact-email"></span>.</p>
+
+      <h2>What Data We Collect</h2>
+      <p>We collect only the minimum personal data necessary to fulfil the purposes described below:</p>
+      <ul>
+        <li><strong>Name and email address</strong> — provided when you subscribe to our mailing list.</li>
+        <li><strong>Name, email address, and affiliation</strong> — provided when you submit a paper or proposal to one of our conferences.</li>
+      </ul>
+      <p>We do not collect any special category data (e.g., racial or ethnic origin, political opinions, health data) or data from automated tracking technologies such as cookies for profiling purposes.</p>
+
+      <h2>Legal Basis for Processing (GDPR Art. 6)</h2>
+      <p>We process your personal data on the basis of your <strong>consent</strong> (Art. 6(1)(a) GDPR), which you provide when you voluntarily subscribe to our mailing list or submit information to our conferences. You may withdraw your consent at any time without affecting the lawfulness of processing carried out prior to withdrawal.</p>
+
+      <h2>How We Use Your Data</h2>
+      <p>Your personal data is used exclusively for the following purposes:</p>
+      <ul>
+        <li>Communicating information about FREIT conferences, calls for papers, and related academic events via our mailing list.</li>
+        <li>Processing and managing conference submissions, including corresponding with authors regarding acceptance decisions and logistics.</li>
+      </ul>
+
+      <h2>Data Sharing and Disclosure</h2>
+      <p><strong>We do not sell, rent, trade, or otherwise share your personal data with any third parties.</strong> Your information is used solely by FREIT for the purposes stated above. We do not disclose your data to commercial entities, advertisers, or data brokers under any circumstances.</p>
+      <p>In the limited case where we use third-party service providers for email delivery or conference management, those providers process data only on our behalf and under contractual obligations to maintain confidentiality and security consistent with GDPR requirements.</p>
+
+      <h2>Data Retention</h2>
+      <p>We retain your personal data only for as long as necessary to fulfil the purposes for which it was collected:</p>
+      <ul>
+        <li><strong>Mailing list subscribers:</strong> your data is retained until you unsubscribe or request deletion.</li>
+        <li><strong>Conference submissions:</strong> submission data is retained for a reasonable period following the conclusion of the conference for archival and organizational purposes, after which it is deleted.</li>
+      </ul>
+
+      <h2>Your Rights Under the GDPR</h2>
+      <p>If you are located in the European Economic Area (EEA) or the United Kingdom, you have the following rights regarding your personal data:</p>
+      <ul>
+        <li><strong>Right of access</strong> — You may request a copy of the personal data we hold about you.</li>
+        <li><strong>Right to rectification</strong> — You may request correction of inaccurate or incomplete data.</li>
+        <li><strong>Right to erasure</strong> — You may request deletion of your personal data where there is no compelling reason for its continued processing.</li>
+        <li><strong>Right to restrict processing</strong> — You may request that we limit how we use your data.</li>
+        <li><strong>Right to data portability</strong> — You may request your data in a structured, commonly used, machine-readable format.</li>
+        <li><strong>Right to withdraw consent</strong> — You may withdraw your consent at any time by contacting us or unsubscribing from our mailing list.</li>
+        <li><strong>Right to lodge a complaint</strong> — You have the right to lodge a complaint with a supervisory authority in your country of residence.</li>
+      </ul>
+      <p>To exercise any of these rights, please contact us at the email address provided above.</p>
+
+      <h2>Data Security</h2>
+      <p>We implement appropriate technical and organizational measures to protect your personal data against unauthorized access, alteration, disclosure, or destruction. Access to personal data is limited to authorized personnel who require it to perform their duties.</p>
+
+      <h2>International Data Transfers</h2>
+      <p>As FREIT is based in the United States, personal data collected from individuals in the EEA or UK may be transferred to and processed in the United States. Where such transfers occur, we take steps to ensure your data is protected in accordance with applicable data protection law.</p>
+
+      <h2>Changes to This Policy</h2>
+      <p>We may update this privacy policy from time to time. Any changes will be posted on this page with an updated revision date. We encourage you to review this policy periodically.</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <span>&copy; 2026 FREIT. All rights reserved. Based at Georgia Institute of Technology.</span>
+      <span id="footer-email"></span>
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      var u = 'freit';
+      var d = 'gatech.edu';
+      var e = u + '@' + d;
+      var m = 'mailto:' + e;
+      var nav = document.getElementById('nav-contact');
+      if (nav) { nav.href = m; }
+      var fe = document.getElementById('footer-email');
+      if (fe) { fe.innerHTML = '<a href="' + m + '" style="color:var(--accent-600);transition:color 0.2s;">' + e + '</a>'; }
+      var ce = document.getElementById('contact-email');
+      if (ce) { ce.innerHTML = '<a href="' + m + '" style="color:var(--accent-600);text-decoration:underline;text-underline-offset:2px;">' + e + '</a>'; }
+    })();
+  </script>
+</body>
+</html>
