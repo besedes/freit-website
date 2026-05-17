@@ -298,6 +298,59 @@
       color: var(--accent-700);
     }
 
+    /* ===== MAILING LIST ===== */
+    .mailing-list {
+      background: var(--navy-900);
+    }
+
+    .mailing-list-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 2.5rem var(--side-padding);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    .mailing-list-text h3 {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 1.125rem;
+      color: white;
+      margin-bottom: 4px;
+    }
+
+    .mailing-list-text p {
+      font-size: 0.8125rem;
+      color: var(--navy-200);
+      line-height: 1.5;
+    }
+
+    .mailing-list-form {
+      display: flex;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .mailing-list-form button {
+      padding: 10px 22px;
+      background: var(--accent-500);
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 0.8125rem;
+      font-weight: 500;
+      font-family: var(--font-body);
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background 0.15s;
+    }
+
+    .mailing-list-form button:hover {
+      background: var(--accent-600);
+    }
+
     /* ===== FADE-IN ANIMATION ===== */
     .fade-up {
       opacity: 0;
@@ -461,6 +514,19 @@
         <div class="conf-card-meta"><span class="conf-dot"></span> Kazakhstan</div>
       </a>
 
+    </div>
+  </section>
+
+  <!-- MAILING LIST -->
+  <section class="mailing-list">
+    <div class="mailing-list-inner">
+      <div class="mailing-list-text">
+        <h3>Stay informed</h3>
+        <p>Join our mailing list to receive updates about upcoming conferences and calls for papers.</p>
+      </div>
+      <a href="subscribe.html" class="mailing-list-form" style="text-decoration:none;">
+        <button type="button">Subscribe</button>
+      </a>
     </div>
   </section>
 

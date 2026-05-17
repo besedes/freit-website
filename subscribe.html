@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Subscribe — FREIT</title>
+  <meta name="description" content="Subscribe to the FREIT mailing list to receive conference announcements and calls for papers.">
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+  <link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96x96.png">
+  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,300;8..60,400;8..60,600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    :root {
+      --navy-900: #1a1f3a;
+      --navy-800: #242b4a;
+      --navy-700: #2e3660;
+      --navy-600: #3d4578;
+      --navy-400: #6b7199;
+      --navy-200: #b0b4cc;
+      --navy-100: #d8dae6;
+      --navy-50: #eef0f5;
+
+      --accent-700: #8a6d3b;
+      --accent-600: #a07d45;
+      --accent-500: #c4985a;
+      --accent-400: #d4b07a;
+      --accent-300: #e0c99e;
+      --accent-200: #e8dcc8;
+      --accent-100: #f0e8d8;
+      --accent-50: #f7f3eb;
+
+      --bg-page: #faf9f7;
+      --bg-card: #ffffff;
+
+      --font-display: 'Source Serif 4', Georgia, serif;
+      --font-body: 'DM Sans', system-ui, sans-serif;
+
+      --max-width: 1080px;
+      --side-padding: 2.5rem;
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--navy-900);
+      background: var(--bg-page);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* ===== NAVIGATION ===== */
+    .nav {
+      background: var(--bg-card);
+      border-bottom: 1px solid var(--accent-100);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0.65rem var(--side-padding);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .nav-logo-img {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--accent-50);
+      border: 1px solid var(--accent-200);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .nav-logo-img img {
+      width: 26px;
+      height: 26px;
+      object-fit: contain;
+    }
+
+    .nav-logo-text {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 1.125rem;
+      color: var(--navy-900);
+      letter-spacing: 2px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      font-size: 0.8125rem;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    .nav-links a {
+      color: var(--navy-400);
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--navy-900); }
+
+    .nav-links a.active {
+      color: var(--accent-600);
+      border-bottom: 1.5px solid var(--accent-500);
+      padding-bottom: 2px;
+    }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    .nav-toggle svg {
+      display: block;
+      width: 24px;
+      height: 24px;
+      stroke: var(--navy-900);
+      stroke-width: 2;
+      fill: none;
+    }
+
+    /* ===== HERO ===== */
+    .page-hero {
+      background: var(--bg-card);
+      padding: 2.5rem var(--side-padding) 2rem;
+    }
+
+    .page-hero-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .page-hero h1 {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 1.5rem;
+      color: var(--navy-900);
+      margin-bottom: 0.5rem;
+    }
+
+    .page-hero p {
+      font-size: 0.9375rem;
+      color: var(--navy-400);
+      line-height: 1.65;
+    }
+
+    .hero-divider {
+      width: 40px;
+      height: 2px;
+      background: var(--accent-500);
+      margin: 1.25rem 0 0;
+    }
+
+    /* ===== SECTIONS ===== */
+    .section {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 2.5rem var(--side-padding) 0;
+    }
+
+    .section:last-of-type {
+      padding-bottom: 3rem;
+    }
+
+    .section-label {
+      font-size: 0.6875rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--accent-600);
+      font-weight: 600;
+      margin-bottom: 1.25rem;
+    }
+
+    /* ===== SIGNUP FORM CONTAINER ===== */
+    .signup-container {
+      background: var(--bg-card);
+      border: 1px solid var(--accent-100);
+      border-radius: 10px;
+      padding: 2rem 2.5rem;
+      max-width: 540px;
+    }
+
+    .signup-container p {
+      font-size: 0.9rem;
+      color: var(--navy-400);
+      line-height: 1.75;
+      margin-bottom: 1.5rem;
+    }
+
+    /* ===== MAILCHIMP FORM OVERRIDES ===== */
+    #mc_embed_signup {
+      background: transparent !important;
+      font-family: var(--font-body) !important;
+      width: 100% !important;
+      clear: left;
+    }
+
+    #mc_embed_signup h2 {
+      display: none;
+    }
+
+    #mc_embed_signup .indicates-required {
+      font-size: 0.75rem;
+      color: var(--navy-400);
+      margin-bottom: 1rem;
+    }
+
+    #mc_embed_signup .mc-field-group {
+      margin-bottom: 1rem;
+      padding-bottom: 0;
+      min-height: 0;
+    }
+
+    #mc_embed_signup .mc-field-group label {
+      font-family: var(--font-body);
+      font-size: 0.8125rem;
+      font-weight: 500;
+      color: var(--navy-900);
+      margin-bottom: 6px;
+      display: block;
+    }
+
+    #mc_embed_signup .mc-field-group input[type="email"],
+    #mc_embed_signup .mc-field-group input[type="text"] {
+      width: 100% !important;
+      padding: 10px 14px;
+      border: 1px solid var(--accent-200);
+      border-radius: 6px;
+      background: var(--bg-page);
+      font-family: var(--font-body);
+      font-size: 0.875rem;
+      color: var(--navy-900);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    #mc_embed_signup .mc-field-group input[type="email"]:focus,
+    #mc_embed_signup .mc-field-group input[type="text"]:focus {
+      border-color: var(--accent-500);
+    }
+
+    #mc_embed_signup #mergeRow-gdpr {
+      margin-top: 1.25rem;
+      padding: 1.25rem;
+      background: var(--accent-50);
+      border-radius: 8px;
+      border: 1px solid var(--accent-100);
+    }
+
+    #mc_embed_signup #mergeRow-gdpr .content__gdpr > label {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 0.9375rem;
+      color: var(--navy-900);
+      margin-bottom: 6px;
+    }
+
+    #mc_embed_signup #mergeRow-gdpr .content__gdpr > p {
+      font-size: 0.8125rem;
+      color: var(--navy-400);
+      line-height: 1.6;
+      margin-bottom: 0.75rem;
+    }
+
+    #mc_embed_signup #mergeRow-gdpr .content__gdprLegal p {
+      font-size: 0.75rem;
+      color: var(--navy-400);
+      line-height: 1.6;
+      margin-top: 0.75rem;
+    }
+
+    #mc_embed_signup #mergeRow-gdpr .content__gdprLegal a {
+      color: var(--accent-600);
+      text-decoration: underline;
+    }
+
+    #mc_embed_signup #mergeRow-gdpr .content__gdprLegal a:hover {
+      color: var(--accent-700);
+    }
+
+    #mc_embed_signup .gdprRequired label.checkbox {
+      font-size: 0.8125rem;
+      color: var(--navy-900);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+    }
+
+    #mc_embed_signup .gdprRequired input[type="checkbox"] {
+      width: 16px;
+      height: 16px;
+      accent-color: var(--accent-500);
+    }
+
+    #mc_embed_signup .mc_fieldset {
+      border: none !important;
+      padding: 0 !important;
+      min-height: 0 !important;
+    }
+
+    #mc_embed_signup .button {
+      background: var(--accent-500) !important;
+      color: white !important;
+      border: none !important;
+      border-radius: 6px !important;
+      padding: 11px 28px !important;
+      font-family: var(--font-body) !important;
+      font-size: 0.875rem !important;
+      font-weight: 500 !important;
+      cursor: pointer;
+      transition: background 0.15s;
+      margin-top: 1rem !important;
+      height: auto !important;
+      line-height: normal !important;
+    }
+
+    #mc_embed_signup .button:hover {
+      background: var(--accent-600) !important;
+    }
+
+    #mc_embed_signup .asterisk {
+      color: var(--accent-500);
+    }
+
+    #mc_embed_signup div.response {
+      font-size: 0.8125rem;
+      margin: 0.5rem 0;
+      padding: 0.75rem 1rem;
+      border-radius: 6px;
+    }
+
+    #mc_embed_signup #mce-error-response {
+      color: #b91c1c;
+      background: #fef2f2;
+    }
+
+    #mc_embed_signup #mce-success-response {
+      color: #166534;
+      background: #f0fdf4;
+    }
+
+    /* ===== CONTACT ===== */
+    .contact-section {
+      background: var(--bg-card);
+      border-top: 1px solid var(--accent-100);
+    }
+
+    .contact-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 2.5rem var(--side-padding);
+    }
+
+    .contact-item {
+      font-size: 0.8125rem;
+      color: var(--navy-400);
+      margin-bottom: 4px;
+      line-height: 1.5;
+    }
+
+    .contact-item strong {
+      color: var(--navy-900);
+      font-weight: 500;
+    }
+
+    .contact-email {
+      color: var(--accent-600);
+      font-size: 0.8125rem;
+      transition: color 0.2s;
+    }
+
+    .contact-email:hover { color: var(--accent-700); }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      background: var(--bg-card);
+      border-top: 1px solid var(--accent-100);
+    }
+
+    .footer-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 1.25rem var(--side-padding);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.75rem;
+      color: var(--navy-200);
+    }
+
+    .footer a {
+      color: var(--accent-600);
+      transition: color 0.2s;
+    }
+
+    .footer a:hover { color: var(--accent-700); }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      :root {
+        --side-padding: 1.25rem;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--bg-card);
+        border-bottom: 1px solid var(--accent-100);
+        flex-direction: column;
+        padding: 1rem 1.25rem;
+        gap: 0;
+      }
+
+      .nav-links.open { display: flex; }
+
+      .nav-links li {
+        padding: 0.75rem 0;
+        border-bottom: 1px solid var(--accent-50);
+      }
+
+      .nav-links li:last-child { border-bottom: none; }
+
+      .nav-toggle { display: block; }
+
+      .page-hero h1 { font-size: 1.25rem; }
+
+      .signup-container {
+        padding: 1.5rem 1.25rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <span class="nav-logo-img"><img src="images/freit_logo_new.svg" alt="FREIT logo"></span>
+        <span class="nav-logo-text">FREIT</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+        <svg viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="conferences.html">Conferences</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="#" id="nav-contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="page-hero">
+    <div class="page-hero-inner">
+      <h1>Subscribe to Our Mailing List</h1>
+      <p>Stay informed about upcoming FREIT conferences, calls for papers, and other announcements.</p>
+      <div class="hero-divider"></div>
+    </div>
+  </header>
+
+  <!-- SIGNUP FORM -->
+  <section class="section" style="padding-bottom: 3rem;">
+    <div class="section-label">Sign up</div>
+    <div class="signup-container">
+
+      <!-- BEGIN MAILCHIMP EMBEDDED FORM -->
+      <div id="mc_embed_signup">
+        <form action="https://freit.us19.list-manage.com/subscribe/post?u=cf488fc44b1db1f745748cb0b&amp;id=8e58ce2df5&amp;v_id=4948&amp;f_id=008a70e7f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
+          <div id="mc_embed_signup_scroll">
+            <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
+            <div class="mc-field-group">
+              <label for="mce-EMAIL">Email Address <span class="asterisk">*</span></label>
+              <input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required="" value="">
+            </div>
+            <div class="mc-field-group">
+              <label for="mce-FNAME">First Name <span class="asterisk">*</span></label>
+              <input type="text" name="FNAME" class="required text" id="mce-FNAME" required="" value="">
+            </div>
+            <div class="mc-field-group">
+              <label for="mce-LNAME">Last Name <span class="asterisk">*</span></label>
+              <input type="text" name="LNAME" class="required text" id="mce-LNAME" required="" value="">
+            </div>
+            <div id="mergeRow-gdpr" class="mergeRow gdpr-mergeRow content__gdprBlock mc-field-group">
+              <div class="content__gdpr">
+                <label>FREIT</label>
+                <p>The Forum for Research in Empirical International Trade is an organization focused on promoting academic research in empirical international trade.</p>
+                <fieldset class="mc_fieldset gdprRequired mc-field-group" name="interestgroup_field">
+                  <label class="checkbox subfield" for="gdpr124853">
+                    <input type="checkbox" id="gdpr_124853" name="gdpr[124853]" class="gdpr" value="Y">
+                    <span>FREIT information</span>
+                  </label>
+                </fieldset>
+                <p>You can unsubscribe at any time by clicking the link in the footer of our emails. For information about our privacy practices, please visit our website.</p>
+              </div>
+              <div class="content__gdprLegal">
+                <p>We use Mailchimp as our marketing platform. By clicking below to subscribe, you acknowledge that your information will be transferred to Mailchimp for processing. <a href="https://mailchimp.com/legal/terms">Learn more</a> about Mailchimp's privacy practices.</p>
+              </div>
+            </div>
+            <div id="mce-responses" class="clear">
+              <div class="response" id="mce-error-response" style="display: none;"></div>
+              <div class="response" id="mce-success-response" style="display: none;"></div>
+            </div>
+            <div aria-hidden="true" style="position: absolute; left: -5000px;">
+              <input type="text" name="b_cf488fc44b1db1f745748cb0b_8e58ce2df5" tabindex="-1" value="">
+            </div>
+            <div class="clear">
+              <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button" value="Subscribe">
+            </div>
+          </div>
+        </form>
+      </div>
+      <!-- END MAILCHIMP EMBEDDED FORM -->
+
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact-section">
+    <div class="contact-inner">
+      <div class="section-label">Contact</div>
+      <div class="contact-item"><strong>Tibor Besedeš</strong>, Executive Director</div>
+      <div class="contact-item"><a href="https://econ.gatech.edu" target="_blank"> School of Economics, Georgia Institute of Technology, Atlanta, GA 30332-0615</a></div>
+      <span id="contact-email" class="contact-email"></span>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <span>&copy; 2026 FREIT. All rights reserved. Based at Georgia Institute of Technology. · <a href="privacy-policy.html">Privacy Policy</a></span>
+      <span id="footer-email"></span>
+    </div>
+  </footer>
+
+  <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
+  <script type="text/javascript">
+    (function($) {
+      window.fnames = new Array();
+      window.ftypes = new Array();
+      fnames[0]='EMAIL'; ftypes[0]='email';
+      fnames[1]='FNAME'; ftypes[1]='text';
+      fnames[2]='LNAME'; ftypes[2]='text';
+    }(jQuery));
+    var $mcj = jQuery.noConflict(true);
+  </script>
+
+  <script>
+    (function() {
+      var u = 'freit';
+      var d = 'gatech.edu';
+      var e = u + '@' + d;
+      var m = 'mailto:' + e;
+      var nav = document.getElementById('nav-contact');
+      if (nav) { nav.href = m; }
+      var fe = document.getElementById('footer-email');
+      if (fe) { fe.innerHTML = '<a href="' + m + '" style="color:var(--accent-600);transition:color 0.2s;">' + e + '</a>'; }
+      var ce = document.getElementById('contact-email');
+      if (ce) { ce.innerHTML = '<a href="' + m + '" class="contact-email">' + e + '</a>'; }
+    })();
+  </script>
+</body>
+</html>
