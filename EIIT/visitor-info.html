@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visitor Information — EIIT 2026 | FREIT</title>
+  <meta name="description" content="Travel, accommodation, and practical information for the EIIT 2026 conference at Indiana University Bloomington, Indiana, USA.">
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+  <link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96x96.png">
+  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,300;8..60,400;8..60,600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    :root {
+      --navy-900: #1a1f3a;
+      --navy-800: #242b4a;
+      --navy-700: #2e3660;
+      --navy-600: #3d4578;
+      --navy-400: #6b7199;
+      --navy-200: #b0b4cc;
+      --navy-100: #d8dae6;
+      --navy-50: #eef0f5;
+      --accent-700: #8a6d3b;
+      --accent-600: #a07d45;
+      --accent-500: #c4985a;
+      --accent-400: #d4b07a;
+      --accent-300: #e0c99e;
+      --accent-200: #e8dcc8;
+      --accent-100: #f0e8d8;
+      --accent-50: #f7f3eb;
+      --bg-page: #faf9f7;
+      --bg-card: #ffffff;
+      --font-display: 'Source Serif 4', Georgia, serif;
+      --font-body: 'DM Sans', system-ui, sans-serif;
+      --max-width: 1080px;
+      --side-padding: 2.5rem;
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--navy-900);
+      background: var(--bg-page);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .nav {
+      background: var(--bg-card);
+      border-bottom: 1px solid var(--accent-100);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0.65rem var(--side-padding);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo { display: flex; align-items: center; gap: 10px; }
+
+    .nav-logo-img {
+      width: 36px; height: 36px; border-radius: 50%;
+      background: var(--accent-50); border: 1px solid var(--accent-200);
+      display: flex; align-items: center; justify-content: center; overflow: hidden;
+    }
+
+    .nav-logo-img img { width: 26px; height: 26px; object-fit: contain; }
+
+    .nav-logo-text {
+      font-family: var(--font-display); font-weight: 600;
+      font-size: 1.125rem; color: var(--navy-900); letter-spacing: 2px;
+    }
+
+    .nav-links {
+      display: flex; gap: 2rem; list-style: none;
+      font-size: 0.8125rem; font-weight: 500; letter-spacing: 0.5px; text-transform: uppercase;
+    }
+
+    .nav-links a { color: var(--navy-400); transition: color 0.2s; }
+    .nav-links a:hover { color: var(--navy-900); }
+    .nav-links a.active { color: var(--accent-600); border-bottom: 1.5px solid var(--accent-500); padding-bottom: 2px; }
+
+    .nav-toggle {
+      display: none; background: none; border: none; cursor: pointer; padding: 4px;
+    }
+
+    .nav-toggle svg {
+      display: block; width: 24px; height: 24px;
+      stroke: var(--navy-900); stroke-width: 2; fill: none;
+    }
+
+    .detail-hero {
+      background: var(--bg-card);
+      padding: 2.5rem var(--side-padding) 0;
+    }
+
+    .detail-hero-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .breadcrumb { font-size: 0.8125rem; color: var(--navy-200); margin-bottom: 1rem; }
+    .breadcrumb a { color: var(--accent-600); transition: color 0.2s; }
+    .breadcrumb a:hover { color: var(--accent-700); }
+
+    .edition-badge {
+      font-size: 0.6875rem; font-weight: 600; text-transform: uppercase;
+      letter-spacing: 0.5px; padding: 3px 12px; border-radius: 4px;
+      background: var(--accent-50); color: var(--accent-700);
+      display: inline-block; margin-bottom: 8px;
+    }
+
+    .detail-hero h1 {
+      font-family: var(--font-display); font-weight: 600; font-size: 1.5rem;
+      color: var(--navy-900); margin-bottom: 0.25rem;
+    }
+
+    .detail-subtitle { font-size: 0.9375rem; color: var(--navy-400); }
+
+    .hero-divider { width: 40px; height: 2px; background: var(--accent-500); margin: 1.25rem 0 0; }
+
+    .venue-image-section {
+      background: var(--bg-card);
+      padding: 1.5rem var(--side-padding) 2.5rem;
+    }
+
+    .venue-image-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .venue-image-item { flex: 1; }
+
+    .venue-image {
+      width: 100%;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid var(--accent-100);
+    }
+
+    .venue-image img {
+      display: block;
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+    }
+
+    .venue-caption {
+      font-size: 0.75rem;
+      color: var(--navy-200);
+      margin-top: 8px;
+      font-style: italic;
+    }
+
+    .content-body {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 2.5rem var(--side-padding) 3rem;
+    }
+
+    .info-section { margin-bottom: 2.5rem; }
+    .info-section:last-child { margin-bottom: 0; }
+
+    .info-section h2 {
+      font-size: 0.6875rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--accent-600);
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .info-card {
+      background: var(--bg-card);
+      border: 1px solid var(--accent-100);
+      border-radius: 10px;
+      padding: 1.5rem;
+    }
+
+    .info-card h3 {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--navy-900);
+      margin-bottom: 0.75rem;
+    }
+
+    .info-card p {
+      font-size: 0.875rem;
+      color: var(--navy-400);
+      line-height: 1.7;
+      margin-bottom: 0.75rem;
+    }
+
+    .info-card p:last-child { margin-bottom: 0; }
+    .info-card a { color: var(--accent-600); }
+    .info-card a:hover { color: var(--accent-700); }
+
+    .info-card .sub-heading {
+      font-weight: 600;
+      color: var(--navy-600);
+      font-size: 0.875rem;
+      margin-top: 1rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .info-card .sub-heading:first-child { margin-top: 0; }
+
+    .hotel-item {
+      background: var(--accent-50);
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .hotel-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .hotel-name {
+      font-weight: 600;
+      color: var(--navy-900);
+      font-size: 0.875rem;
+    }
+
+    .hotel-name a {
+      color: var(--navy-900);
+    }
+
+    .hotel-name a:hover {
+      color: var(--accent-600);
+    }
+
+    .hotel-detail {
+      font-size: 0.8125rem;
+      color: var(--navy-400);
+      margin-top: 2px;
+    }
+
+    .hotel-item.conference {
+      background: var(--bg-card);
+      border: 1px solid var(--accent-200);
+      border-left: 3px solid var(--accent-500);
+    }
+
+    .hotel-facts {
+      list-style: disc;
+      padding-left: 1.1rem;
+      margin-top: 0.5rem;
+      font-size: 0.8125rem;
+      color: var(--navy-400);
+      line-height: 1.6;
+    }
+
+    .hotel-facts li { margin-bottom: 0.3rem; }
+    .hotel-facts li:last-child { margin-bottom: 0; }
+    .hotel-facts strong { color: var(--navy-600); font-weight: 600; }
+
+    .info-list {
+      list-style: disc;
+      padding-left: 1.25rem;
+      font-size: 0.875rem;
+      color: var(--navy-400);
+      line-height: 1.7;
+      margin-bottom: 0.75rem;
+    }
+
+    .info-list li { margin-bottom: 0.35rem; }
+    .info-list ul { list-style: circle; padding-left: 1.25rem; margin-top: 0.35rem; }
+
+    .info-card a { overflow-wrap: anywhere; }
+
+    .block-note {
+      background: var(--accent-50);
+      border-radius: 8px;
+      padding: 0.75rem 1rem;
+      font-size: 0.8125rem;
+      color: var(--accent-700);
+      font-weight: 500;
+      margin-bottom: 0.75rem;
+    }
+
+    .hotel-group-heading {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--navy-900);
+      margin: 1.5rem 0 0.75rem;
+    }
+
+    .tip-box {
+      background: var(--accent-50);
+      border-left: 3px solid var(--accent-500);
+      border-radius: 0 8px 8px 0;
+      padding: 1rem 1.25rem;
+      margin-top: 1rem;
+    }
+
+    .tip-box p {
+      font-size: 0.8125rem;
+      color: var(--navy-600);
+      margin-bottom: 0;
+    }
+
+    .tip-label {
+      font-weight: 600;
+      color: var(--accent-700);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+    }
+
+    .placeholder-note {
+      background: var(--navy-50);
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      font-size: 0.8125rem;
+      color: var(--navy-400);
+      font-style: italic;
+    }
+
+    .footer {
+      background: var(--bg-card);
+      border-top: 1px solid var(--accent-100);
+    }
+
+    .footer-inner {
+      max-width: var(--max-width); margin: 0 auto;
+      padding: 1.25rem var(--side-padding);
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: 0.75rem; color: var(--navy-200);
+    }
+
+    .footer a { color: var(--accent-600); transition: color 0.2s; }
+    .footer a:hover { color: var(--accent-700); }
+
+    @media (max-width: 768px) {
+      :root { --side-padding: 1.25rem; }
+
+      .nav-links {
+        display: none; position: absolute; top: 100%; left: 0; right: 0;
+        background: var(--bg-card); border-bottom: 1px solid var(--accent-100);
+        flex-direction: column; padding: 1rem 1.25rem; gap: 0;
+      }
+
+      .nav-links.open { display: flex; }
+      .nav-links li { padding: 0.75rem 0; border-bottom: 1px solid var(--accent-50); }
+      .nav-links li:last-child { border-bottom: none; }
+      .nav-toggle { display: block; }
+      .detail-hero h1 { font-size: 1.25rem; }
+
+      .venue-image-inner {
+        flex-direction: column;
+      }
+
+      .venue-image img {
+        height: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">
+        <span class="nav-logo-img"><img src="../images/freit_logo_new.svg" alt="FREIT logo"></span>
+        <span class="nav-logo-text">FREIT</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+        <svg viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../conferences.html" class="active">Conferences</a></li>
+        <!-- <li><a href="../working-papers/index.html">Working Papers</a></li> -->
+        <li><a href="../about.html">About</a></li>
+        <li><a href="#" id="nav-contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="detail-hero">
+    <div class="detail-hero-inner">
+      <div class="breadcrumb">
+        <a href="../conferences.html">Conferences</a> / <a href="index.html">EIIT</a> / <a href="eiit.html">2026</a> / Visitor Information
+      </div>
+      <span class="edition-badge">Visitor Information</span>
+      <h1>EIIT 2026 &mdash; Bloomington, Indiana</h1>
+      <div class="detail-subtitle">Empirical Investigations in International Trade &middot; October 9&ndash;11, 2026</div>
+      <div class="hero-divider"></div>
+    </div>
+  </header>
+
+  <section class="venue-image-section">
+    <div class="venue-image-inner">
+      <div class="venue-image-item">
+        <div class="venue-image">
+          <img src="images/iu.jpg" alt="Indiana University Bloomington campus">
+        </div>
+        <div class="venue-caption">Indiana University Bloomington</div>
+      </div>
+      <!-- Second photo: drop a file named bloomington.jpg into EIIT/images/ and this panel appears.
+           Until then it hides itself so the page shows a single photo rather than a broken image. -->
+      <div class="venue-image-item" id="second-photo">
+        <div class="venue-image">
+          <img src="images/bloomington.jpg" alt="Downtown Bloomington, Indiana" onerror="var e=document.getElementById('second-photo'); if(e){e.style.display='none';}">
+        </div>
+        <div class="venue-caption">Downtown Bloomington</div>
+      </div>
+    </div>
+  </section>
+
+  <main class="content-body">
+
+    <!-- VENUE -->
+    <div class="info-section">
+      <h2>Venue</h2>
+      <div class="info-card">
+        <h3>Indiana University Bloomington</h3>
+        <p>The conference is hosted by the Department of Economics at Indiana University Bloomington. The IU Bloomington campus is a compact, wooded campus built largely of Indiana limestone, immediately adjacent to downtown Bloomington &mdash; nearly everything participants need is within a fifteen-minute walk.</p>
+        <div class="sub-heading">Conference room</div>
+        <p>The exact building and room will be announced closer to the conference and communicated to registered participants.</p>
+        <p style="margin-top: 0.75rem;"><a href="https://www.google.com/maps/search/?api=1&query=Indiana+University+Bloomington" target="_blank" style="color: var(--accent-600); font-weight: 500;">View campus on Google Maps &rarr;</a></p>
+      </div>
+    </div>
+
+    <!-- GETTING THERE -->
+    <div class="info-section">
+      <h2>Getting there</h2>
+      <div class="info-card">
+        <div class="sub-heading">By air</div>
+        <p>Indianapolis International Airport (IND) is the closest airport, approximately 46 miles (74 km) north of Bloomington. IND has direct domestic service from most major U.S. hubs and a small number of international routes; most overseas participants will connect through Chicago, Atlanta, Detroit, Newark, Dallas, or Toronto.</p>
+        <p>Louisville (SDF), about two hours south, and Cincinnati (CVG), about two and a half hours southeast, are workable alternatives if the fare or schedule is better. Monroe County Airport (BMG) in Bloomington itself handles only general aviation and has no scheduled commercial service.</p>
+
+        <div class="sub-heading">Traveling to Bloomington from Indianapolis International Airport (IND)</div>
+        <ul class="info-list">
+          <li>Bloomington is approximately 46 miles south of Indianapolis International Airport, with a typical driving time of about one hour depending on traffic.</li>
+          <li>Travel options include rental cars, Uber, Lyft, taxis, and the GO Express Travel Bloomington Shuttle.</li>
+          <li>The GO Express Travel Bloomington Shuttle provides daily service between Indianapolis International Airport and Bloomington, including stops at Indiana University, downtown hotels, and other locations throughout the city. Advance reservations are recommended.</li>
+          <li>Transportation resources:
+            <ul>
+              <li>GO Express Travel Shuttle reservations: <a href="https://goexpresstravel.com/bloomington-airport-shuttle/" target="_blank" rel="noopener">goexpresstravel.com/bloomington-airport-shuttle</a></li>
+              <li>Uber: <a href="https://www.uber.com/us/en/ride/" target="_blank" rel="noopener">uber.com/us/en/ride</a></li>
+              <li>Lyft: <a href="https://www.lyft.com/rider" target="_blank" rel="noopener">lyft.com/rider</a></li>
+            </ul>
+          </li>
+          <li>Both the Grant Street Inn and the Hilton Garden Inn Bloomington are conveniently located near the Indiana University campus and downtown Bloomington.</li>
+        </ul>
+
+        <div class="sub-heading">Shuttle details</div>
+        <p>The GO Express shuttle takes roughly 50&ndash;55 minutes. Departures are hourly from about 5:40am to 8:40pm on Thursdays, Fridays, Sundays, and Mondays, and roughly every two hours on Tuesdays, Wednesdays, and Saturdays. Fares start around $33 one way. At the airport, the shuttle picks up in Ground Transportation Zone 1. In Bloomington it stops at the Indiana Memorial Union and at several downtown hotels, including the Graduate, Hilton Garden Inn, SpringHill Suites, and Home2 Suites.</p>
+
+        <div class="sub-heading">Rental car and ride-share</div>
+        <p>All the major rental companies operate at IND. Uber and Lyft serve the airport as well; the fare to Bloomington typically runs $90&ndash;120 one way, though ride-share availability for the return trip from Bloomington to the airport is less reliable and should not be counted on for an early morning flight.</p>
+
+        <div class="sub-heading">By car</div>
+        <p>Bloomington is a straightforward drive from Indianapolis on I-69 south, and is also reachable via I-65 and State Road 46 from Columbus, Indiana. Visitor and metered parking is available on campus and downtown; note that most campus lots require a permit during business hours.</p>
+
+        <div class="tip-box">
+          <div class="tip-label">Tip</div>
+          <p>Book the airport shuttle as soon as your flights are set. October is peak season in Bloomington &mdash; home football weekends and fall break fill both the shuttle and the hotels.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ACCOMMODATION -->
+    <div class="info-section">
+      <h2>Accommodation</h2>
+      <div class="info-card">
+        <p>Participants are responsible for their own accommodation. Room blocks have been reserved at two conference hotels; other hotels within walking distance of campus or a short ride away are listed below. Booking early is strongly advised.</p>
+        <p style="margin-top: 0.5rem; margin-bottom: 1rem;"><a href="https://www.google.com/maps/d/u/0/edit?mid=1NXKoC4mR_TZzHw_81RVB3JcORuo58BM&amp;usp=sharing" target="_blank" rel="noopener" style="color: var(--accent-600); font-weight: 500;">View the venue and all hotels on Google Maps &rarr;</a></p>
+
+        <div class="hotel-group-heading" style="margin-top: 0.5rem;">Conference hotels</div>
+        <div class="block-note">Both conference room blocks will be held until Friday, September 25, 2026.</div>
+
+        <div class="hotel-item conference">
+          <div class="hotel-name"><a href="https://www.grantstinn.com/" target="_blank" rel="noopener">The Grant Street Inn</a></div>
+          <ul class="hotel-facts">
+            <li><strong>Reservations:</strong> Book online at <a href="https://www.grantstinn.com/" target="_blank" rel="noopener">grantstinn.com</a> or by calling <a href="tel:+18123342353">812-334-2353</a>. Please reference the IU ECON Conference Room Block when booking.</li>
+            <li><strong>Rate:</strong> Approximately $602.28 for a three-night stay, including taxes (approximately $201 per night).</li>
+            <li><strong>Check-in:</strong> 3:00 PM &middot; <strong>Check-out:</strong> 12:00 PM (noon).</li>
+            <li><strong>Parking:</strong> Complimentary parking is available for all guests. Additional free parking and a complimentary Tesla charging station are available on-site.</li>
+            <li><strong>Cancellation policy:</strong> Reservations canceled after October 1 will be charged the full cost of the stay.</li>
+          </ul>
+        </div>
+
+        <div class="hotel-item conference">
+          <div class="hotel-name"><a href="https://www.hilton.com/en/hotels/bmgbngi-hilton-garden-inn-bloomington/" target="_blank" rel="noopener">Hilton Garden Inn Bloomington</a></div>
+          <div class="hotel-detail">245 N. College Avenue &middot; Downtown, one block from the courthouse square &middot; Airport shuttle stop &middot; About a 10&ndash;15 minute walk to campus</div>
+          <ul class="hotel-facts">
+            <li><strong>Reservations:</strong> Book through the <a href="https://tinyurl.com/f7atjw6y" target="_blank" rel="noopener">EIIT conference booking link</a>.</li>
+            <li><strong>Rate:</strong> $211.68 per night, including taxes.</li>
+            <li><strong>Check-in:</strong> 3:00 PM &middot; <strong>Check-out:</strong> 11:00 AM.</li>
+            <li><strong>Parking:</strong> Self-parking is available in the garage directly behind the hotel for $13.50 per day. Covered parking and in/out privileges are included.</li>
+            <li><strong>Cancellation policy:</strong> Reservations may be canceled up to 48 hours prior to arrival. Cancellations can be made by phone, email, or through the Hilton app. Hotel phone: <a href="tel:+18123311335">812-331-1335</a>.</li>
+            <li><strong>Conference block:</strong> No conference code is required, as the booking link is already associated with the conference room block.</li>
+          </ul>
+        </div>
+
+        <div class="hotel-group-heading">Other hotels</div>
+
+        <div class="hotel-item">
+          <div class="hotel-name"><a href="https://imu.indiana.edu/hotel/index.html" target="_blank">IU Biddle Hotel at the Indiana Memorial Union</a></div>
+          <div class="hotel-detail">On campus &middot; 900 E. Seventh Street &middot; 189 rooms inside the Indiana Memorial Union, with restaurants, a pub, and a bakery in the same building &middot; The most convenient option and an airport shuttle stop</div>
+        </div>
+
+        <div class="hotel-item">
+          <div class="hotel-name"><a href="https://www.hilton.com/en/hotels/indgbgu-graduate-bloomington/" target="_blank">Graduate by Hilton Bloomington</a></div>
+          <div class="hotel-detail">210 E. Kirkwood Avenue &middot; At the edge of campus on Kirkwood, between the Sample Gates and the downtown square &middot; Airport shuttle stop &middot; About a 5 minute walk to campus</div>
+        </div>
+
+        <div class="hotel-item">
+          <div class="hotel-name"><a href="https://www.marriott.com/en-us/hotels/bmgsh-springhill-suites-bloomington/overview/" target="_blank">SpringHill Suites Bloomington</a></div>
+          <div class="hotel-detail">501 N. College Avenue &middot; Downtown, all-suite rooms with sitting areas &middot; Airport shuttle stop &middot; About a 15 minute walk to campus</div>
+        </div>
+
+        <div class="hotel-item">
+          <div class="hotel-name"><a href="https://www.marriott.com/en-us/hotels/bmgcy-courtyard-bloomington/overview/" target="_blank">Courtyard by Marriott Bloomington</a></div>
+          <div class="hotel-detail">310 S. College Avenue &middot; South edge of downtown &middot; Indoor pool, fitness center, on-site restaurant &middot; On-site parking for a daily fee &middot; About a 15 minute walk to campus</div>
+        </div>
+
+        <div class="hotel-item">
+          <div class="hotel-name"><a href="https://www.hilton.com/en/hotels/bmgnwht-home2-suites-bloomington/" target="_blank">Home2 Suites by Hilton Bloomington</a></div>
+          <div class="hotel-detail">1410 N. Walnut Street &middot; Extended-stay suites with kitchenettes, north of downtown &middot; Airport shuttle stop &middot; Best reached by bus or ride-share</div>
+        </div>
+
+        <div class="tip-box">
+          <div class="tip-label">Tip</div>
+          <p>Staying downtown along College Avenue or on Kirkwood puts you within walking distance of both the campus and the restaurants, and on the shuttle route back to the airport.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- LOCAL TRANSPORTATION -->
+    <div class="info-section">
+      <h2>Local transportation</h2>
+      <div class="info-card">
+        <div class="sub-heading">Walking</div>
+        <p>Bloomington is a walking town. Kirkwood Avenue runs from the Sample Gates at the western edge of campus straight to the courthouse square, a distance of about half a mile, and most of the restaurants, cafés, and bookshops participants will want are along that stretch or a block off it.</p>
+
+        <div class="sub-heading">Buses</div>
+        <p>Bloomington Transit operates city bus routes connecting downtown, campus, and the surrounding neighborhoods. The IU Campus Bus circulates around campus and is free to ride and open to the public.</p>
+
+        <div class="sub-heading">Ride-share and taxis</div>
+        <p>Uber and Lyft operate in Bloomington and are reliable within town, with typical in-town fares of $10&ndash;15. Local taxi companies are also available, though usually by phone rather than by hailing.</p>
+
+        <div class="sub-heading">Parking</div>
+        <p>Campus lots and garages require a permit or hourly payment during business hours. Metered street parking and several garages are available downtown. Participants driving to the conference should ask the organizers about visitor parking arrangements.</p>
+      </div>
+    </div>
+
+    <!-- MEALS -->
+    <div class="info-section">
+      <h2>Meals</h2>
+      <div class="info-card">
+        <p>Conference registration includes lunches and a conference dinner. Details about the dinner venue will be communicated to registered participants.</p>
+        <p>For meals on your own, Kirkwood Avenue and the courthouse square hold most of the town's restaurants and cafés. Bloomington is unusually good for a town its size: Fourth Street, one block south of Kirkwood, is a dense strip of Tibetan, Afghan, Turkish, Korean, Thai, Ethiopian, and Burmese restaurants, a legacy of the university's international programs. The Bloomington Community Farmers' Market runs Saturday mornings downtown through the fall.</p>
+      </div>
+    </div>
+
+    <!-- PRACTICAL INFORMATION -->
+    <div class="info-section">
+      <h2>Practical information</h2>
+      <div class="info-card">
+        <div class="sub-heading">Currency</div>
+        <p>U.S. Dollar (USD). Credit and debit cards, including contactless, are accepted essentially everywhere. ATMs are widely available on campus and downtown. Tipping of 15&ndash;20% is customary in restaurants.</p>
+
+        <div class="sub-heading">Weather</div>
+        <p>Early October in southern Indiana is usually mild and pleasant: daytime highs around 62&ndash;70&deg;F (17&ndash;21&deg;C) and overnight lows around 42&ndash;48&deg;F (6&ndash;9&deg;C), with the fall colors typically near their peak. Bring layers and a light rain jacket.</p>
+
+        <div class="sub-heading">Entry requirements</div>
+        <p>International visitors will need either a visa or, for citizens of Visa Waiver Program countries, an approved ESTA authorization obtained before travel. Apply well in advance; visa appointment wait times vary considerably by country. Participants who need a letter of invitation should contact the organizers. See the <a href="https://travel.state.gov/content/travel/en/us-visas.html" target="_blank">U.S. Department of State</a> for current requirements.</p>
+
+        <div class="sub-heading">Power supply</div>
+        <p>The United States uses Type A and Type B plugs at 120V, 60Hz. Visitors from Europe, Asia, and Australia will need an adapter, and some equipment will need a voltage converter.</p>
+
+        <div class="sub-heading">Time zone</div>
+        <p>Bloomington observes Eastern Time and follows daylight saving time. During the conference the local time is EDT, UTC&minus;4.</p>
+
+        <div class="sub-heading">Wi-Fi</div>
+        <p>Eduroam is available across the IU Bloomington campus for participants with eduroam credentials from their home institution. A guest wireless network is available for those without.</p>
+
+        <div class="sub-heading">Emergency numbers</div>
+        <p>Emergency (police, fire, ambulance): 911 &middot; IU Police Department (non-emergency): +1 812-855-4111</p>
+      </div>
+    </div>
+
+    <!-- ABOUT BLOOMINGTON -->
+    <div class="info-section">
+      <h2>About Bloomington</h2>
+      <div class="info-card">
+        <p>Bloomington is a town of about 80,000 in the wooded hills of southern Indiana, built around Indiana University, which has been there since 1820. The campus is one of the more attractive in the United States &mdash; limestone buildings, a creek running through the middle of it, and enough mature trees that the whole thing reads as a park. The town's other well-known export is the Jacobs School of Music, one of the largest music schools in the world, whose students give free or inexpensive concerts most nights of the week.</p>
+        <p>Within easy reach are Brown County State Park, Indiana's largest, roughly half an hour east and at its best in early October; Lake Monroe, the state's largest lake, fifteen minutes south; and the limestone quarries around town that gave <em>Breaking Away</em> its setting. On campus, the Eskenazi Museum of Art occupies a building designed by I. M. Pei and is free to visit.</p>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <span>&copy; 2026 FREIT. All rights reserved. Based at Georgia Institute of Technology. · <a href="../privacy-policy.html">Privacy Policy</a></span>
+      <span id="footer-email"></span>
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      var u = 'freit';
+      var d = 'gatech.edu';
+      var e = u + '@' + d;
+      var m = 'mailto:' + e;
+      var nav = document.getElementById('nav-contact');
+      if (nav) { nav.href = m; }
+      var fe = document.getElementById('footer-email');
+      if (fe) { fe.innerHTML = '<a href="' + m + '" style="color:var(--accent-600);transition:color 0.2s;">' + e + '</a>'; }
+    })();
+  </script>
+
+</body>
+</html>

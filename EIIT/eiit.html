@@ -461,6 +461,25 @@
 
     .cta-btn:hover { background: var(--accent-600); }
 
+    .cta-card .cta-label {
+      font-size: 0.625rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--accent-400);
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .reg-link {
+      color: var(--accent-600);
+      font-weight: 500;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      transition: color 0.2s;
+    }
+
+    .reg-link:hover { color: var(--accent-700); }
+
     /* ===== FOOTER ===== */
     .footer {
       background: var(--bg-card);
@@ -647,14 +666,21 @@
           <h3>Registration</h3>
           <p>Please notify the organizers if you would like to attend and/or would be willing to serve as a discussant but are not submitting a paper. Registration is mandatory if you would like to attend any of the conference. All participants will have to register.</p>
           <div class="note-box">
-            There is a $150 registration fee for both presenters and other conference attendees. Participants from Indiana University Bloomington and graduate students are exempt from this fee.
+            There is a $150 registration fee for both presenters and other conference attendees. Participants from Indiana University Bloomington and graduate students are exempt from this fee. Please email <span id="fee-email">us</span> if you are exempt from the registration fee.
           </div>
+          <p style="margin-top: 0.75rem;"><a href="https://epay.gatech.edu:443/C20793_ustores/web/product_detail.jsp?PRODUCTID=6699&amp;FROMQRCODE=true&amp;SINGLESTORE=true" target="_blank" rel="noopener" class="reg-link">Register and pay the registration fee here.</a></p>
         </div>
 
       </div>
 
       <!-- Sidebar -->
       <aside class="detail-sidebar">
+
+        <div class="cta-card">
+          <div class="cta-label">Registration</div>
+          <p>Registration fee: $150</p>
+          <a href="https://epay.gatech.edu:443/C20793_ustores/web/product_detail.jsp?PRODUCTID=6699&amp;FROMQRCODE=true&amp;SINGLESTORE=true" target="_blank" rel="noopener" class="cta-btn">Register &amp; pay fee</a>
+        </div>
 
         <div class="info-card">
           <div class="label">Location</div>
@@ -733,6 +759,8 @@
       if (ce) { ce.innerHTML = '<a href="' + m + '" class="contact-email">' + e + '</a>'; }
       var se = document.getElementById('sidebar-email');
       if (se) { se.innerHTML = '<a href="' + m + '" style="color:var(--accent-600);text-decoration:none;">' + e + '</a>'; }
+      var fee = document.getElementById('fee-email');
+      if (fee) { fee.innerHTML = '<a href="' + m + '" style="color:var(--accent-700);text-decoration:underline;">' + e + '</a>'; }
     })();
   </script>
 
