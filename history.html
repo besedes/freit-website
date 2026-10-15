@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>History — FREIT</title>
+  <meta name="description" content="A short history of the Forum for Research in Empirical International Trade (FREIT), from the first EIIT at Purdue in 1994 to today, with participation statistics for every FREIT conference.">
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+  <link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96x96.png">
+  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,300;8..60,400;8..60,600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    :root {
+      --navy-900: #1a1f3a;
+      --navy-800: #242b4a;
+      --navy-700: #2e3660;
+      --navy-600: #3d4578;
+      --navy-400: #6b7199;
+      --navy-200: #b0b4cc;
+      --navy-100: #d8dae6;
+      --navy-50: #eef0f5;
+
+      --accent-700: #8a6d3b;
+      --accent-600: #a07d45;
+      --accent-500: #c4985a;
+      --accent-400: #d4b07a;
+      --accent-300: #e0c99e;
+      --accent-200: #e8dcc8;
+      --accent-100: #f0e8d8;
+      --accent-50: #f7f3eb;
+
+      --bg-page: #faf9f7;
+      --bg-card: #ffffff;
+
+      --font-display: 'Source Serif 4', Georgia, serif;
+      --font-body: 'DM Sans', system-ui, sans-serif;
+
+      --max-width: 1080px;
+      --side-padding: 2.5rem;
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--navy-900);
+      background: var(--bg-page);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* ===== NAVIGATION ===== */
+    .nav {
+      background: var(--bg-card);
+      border-bottom: 1px solid var(--accent-100);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0.65rem var(--side-padding);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .nav-logo-img {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--accent-50);
+      border: 1px solid var(--accent-200);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .nav-logo-img img {
+      width: 26px;
+      height: 26px;
+      object-fit: contain;
+    }
+
+    .nav-logo-text {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 1.125rem;
+      color: var(--navy-900);
+      letter-spacing: 2px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      font-size: 0.8125rem;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    .nav-links a {
+      color: var(--navy-400);
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--navy-900); }
+
+    .nav-links a.active {
+      color: var(--accent-600);
+      border-bottom: 1.5px solid var(--accent-500);
+      padding-bottom: 2px;
+    }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    .nav-toggle svg {
+      display: block;
+      width: 24px;
+      height: 24px;
+      stroke: var(--navy-900);
+      stroke-width: 2;
+      fill: none;
+    }
+
+    /* ===== HERO ===== */
+    .page-hero {
+      background: linear-gradient(135deg, var(--navy-900) 0%, var(--navy-700) 100%);
+      padding: 2.5rem var(--side-padding);
+    }
+
+    .page-hero-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .page-hero h1 {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #ffffff;
+    }
+
+    /* ===== CONTENT ===== */
+    .content-section {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 2.5rem var(--side-padding) 3rem;
+    }
+
+    .history-content h2 {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--navy-800);
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .history-content h2:first-child {
+      margin-top: 0;
+    }
+
+    .history-content p {
+      font-size: 0.9375rem;
+      line-height: 1.7;
+      color: var(--navy-600);
+      margin-bottom: 1rem;
+    }
+
+    .history-content ul {
+      list-style: disc;
+      margin-left: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .history-content ul li {
+      font-size: 0.9375rem;
+      line-height: 1.7;
+      color: var(--navy-600);
+      margin-bottom: 0.35rem;
+    }
+
+    .history-content a {
+      color: var(--accent-600);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .history-content a:hover {
+      color: var(--accent-700);
+    }
+
+    .history-content {
+      max-width: 760px;
+    }
+
+    .history-content .lede {
+      font-family: var(--font-display);
+      font-size: 1.125rem;
+      line-height: 1.6;
+      color: var(--navy-800);
+    }
+
+    .history-content h2 {
+      margin-top: 2.5rem;
+    }
+
+    .stats-subhead {
+      font-family: var(--font-body);
+      font-size: 0.9375rem;
+      font-weight: 400;
+      color: var(--navy-400);
+    }
+
+    /* ===== STATS TABLE ===== */
+    .table-wrap {
+      width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      margin: 1.25rem 0 1.25rem;
+    }
+
+    table.freit-stats {
+      width: 100%;
+      min-width: 0;
+      border-collapse: collapse;
+      font-size: 0.875rem;
+      color: var(--navy-800);
+      background: var(--bg-card);
+    }
+
+    table.freit-stats th,
+    table.freit-stats td {
+      padding: 0.55rem 0.75rem;
+      border-bottom: 1px solid var(--accent-100);
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    table.freit-stats th:first-child,
+    table.freit-stats td:first-child {
+      text-align: left;
+    }
+
+    table.freit-stats thead th {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      color: var(--navy-400);
+      border-bottom: 1.5px solid var(--accent-300);
+    }
+
+    table.freit-stats tbody tr:nth-child(even) {
+      background: var(--accent-50);
+    }
+
+    table.freit-stats td a {
+      color: var(--accent-600);
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    table.freit-stats td a:hover {
+      color: var(--accent-700);
+      text-decoration: underline;
+    }
+
+    table.freit-stats tfoot th {
+      font-weight: 600;
+      color: var(--navy-900);
+      border-top: 1.5px solid var(--accent-300);
+      border-bottom: none;
+    }
+
+    .stats-note {
+      font-size: 0.8125rem !important;
+      line-height: 1.6 !important;
+      color: var(--navy-400) !important;
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      background: var(--bg-card);
+      border-top: 1px solid var(--accent-100);
+    }
+
+    .footer-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 1.25rem var(--side-padding);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.75rem;
+      color: var(--navy-200);
+    }
+
+    .footer a {
+      color: var(--accent-600);
+      transition: color 0.2s;
+    }
+
+    .footer a:hover { color: var(--accent-700); }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      :root {
+        --side-padding: 1.25rem;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--bg-card);
+        border-bottom: 1px solid var(--accent-100);
+        flex-direction: column;
+        padding: 1rem 1.25rem;
+        gap: 0;
+      }
+
+      .nav-links.open { display: flex; }
+
+      .nav-links li {
+        padding: 0.75rem 0;
+        border-bottom: 1px solid var(--accent-50);
+      }
+
+      .nav-links li:last-child { border-bottom: none; }
+
+      .nav-toggle { display: block; }
+
+      .page-hero h1 { font-size: 1.25rem; }
+
+      table.freit-stats { min-width: 0; font-size: 0.6875rem; }
+
+      table.freit-stats th,
+      table.freit-stats td { padding: 0.45rem 0.2rem; }
+
+      table.freit-stats thead th {
+        font-size: 0.5rem;
+        letter-spacing: 0;
+        white-space: normal;
+        vertical-align: bottom;
+      }
+
+      table.freit-stats tfoot th:first-child { white-space: normal; }
+
+      .footer-inner {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 380px) {
+      table.freit-stats { font-size: 0.625rem; }
+      table.freit-stats th,
+      table.freit-stats td { padding: 0.4rem 0.12rem; }
+    }
+  </style>
+</head>
+<body>
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <span class="nav-logo-img"><img src="images/freit_logo_new.svg" alt="FREIT logo"></span>
+        <span class="nav-logo-text">FREIT</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+        <svg viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="conferences.html">Conferences</a></li>
+        <li><a href="history.html" class="active">History</a></li>
+        <!-- <li><a href="working-papers/index.html">Working Papers</a></li> -->
+        <li><a href="about.html">About</a></li>
+        <li><a href="#" id="nav-contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="page-hero">
+    <div class="page-hero-inner">
+      <h1>A short history of FREIT</h1>
+    </div>
+  </header>
+
+  <!-- CONTENT -->
+  <section class="content-section">
+    <div class="history-content">
+      <p class="lede">The seed of FREIT was the first <a href="EIIT/index.html">Empirical Investigations in International Trade (EIIT)</a> organized at Purdue University by Jon Haveman in 1994. Since then, FREIT has organized <span data-freit-stat="conferences">94</span> conferences in eleven countries. The idea for it was born at a post-seminar happy hour at Lafayette Brewing Co in downtown Lafayette, IN. At the time, the international trade field/literature was theory driven with few conferences open to empirical work. Jon’s senior colleague suggested a solution was to start a conference dedicated to empirical work.</p>
+
+      <p>EIIT quickly converged on a model still in use. Each paper is presented in a plenary session and allocated an hour with 40 minutes for the presenter, 10 for the discussant, and 10 for general Q&amp;A. Each EIIT has a keynote speaker with an hour long address with general Q&amp;A. Other FREIT conferences follow a similar approach: 12-15 papers, an hour for a paper, with most but not all having a keynote speaker.</p>
+
+      <p>The first six EIITs took place at Purdue University. In 2000, EIIT started rotating between Purdue and another host institution first on a biennial basis, and between 2015 and 2024 on a triennial basis. Whenever EIIT took place at Purdue, an evening at Lafayette Brewing Co, where the idea for the conference was born, was a standing tradition. Fifteen different institutions have hosted EIIT with the University of Colorado Boulder having hosted three times and UC Santa Cruz having done so twice. Indiana University hosted twice as well, though one of those was a virtual conference in 2020 on account of COVID.</p>
+
+      <p>EIIT introduced an <a href="EIIT/grad-competition.html">award for the best paper submitted by a graduate student</a> in 1995. The first winner was David Hummels. The winner’s cost of travel and lodging are covered by the host institution. In 33 editions of EIIT students from 20 institutions have won the award with UC Davis having five winners, Yale, UCLA, and Maryland each with three, and MIT, Brown, UC San Diego, and Wisconsin Madison with two each.</p>
+
+      <p>After the 2002 EIIT Joze Damijan from the University of Ljubljana approached Jon Haveman about organizing a conference in Slovenia. Thus was born the Empirical Investigations in International Economics (EIIE) conference, later renamed the <a href="LETC/index.html">Ljubljana Empirical Trade Conference (LETC)</a>. The conference took place annually until 2019 with nine editions held in Ljubljana while the remaining seven were in Izola. EIIE started a tradition of post-conference activities having organized several sailing trips and white-water rafting trips. When in Izola, the conference organized an afternoon sailing excursion with dinner on a boat. With the addition of EIIE Jon Haveman established the Forum for Research in Empirical International Trade (FREIT) as the umbrella organization to manage conferences.</p>
+
+      <p>In 2007 with an introduction provided by Mary Amiti, Fukunari Kimura and Jon Haveman organized the first <a href="EITI/index.html">Empirical Investigations in Trade and Investment (EITI)</a> conference at Keio University in Tokyo, Japan. EITI has been organized 15 times with Keio University in Tokyo hosting eight times. Seven EITIs took place elsewhere, thrice in Indonesia (Bali, Yogyakarta, and Jakarta), twice in Thailand (Bangkok and Phuket), and once in Hanoi, Vietnam and Sapporo, Japan. EITI tends to draw more heavily from junior economists and Asian-based economists.</p>
+
+      <p>In 2009 Russell Hillberry, then at the University of Melbourne, and Jon Haveman organized a one-off conference in Melbourne, Australia, the <a href="EITG/index.html">Empirical Investigations in Trade and Geography</a>.</p>
+
+      <p>Four years after hosting EIIT in 2006 in Banff, Canada, Eugene Beaulieu of the University of Calgary and Jon Haveman started the <a href="RMET/index.html">Rocky Mountain Empirical Trade (RMET)</a> conference. RMET takes place annually at the Banff Centre in Banff, Canada, part of the Banff National Park, Canada’s oldest national park established in 1885. Given its location, RMET has a tradition of a lunch-time hike up Tunnel Mountain. RMET took place outside of Banff twice, having been organized by the University of British Columbia in Vancouver in 2012 and at the University of Ottawa in Ottawa in 2018. RMET is supported by a group of Canadian universities including the University of British Columbia, University of Victoria, University of Alberta, University of Toronto, and occasionally with support from the Bank of Canada.</p>
+
+      <p>In 2016 Jon Haveman appointed Tibor Besedeš as associate director of FREIT to help with conference organization and management. Jon was the main FREIT organizer of LETC and EITI, while Tibor was the main FREIT point of contact for EIIT and RMET. In 2018 Tibor Besedeš became director and Jon Haveman became executive director of FREIT.</p>
+
+      <p>In 2017 with the help of Anna Maria Pinna and Andrea Ariu Jon started the <a href="SETC/index.html">Sardinian Empirical Trade Conference (SETC)</a>. With one exception SETC takes place in Cagliari on the island of Sardinia. In 2026 SETC took place in Alghero, on the opposite side of Sardinia. Similar to EIIT, SETC also awards a <a href="SETC/grad-competition.html">prize to the best graduate student paper</a>. In nine editions students from eight institutions have won the prize with Universite Libré de Bruxelles having won twice. With one exception, the keynote speaker at SETC is a female trade economist.</p>
+
+      <p>When COVID pandemic hit FREIT’s response was to organize the <a href="ITO/index.html">International Trade Online conference (ITO)</a> in April of 2020, shortly after wide-spread stay at home orders were implemented. Organizers of ITO were Jon Haveman, Andrew Bernard, and Tibor Besedeš. Shortly after the first ITO, Tibor Besedeš and Anson Soderbery launched the <a href="ETOS/index.html">Empirical Trade On-line Seminar (ETOS)</a>, a weekly online seminar which allowed trade economists to present their research in a seminar format and stay in touch when travel was not possible. Over a two-year span 70 online seminars were given.</p>
+
+      <p>In 2023 Laura Puzzello of Monash University and Reshad Ahsan of the University of Melbourne approached Tibor Besedeš about organizing a FREIT conference in Melbourne. In 2024 the first <a href="METC/index.html">Melbourne Empirical Trade conference</a> took place in December in Melbourne, with subsequent editions taking place in July. Maria Ptashkina became an organizer as well in 2025.</p>
+
+      <p>Jon Haveman stepped down from FREIT in October 2025 with Tibor Besedeš becoming the executive director. Jon’s tenure nearly coincided with the life of Lafayette Brewing Co, which opened in 1993, a year before the first EIIT, and closed in 2025, the year he stepped down. With Tibor’s appointment, FREIT found its first institutional home at the Georgia Institute of Technology in 2026. Andrew Bernard was appointed as director, with Anson Soderbery joining David Hummels and Fukunari Kimura as associate directors. FREIT’s editorial board is composed of local organizers of each FREIT conference. Since EIIT travels, local organizers of occasional EIIT hosts serve on the board for six years.</p>
+
+      <p>In 2025 Seunghoon Lee, Eunhee Lee, Jaerim Choi, and Ryan Kim approached Tibor Besedeš about starting a FREIT conference in Seoul, South Korea with the intention of enabling greater interactions between South Korean trade researchers and international visitors. The inaugural <a href="KETC/index.html">Korean Empirical Trade Conference (KETC)</a> took place in January 2026.</p>
+
+      <p>Joep Konings in 2025 also approached Tibor Besedeš to start a conference in Astana, Kazakhstan. The inaugural <a href="SRET/index.html">Silk Road Empirical Trade (SRET)</a> conference took place in August 2026 and was co-organized by Joep Konings, David DeRemer, and Yao Amber Li with support from Nazarbayev University and Hong Kong University of Science and Technology.</p>
+
+      <h2 id="by-the-numbers">FREIT by the numbers <span class="stats-subhead">(through <span data-freit-stat="through">EIIT 2026</span>)</span></h2>
+
+      <p>Between the first EIIT in 1994 and <span data-freit-stat="through">EIIT 2026</span>, FREIT organized <span data-freit-stat="conferences">94</span> conferences across <span data-freit-stat="series_count_words">ten</span> series. These conferences featured <span data-freit-stat="papers">1,340</span> papers and <span data-freit-stat="keynotes">59</span> <a href="keynotes.html">keynote addresses</a> given by <span data-freit-stat="presenters">720</span> different economists. Counting discussants as well, <span data-freit-stat="participants">851</span> economists from <span data-freit-stat="institutions">375</span> institutions (universities, central banks including the Federal Reserve, international organizations, government agencies, and research institutes) have taken part in at least one FREIT conference. The economists who gave the last paper of a conference are acknowledged as <a href="closers.html">the closers</a>.</p>
+
+      <div class="table-wrap">
+        <!-- FREIT-STATS-TABLE:START -->
+        <table class="freit-stats">
+          <thead>
+            <tr><th>Conference</th><th>Years</th><th>Editions</th><th>Papers</th><th>Presenters</th><th>Institutions</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><a href="EIIT/index.html">EIIT</a></td><td>1994–2026</td><td>33</td><td>485</td><td>323</td><td>192</td></tr>
+            <tr><td><a href="LETC/index.html">LETC</a></td><td>2004–2019</td><td>16</td><td>237</td><td>155</td><td>123</td></tr>
+            <tr><td><a href="EITI/index.html">EITI</a></td><td>2007–2026</td><td>15</td><td>225</td><td>163</td><td>136</td></tr>
+            <tr><td><a href="EITG/index.html">EITG</a></td><td>2009</td><td>1</td><td>15</td><td>16</td><td>18</td></tr>
+            <tr><td><a href="RMET/index.html">RMET</a></td><td>2010–2026</td><td>13</td><td>193</td><td>176</td><td>114</td></tr>
+            <tr><td><a href="SETC/index.html">SETC</a></td><td>2017–2026</td><td>9</td><td>113</td><td>106</td><td>79</td></tr>
+            <tr><td><a href="ITO/index.html">ITO</a></td><td>2020–2021</td><td>2</td><td>14</td><td>14</td><td>17</td></tr>
+            <tr><td><a href="METC/index.html">METC</a></td><td>2024–2026</td><td>3</td><td>36</td><td>35</td><td>28</td></tr>
+            <tr><td><a href="KETC/index.html">KETC</a></td><td>2026</td><td>1</td><td>11</td><td>12</td><td>16</td></tr>
+            <tr><td><a href="SRET/index.html">SRET</a></td><td>2026</td><td>1</td><td>11</td><td>12</td><td>12</td></tr>
+          </tbody>
+          <tfoot>
+            <tr><th>All FREIT conferences</th><th>1994–2026</th><th>94</th><th>1,340</th><th>720</th><th>375</th></tr>
+          </tfoot>
+        </table>
+        <!-- FREIT-STATS-TABLE:END -->
+      </div>
+
+      <p class="stats-note">Counts are based on the conference programs. Presenters include keynote speakers. Institutions are counted by the first affiliation listed for each presenter and discussant, with business schools counted as part of their university. Because many economists have participated in more than one FREIT conference, the FREIT totals are smaller than the sum of the rows. For the early EIITs, which list all co-authors without marking the presenter, the first listed author is counted as the presenter. ETOS is not included in the table. Over its two years it hosted 70 seminars given by 70 economists from 62 institutions.</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <span>&copy; 2026 FREIT. All rights reserved. Based at Georgia Institute of Technology. · <a href="privacy-policy.html">Privacy Policy</a></span>
+      <span id="footer-email"></span>
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      var u = 'freit';
+      var d = 'gatech.edu';
+      var e = u + '@' + d;
+      var m = 'mailto:' + e;
+      var nav = document.getElementById('nav-contact');
+      if (nav) { nav.href = m; }
+      var fe = document.getElementById('footer-email');
+      if (fe) { fe.innerHTML = '<a href="' + m + '" style="color:var(--accent-600);transition:color 0.2s;">' + e + '</a>'; }
+    })();
+  </script>
+</body>
+</html>

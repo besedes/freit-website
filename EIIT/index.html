@@ -461,6 +461,57 @@
 
       .grad-btn { width: 100%; text-align: center; }
     }
+
+    /* ===== KEYNOTES ===== */
+    .keynote-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 8px;
+    }
+
+    .keynote-row {
+      display: flex;
+      align-items: baseline;
+      gap: 0.75rem;
+      background: var(--bg-card);
+      border: 1px solid var(--accent-100);
+      border-radius: 8px;
+      padding: 8px 12px;
+      text-decoration: none;
+      min-width: 0;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .keynote-row:hover {
+      border-color: var(--accent-300);
+      transform: translateY(-1px);
+    }
+
+    .keynote-year {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--accent-600);
+      flex: 0 0 auto;
+      min-width: 2.4rem;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .keynote-name {
+      font-size: 0.875rem;
+      color: var(--navy-900);
+    }
+
+    .keynote-note {
+      margin-top: 1rem;
+      font-size: 0.875rem;
+      color: var(--navy-600);
+    }
+
+    .keynote-note a {
+      color: var(--accent-600);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
   </style>
 </head>
 <body>
@@ -478,6 +529,7 @@
       <ul class="nav-links">
         <li><a href="../index.html">Home</a></li>
         <li><a href="../conferences.html" class="active">Conferences</a></li>
+        <li><a href="../history.html">History</a></li>
         <!-- <li><a href="../working-papers/index.html">Working Papers</a></li> -->
         <li><a href="../about.html">About</a></li>
         <li><a href="#" id="nav-contact">Contact</a></li>
@@ -568,6 +620,45 @@
       <a href="Archives/AgendaEIIT1995.pdf" target="_blank" class="past-pill">1995</a>
       <a href="Archives/AgendaEIIT1994.pdf" target="_blank" class="past-pill">1994</a>
     </div>
+
+    <!-- Keynote addresses (list rebuilt by freit-stats/keynotes.py) -->
+    <div class="section-label" style="margin-top: 2.5rem;">Keynote addresses</div>
+    <!-- FREIT-SERIES-KEYNOTES:START -->
+    <div class="keynote-grid">
+      <a href="Archives/AgendaEIIT2026.pdf" target="_blank" class="keynote-row"><span class="keynote-year">2026</span><span class="keynote-name">Kerem Coşar</span></a>
+      <a href="Archives/AgendaEIIT2025.pdf" target="_blank" class="keynote-row"><span class="keynote-year">2025</span><span class="keynote-name">Beata Javorcik</span></a>
+      <a href="Archives/AgendaEIIT2024.pdf" target="_blank" class="keynote-row"><span class="keynote-year">2024</span><span class="keynote-name">Andreas Moxnes</span></a>
+      <a href="Archives/AgendaEIIT2023.pdf" target="_blank" class="keynote-row"><span class="keynote-year">2023</span><span class="keynote-name">Teresa Fort</span></a>
+      <a href="Archives/AgendaEIIT2022.pdf" target="_blank" class="keynote-row"><span class="keynote-year">2022</span><span class="keynote-name">Matilde Bombardini</span></a>
+      <a href="Archives/AgendaEIIT2021.pdf" target="_blank" class="keynote-row"><span class="keynote-year">2021</span><span class="keynote-name">Stephen Yeaple</span></a>
+      <a href="Archives/AgendaEIIT2020.pdf" target="_blank" class="keynote-row"><span class="keynote-year">2020</span><span class="keynote-name">Amit Khandelwal</span></a>
+      <a href="Archives/AgendaEIIT2019.pdf" target="_blank" class="keynote-row"><span class="keynote-year">2019</span><span class="keynote-name">Mary Lovely</span></a>
+      <a href="Archives/AgendaEIIT2018.pdf" target="_blank" class="keynote-row"><span class="keynote-year">2018</span><span class="keynote-name">David Hummels</span></a>
+      <a href="Archives/AgendaEIIT2017.pdf" target="_blank" class="keynote-row"><span class="keynote-year">2017</span><span class="keynote-name">Stephen Redding</span></a>
+      <a href="Archives/AgendaEIIT2016.pdf" target="_blank" class="keynote-row"><span class="keynote-year">2016</span><span class="keynote-name">David Weinstein</span></a>
+      <a href="Archives/AgendaEIIT2015.pdf" target="_blank" class="keynote-row"><span class="keynote-year">2015</span><span class="keynote-name">James Rauch</span></a>
+      <a href="Archives/AgendaEIIT2014.pdf" target="_blank" class="keynote-row"><span class="keynote-year">2014</span><span class="keynote-name">Andrew Bernard</span></a>
+      <a href="Archives/AgendaEIIT2013.pdf" target="_blank" class="keynote-row"><span class="keynote-year">2013</span><span class="keynote-name">Elhanan Helpman</span></a>
+      <a href="Archives/AgendaEIIT2012.pdf" target="_blank" class="keynote-row"><span class="keynote-year">2012</span><span class="keynote-name">Caroline Freund</span></a>
+      <a href="Archives/AgendaEIIT2011.pdf" target="_blank" class="keynote-row"><span class="keynote-year">2011</span><span class="keynote-name">Jeffrey Bergstrand</span></a>
+      <a href="Archives/AgendaEIIT2010.pdf" target="_blank" class="keynote-row"><span class="keynote-year">2010</span><span class="keynote-name">Robert E. Lucas Jr.</span></a>
+      <a href="Archives/AgendaEIIT2010.pdf" target="_blank" class="keynote-row"><span class="keynote-year">2010</span><span class="keynote-name">Stephen Redding</span></a>
+      <a href="Archives/AgendaEIIT2009.pdf" target="_blank" class="keynote-row"><span class="keynote-year">2009</span><span class="keynote-name">Thomas Hertel</span></a>
+      <a href="Archives/AgendaEIIT2008.pdf" target="_blank" class="keynote-row"><span class="keynote-year">2008</span><span class="keynote-name">Matthew Slaughter</span></a>
+      <a href="Archives/AgendaEIIT2007.pdf" target="_blank" class="keynote-row"><span class="keynote-year">2007</span><span class="keynote-name">Christine McDaniel</span></a>
+      <a href="Archives/AgendaEIIT2006.pdf" target="_blank" class="keynote-row"><span class="keynote-year">2006</span><span class="keynote-name">Samuel Kortum</span></a>
+      <a href="Archives/AgendaEIIT2005.pdf" target="_blank" class="keynote-row"><span class="keynote-year">2005</span><span class="keynote-name">J. David Richardson</span></a>
+      <a href="Archives/AgendaEIIT2004.pdf" target="_blank" class="keynote-row"><span class="keynote-year">2004</span><span class="keynote-name">Donald R. Davis</span></a>
+      <a href="Archives/AgendaEIIT2003.pdf" target="_blank" class="keynote-row"><span class="keynote-year">2003</span><span class="keynote-name">Keith Maskus</span></a>
+      <a href="Archives/AgendaEIIT2001.pdf" target="_blank" class="keynote-row"><span class="keynote-year">2001</span><span class="keynote-name">James Harrigan</span></a>
+      <a href="Archives/AgendaEIIT2000.pdf" target="_blank" class="keynote-row"><span class="keynote-year">2000</span><span class="keynote-name">Edward Leamer</span></a>
+      <a href="Archives/AgendaEIIT1999.pdf" target="_blank" class="keynote-row"><span class="keynote-year">1999</span><span class="keynote-name">Linda Goldberg</span></a>
+      <a href="Archives/AgendaEIIT1997.pdf" target="_blank" class="keynote-row"><span class="keynote-year">1997</span><span class="keynote-name">J. Bradford Jensen</span></a>
+      <a href="Archives/AgendaEIIT1996.pdf" target="_blank" class="keynote-row"><span class="keynote-year">1996</span><span class="keynote-name">Robert Feenstra</span></a>
+      <a href="Archives/AgendaEIIT1995.pdf" target="_blank" class="keynote-row"><span class="keynote-year">1995</span><span class="keynote-name">Robert E. Baldwin</span></a>
+    </div>
+    <!-- FREIT-SERIES-KEYNOTES:END -->
+    <p class="keynote-note">See also <a href="../keynotes.html">keynote speakers at all FREIT conferences</a> and <a href="../closers.html">the closers</a>.</p>
 
   </main>
 

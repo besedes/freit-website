@@ -342,6 +342,57 @@
 
       .next-btn { width: 100%; text-align: center; }
     }
+
+    /* ===== KEYNOTES ===== */
+    .keynote-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 8px;
+    }
+
+    .keynote-row {
+      display: flex;
+      align-items: baseline;
+      gap: 0.75rem;
+      background: var(--bg-card);
+      border: 1px solid var(--accent-100);
+      border-radius: 8px;
+      padding: 8px 12px;
+      text-decoration: none;
+      min-width: 0;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .keynote-row:hover {
+      border-color: var(--accent-300);
+      transform: translateY(-1px);
+    }
+
+    .keynote-year {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--accent-600);
+      flex: 0 0 auto;
+      min-width: 2.4rem;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .keynote-name {
+      font-size: 0.875rem;
+      color: var(--navy-900);
+    }
+
+    .keynote-note {
+      margin-top: 1rem;
+      font-size: 0.875rem;
+      color: var(--navy-600);
+    }
+
+    .keynote-note a {
+      color: var(--accent-600);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
   </style>
 </head>
 <body>
@@ -358,6 +409,8 @@
       <ul class="nav-links">
         <li><a href="../index.html">Home</a></li>
         <li><a href="../conferences.html" class="active">Conferences</a></li>
+        <li><a href="../history.html">History</a></li>
+        <!-- <li><a href="../working-papers/index.html">Working Papers</a></li> -->
         <li><a href="../about.html">About</a></li>
         <li><a href="#" id="nav-contact">Contact</a></li>
       </ul>
@@ -398,6 +451,17 @@
       <a href="Archives/AgendaMETC2025.pdf" class="past-pill" target="_blank">2025</a>
       <a href="Archives/AgendaMETC2024.pdf" class="past-pill" target="_blank">2024</a>
     </div>
+
+    <!-- Keynote addresses (list rebuilt by freit-stats/keynotes.py) -->
+    <div class="section-label" style="margin-top: 2.5rem;">Keynote addresses</div>
+    <!-- FREIT-SERIES-KEYNOTES:START -->
+    <div class="keynote-grid">
+      <a href="Archives/AgendaMETC2026.pdf" target="_blank" class="keynote-row"><span class="keynote-year">2026</span><span class="keynote-name">Matilde Bombardini</span></a>
+      <a href="Archives/AgendaMETC2025.pdf" target="_blank" class="keynote-row"><span class="keynote-year">2025</span><span class="keynote-name">Paola Conconi</span></a>
+      <a href="Archives/AgendaMETC2024.pdf" target="_blank" class="keynote-row"><span class="keynote-year">2024</span><span class="keynote-name">Andrew Bernard</span></a>
+    </div>
+    <!-- FREIT-SERIES-KEYNOTES:END -->
+    <p class="keynote-note">See also <a href="../keynotes.html">keynote speakers at all FREIT conferences</a> and <a href="../closers.html">the closers</a>.</p>
 
   </main>
 
